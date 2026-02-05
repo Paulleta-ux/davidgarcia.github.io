@@ -230,12 +230,14 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3.75rem;
+    grid-auto-rows: 1fr; /* Hace que todas las filas tengan la misma altura */
 }
 
 .project-card-link {
     display: block;
     text-decoration: none;
     color: inherit;
+    height: 100%; /* El enlace ocupa toda la altura disponible */
 }
 
 .project-card {
@@ -244,6 +246,9 @@ button {
     overflow: hidden;
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     cursor: pointer;
+    height: 100%; /* La card ocupa toda la altura del enlace */
+    display: flex;
+    flex-direction: column; /* Layout vertical para distribuir el espacio */
 }
 
 .project-card-link:hover .project-card,
@@ -308,6 +313,9 @@ button {
 
 .project-info {
     padding: 2rem;
+    flex: 1; /* Ocupa todo el espacio restante disponible */
+    display: flex;
+    flex-direction: column;
 }
 
 .project-info h3 {
@@ -328,6 +336,7 @@ button {
     color: var(--color-text-gray);
     line-height: 1.5;
     font-family: var(--font-secondary);
+    flex: 1; /* El párrafo se expande para llenar el espacio */
 }
 
 /* ===================================
