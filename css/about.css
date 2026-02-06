@@ -58,29 +58,6 @@
     border-color: rgba(108, 89, 51, 0.15);
 }
 
-/* Efecto de brillo sutil */
-.about-image {
-    position: relative;
-    overflow: hidden;
-    border-radius: 24px;
-}
-
-.about-image::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.8s ease;
-    z-index: 1;
-    pointer-events: none;
-}
-
-.about-image:hover::before {
-    left: 100%;
-}
 
 /* Recognitions Section */
 .recognitions {
