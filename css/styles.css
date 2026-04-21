@@ -58,7 +58,7 @@ html {
 body {
     font-family: var(--font-primary);
     color: var(--color-text);
-    background-color: var(--color-secondary);
+    background-color: var(--color-background);
     line-height: 1.65;
     overflow-x: hidden;
 }
@@ -140,7 +140,7 @@ button {
    =================================== */
 .hero {
     padding: 5rem 0;
-    background-color: var(--color-secondary);
+    background-color: var(--color-background);
 }
 
 .hero-content {
@@ -208,18 +208,18 @@ button {
 .btn {
     display: inline-block;
     padding: 1.5rem 4rem;
-    border-radius: 18px; /* Redondeado moderado, no tan extremo */
-    font-weight: 600; /* Más bold para mejor visibilidad */
+    border-radius: 18px;
+    font-weight: 600;
     font-size: 1rem;
     transition: all var(--transition-normal);
     text-align: center;
-    letter-spacing: 0.5px; /* Mejor legibilidad */
+    letter-spacing: 0.5px;
 }
 
 .btn-primary {
     background-color: var(--color-primary);
     color: var(--color-white);
-    box-shadow: 0 4px 12px rgba(108, 89, 51, 0.3); /* Sombra más pronunciada */
+    box-shadow: 0 4px 12px rgba(108, 89, 51, 0.3);
     position: relative;
     overflow: hidden;
 }
@@ -241,8 +241,8 @@ button {
 
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
-    transform: translateY(-3px) scale(1.02); /* Efecto más pronunciado */
-    box-shadow: 0 8px 20px rgba(108, 89, 51, 0.4); /* Sombra más grande al hover */
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(108, 89, 51, 0.4);
 }
 
 .btn-primary:active {
@@ -304,14 +304,14 @@ button {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 3.75rem;
-    grid-auto-rows: 1fr; /* Hace que todas las filas tengan la misma altura */
+    grid-auto-rows: 1fr;
 }
 
 .project-card-link {
     display: block;
     text-decoration: none;
     color: inherit;
-    height: 100%; /* El enlace ocupa toda la altura disponible */
+    height: 100%;
 }
 
 .project-card {
@@ -320,9 +320,9 @@ button {
     overflow: hidden;
     transition: transform var(--transition-normal), box-shadow var(--transition-normal);
     cursor: pointer;
-    height: 100%; /* La card ocupa toda la altura del enlace */
+    height: 100%;
     display: flex;
-    flex-direction: column; /* Layout vertical para distribuir el espacio */
+    flex-direction: column;
     box-shadow: 0 4px 16px rgba(108, 89, 51, 0.08),
                 0 2px 8px rgba(108, 89, 51, 0.04);
     border: 2px solid rgba(108, 89, 51, 0.05);
@@ -392,7 +392,7 @@ button {
 
 .project-info {
     padding: 2rem;
-    flex: 1; /* Ocupa todo el espacio restante disponible */
+    flex: 1;
     display: flex;
     flex-direction: column;
 }
@@ -415,7 +415,7 @@ button {
     color: var(--color-text-gray);
     line-height: 1.5;
     font-family: var(--font-secondary);
-    flex: 1; /* El párrafo se expande para llenar el espacio */
+    flex: 1;
 }
 
 /* ===================================
@@ -595,7 +595,7 @@ button {
     height: 3.375rem;
     background-color: var(--color-primary);
     color: var(--color-white);
-    border-radius: 12px; /* Redondeado moderado, no circular */
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
