@@ -1,0 +1,616 @@
+/* ════════════════════════════════════════
+   MAGNUS BARBER SUPPLY — Case Study Styles
+   ════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #1a1a1a;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* ── CSS Variables ── */
+:root {
+  --gold:       #B8962E;
+  --gold-light: #C8A645;
+  --dark:       #1a1a1a;
+  --darker:     #111111;
+  --charcoal:   #222222;
+  --light-bg:   #EFEFEF;
+  --white:      #ffffff;
+  --text-muted: #888888;
+  --text-body:  #333333;
+
+  --section-pad-x: 80px;
+  --section-pad-y: 100px;
+}
+
+/* ── Typography ── */
+.font-title    { font-family: 'Oswald', sans-serif; }
+.font-body     { font-family: 'Inter', sans-serif; }
+
+h1, h2, h3, h4 { font-family: 'Oswald', sans-serif; }
+
+/* ── Utilities ── */
+.gold        { color: var(--gold); }
+.uppercase   { text-transform: uppercase; }
+.italic      { font-style: italic; }
+
+.label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 400;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section-divider {
+  width: 48px;
+  height: 3px;
+  background: var(--gold);
+  margin: 8px 0 36px;
+}
+
+/* ── Scroll Reveal ── */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+
+/* ────────────────────────────────────────
+   SECTION 0 — HERO
+──────────────────────────────────────── */
+#hero {
+  background: var(--dark);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  padding: 80px var(--section-pad-x);
+  position: relative;
+  overflow: hidden;
+}
+
+#hero .year {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 4px;
+  position: absolute;
+  top: 48px;
+  right: var(--section-pad-x);
+  animation: fadeDown 0.7s 0.2s both;
+}
+
+.hero-left {
+  animation: fadeUp 0.8s 0.3s both;
+}
+
+.hero-pretitle {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+
+.hero-title {
+  font-size: clamp(4rem, 7vw, 6.5rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 1px;
+  margin-bottom: 52px;
+  text-transform: uppercase;
+}
+
+.meta-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 0 48px;
+  margin-bottom: 48px;
+}
+
+.meta-item .label { margin-bottom: 6px; }
+
+.meta-item .value {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.roles-section { margin-bottom: 36px; }
+
+.roles-list {
+  list-style: none;
+  margin-top: 8px;
+}
+
+.roles-list li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--white);
+  padding: 2px 0 2px 18px;
+  position: relative;
+}
+
+.roles-list li::before {
+  content: '•';
+  position: absolute;
+  left: 4px;
+  color: var(--white);
+}
+
+.agency-line {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  color: var(--white);
+}
+
+.agency-line em {
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.agency-line strong { font-weight: 600; }
+
+/* Hero right — mockups container */
+.hero-right {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 12px;
+  animation: fadeUp 0.8s 0.5s both;
+}
+
+/* ────────────────────────────────────────
+   SECTION 1 — UI SHOWCASE
+──────────────────────────────────────── */
+#showcase {
+  background: linear-gradient(180deg, var(--dark) 0%, #ffffff 38%);
+  padding: var(--section-pad-y) var(--section-pad-x);
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  align-items: center;
+  gap: 60px;
+  min-height: 80vh;
+}
+
+.showcase-text { color: var(--dark); }
+
+.ui-badge {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--white);
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 18px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.showcase-title {
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+/* ────────────────────────────────────────
+   SECTION 2 — SINOPSIS
+──────────────────────────────────────── */
+#sinopsis {
+  background: var(--light-bg);
+  padding: var(--section-pad-y) var(--section-pad-x);
+  position: relative;
+}
+
+#sinopsis h2 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 700;
+  color: var(--dark);
+  text-transform: uppercase;
+}
+
+#sinopsis p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--text-body);
+  max-width: 980px;
+}
+
+/* ────────────────────────────────────────
+   SECTION 3 — EL DESAFÍO
+──────────────────────────────────────── */
+#challenge {
+  background: var(--dark);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+  align-items: center;
+}
+
+.challenge-left {
+  padding: var(--section-pad-y) var(--section-pad-x);
+}
+
+.challenge-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+
+.challenge-title {
+  font-size: clamp(2.5rem, 4vw, 3.8rem);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.quote-block {
+  border-left: 3px solid var(--gold);
+  padding-left: 24px;
+  margin-bottom: 28px;
+}
+
+.quote-block p,
+.challenge-extra p {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-style: italic;
+  line-height: 1.8;
+  color: #cccccc;
+}
+
+.challenge-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+  height: 100%;
+}
+
+/* ────────────────────────────────────────
+   MOCKUP COMPONENTS
+──────────────────────────────────────── */
+
+/* Laptop */
+.mockup-laptop {
+  background: #2d2d2d;
+  border-radius: 14px 14px 6px 6px;
+  overflow: hidden;
+  box-shadow:
+    0 40px 80px rgba(0,0,0,0.7),
+    0 0 0 1px rgba(255,255,255,0.06);
+  flex-shrink: 0;
+}
+
+.mockup-laptop .screen {
+  overflow: hidden;
+  background: #111;
+}
+
+.mockup-laptop.size-sm  { width: 320px; }
+.mockup-laptop.size-md  { width: 480px; }
+.mockup-laptop.size-lg  { width: 560px; }
+
+.mockup-laptop .screen  { aspect-ratio: 16/10; }
+
+.laptop-chin {
+  background: #2d2d2d;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.laptop-chin span {
+  font-family: 'Inter', sans-serif;
+  font-size: 8px;
+  color: #555;
+  letter-spacing: 3px;
+}
+
+/* Mobile */
+.mockup-mobile {
+  background: #1e1e1e;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 70px rgba(0,0,0,0.8),
+    0 0 0 1px rgba(255,255,255,0.06);
+  padding: 10px 8px 18px;
+  flex-shrink: 0;
+}
+
+.mockup-mobile .screen {
+  background: #111;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+.mockup-mobile.size-sm  { width: 120px; }
+.mockup-mobile.size-md  { width: 180px; }
+
+/* Placeholder image box */
+.img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: rgba(255,255,255,0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.2);
+  font-size: 0.65rem;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  text-align: center;
+  border: 1px dashed rgba(255,255,255,0.1);
+}
+
+/* ────────────────────────────────────────
+   FAKE WEBSITE CONTENT (inside mockups)
+──────────────────────────────────────── */
+.fake-site { width: 100%; height: 100%; background: #111; }
+
+/* Top announcement bar */
+.fs-announce {
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 3px 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 5px;
+  color: #888;
+  font-family: 'Inter', sans-serif;
+}
+
+.fs-announce .center { flex: 1; text-align: center; color: #888; }
+
+/* Search bar row */
+.fs-search {
+  background: #1a1a1a;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 4px 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.fs-search-input {
+  flex: 1;
+  background: #333;
+  border: 1px solid #444;
+  border-radius: 3px;
+  height: 10px;
+}
+
+.fs-search-btn {
+  width: 14px;
+  height: 10px;
+  background: var(--gold);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 7px;
+  color: white;
+}
+
+/* Nav menu */
+.fs-nav {
+  background: #111;
+  border-bottom: 1px solid #2a2a2a;
+  padding: 4px 8px;
+  display: flex;
+  gap: 7px;
+  font-size: 5px;
+  color: #ccc;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* Hero banner */
+.fs-banner {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(90deg, #C4A95A 0%, #1a1a1a 60%);
+  padding: 10px 8px;
+  gap: 6px;
+  min-height: 60px;
+}
+
+.fs-banner-text { flex: 1; }
+
+.fs-banner-headline {
+  font-family: 'Oswald', sans-serif;
+  font-size: 8px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.25;
+  margin-bottom: 3px;
+}
+
+.fs-banner-sub {
+  font-size: 5px;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Product strip */
+.fs-products {
+  background: #f0f0f0;
+  display: flex;
+  gap: 3px;
+  padding: 5px;
+  overflow: hidden;
+}
+
+.fs-prod-thumb {
+  flex-shrink: 0;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+/* Mobile nav */
+.fsm-nav {
+  background: #111;
+  padding: 6px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.fsm-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
+}
+
+.fsm-icon { font-size: 10px; color: #aaa; }
+
+/* Mobile banner */
+.fsm-banner {
+  background: linear-gradient(135deg, #C4A95A 0%, #8B6914 100%);
+  padding: 10px 8px;
+  text-align: center;
+}
+
+.fsm-banner p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 6.5px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.3;
+  margin-bottom: 2px;
+}
+
+.fsm-banner small {
+  font-size: 4.5px;
+  color: #333;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Mobile product cards */
+.fsm-products {
+  background: white;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+}
+
+.fsm-card {
+  background: #f9f9f9;
+  border-radius: 3px;
+  padding: 5px;
+}
+
+.fsm-card .thumb {
+  aspect-ratio: 1;
+  border-radius: 2px;
+  overflow: hidden;
+  margin-bottom: 4px;
+  background: #ddd;
+}
+
+.fsm-card .compare-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  font-size: 4.5px;
+  color: #666;
+  margin-bottom: 3px;
+  font-family: 'Inter', sans-serif;
+}
+
+.fsm-card .compare-row input { width: 5px; height: 5px; }
+
+.fsm-card .price {
+  font-size: 7px;
+  font-weight: 700;
+  color: #222;
+  font-family: 'Oswald', sans-serif;
+}
+
+.fsm-card .old-price {
+  font-size: 5px;
+  color: #aaa;
+  text-decoration: line-through;
+  font-family: 'Inter', sans-serif;
+}
+
+.fsm-card .save-badge {
+  background: #e00;
+  color: white;
+  font-size: 4px;
+  padding: 1px 3px;
+  border-radius: 2px;
+  display: inline-block;
+  margin-bottom: 1px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* ────────────────────────────────────────
+   KEYFRAMES
+──────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ────────────────────────────────────────
+   RESPONSIVE
+──────────────────────────────────────── */
+@media (max-width: 960px) {
+  :root {
+    --section-pad-x: 28px;
+    --section-pad-y: 60px;
+  }
+
+  #hero, #showcase, #challenge {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-right { justify-content: center; margin-top: 48px; }
+  .challenge-right { padding: 40px 28px; }
+  #showcase { background: linear-gradient(180deg, var(--dark) 0%, #fff 30%); }
+}
