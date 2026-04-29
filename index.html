@@ -57,7 +57,7 @@
           Mi especialización se centra en UX Research, UX Strategy y UI Design.
         </p>
 
-        <!-- CTA -->
+        <!-- CTA --> 
         <a 
           href="files/David_Garcia_ProductDesigner.pdf"
           class="btn btn-primary"
@@ -77,135 +77,145 @@
     </section>
 
 
-    <!-- Productos Realizados -->
-    <section class="products">
+<!-- Portfolio con Tabs -->
+    <section class="portfolio-tabs" id="portafolio">
         <div class="container">
-            <h2 class="section-title">Productos realizados</h2>
+            <h2 class="section-title">Portafolio</h2>
 
-            <!-- Universo Maloka - Experiencia Extendida -->
-            <div class="product-item">
-                <div class="product-content reverse">
-                    <div class="product-image">
-                        <img src="images/Maloka.png" alt="Maloka - Experiencia Extendida">
-                    </div>
-                    <div class="product-text">
-                        <h3>Universo Maloka</h3>
-                        <h4>Experiencia Extendida</h4>
-                        <p>Team Leader en colaboración con Maloka, lideré el diseño de una experiencia extendida para familias (folleto físico y app con realidad aumentada), a cargo de la investigación con usuarios, UI, prototipado y gestión de stakeholders.</p>
-                        <div class="product-buttons">
-                            <a href="https://www.behance.net/gallery/225202727/Universo-Maloka-Caso-de-estudio-Experiencia-extendida" 
-                               class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
-                            <a href="https://grupoland.itch.io/universo-maloka" 
-                               class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+            <!-- Tab Nav -->
+            <div class="tabs-nav" role="tablist">
+                <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-design" id="tab-design" data-tab="design">
+                    Product Design
+                </button>
+                <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-web" id="tab-web" data-tab="web">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    Páginas Web
+                </button>
+            </div>
+
+            <!-- Panel: Product Design -->
+            <div class="tab-panel active" id="panel-design" role="tabpanel" aria-labelledby="tab-design">
+
+                <div class="product-item">
+                    <div class="product-content reverse">
+                        <div class="product-image">
+                            <img src="images/Maloka.png" alt="Maloka - Experiencia Extendida">
+                        </div>
+                        <div class="product-text">
+                            <h3>Universo Maloka</h3>
+                            <h4>Experiencia Extendida</h4>
+                            <p>Team Leader en colaboración con Maloka, lideré el diseño de una experiencia extendida para familias (folleto físico y app con realidad aumentada), a cargo de la investigación con usuarios, UI, prototipado y gestión de stakeholders.</p>
+                            <div class="product-buttons">
+                                <a href="https://www.behance.net/gallery/225202727/Universo-Maloka-Caso-de-estudio-Experiencia-extendida"
+                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                <a href="https://grupoland.itch.io/universo-maloka"
+                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="divider"></div>
+                <div class="divider"></div>
 
-            <!-- Neuronautas - Videojuego -->
-            <div class="product-item">
-                <div class="product-content">
-                    <div class="product-image">
-                        <img src="images/neuronautas-game.png" alt="Neuronautas - Videojuego">
-                    </div>
-                    <div class="product-text">
-                        <h3>Neuronautas</h3>
-                        <h4>Videojuego</h4>
-                        <p>Lideré el desarrollo de un videojuego accesible y sensorialmente amigable para personas dentro del espectro autista, a cargo de la estrategia UX, investigación y diseño de interacción, con enfoque en inclusión y visibilización de vivencias neurodivergentes.</p>
-                        <div class="product-buttons">
-                            <a href="https://www.behance.net/gallery/223178539/Neuronautas" 
-                               class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
-                            <a href="https://paulleta.itch.io/neuronautas" 
-                               class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                <div class="product-item">
+                    <div class="product-content">
+                        <div class="product-image">
+                            <img src="images/neuronautas-game.png" alt="Neuronautas - Videojuego">
+                        </div>
+                        <div class="product-text">
+                            <h3>Neuronautas</h3>
+                            <h4>Videojuego</h4>
+                            <p>Lideré el desarrollo de un videojuego accesible y sensorialmente amigable para personas dentro del espectro autista, a cargo de la estrategia UX, investigación y diseño de interacción, con enfoque en inclusión y visibilización de vivencias neurodivergentes.</p>
+                            <div class="product-buttons">
+                                <a href="https://www.behance.net/gallery/223178539/Neuronautas"
+                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                <a href="https://paulleta.itch.io/neuronautas"
+                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="divider"></div>
+                <div class="divider"></div>
 
-            <!-- Mitos del Hermano Mayor -->
-            <div class="product-item">
-                <div class="product-content reverse">
-                    <div class="product-image">
-                        <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor">
-                    </div>
-                    <div class="product-text">
-                        <h3>Mitos del Hermano Mayor</h3>
-                        <h4>Experiencia extendida</h4>
-                        <p>Líder de diseño en proyecto especulativo sobre saberes ancestrales, coordiné el proceso completo desde la investigación con antropólogos hasta el desarrollo de modelos conceptuales, infografías y guía de estilos, destacando habilidades en investigación y diseño de productos digitales.</p>
-                        <div class="product-buttons">
-                            <a href="https://www.behance.net/gallery/219527671/Mitos-del-Hermano-Mayor-Ganador-Hackaton" 
-                               class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
-                            <a href="https://paulleta.itch.io/mitos-del-hermano-mayor" 
-                               class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                <div class="product-item">
+                    <div class="product-content reverse">
+                        <div class="product-image">
+                            <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor">
+                        </div>
+                        <div class="product-text">
+                            <h3>Mitos del Hermano Mayor</h3>
+                            <h4>Experiencia extendida</h4>
+                            <p>Líder de diseño en proyecto especulativo sobre saberes ancestrales, coordiné el proceso completo desde la investigación con antropólogos hasta el desarrollo de modelos conceptuales, infografías y guía de estilos, destacando habilidades en investigación y diseño de productos digitales.</p>
+                            <div class="product-buttons">
+                                <a href="https://www.behance.net/gallery/219527671/Mitos-del-Hermano-Mayor-Ganador-Hackaton"
+                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                <a href="https://paulleta.itch.io/mitos-del-hermano-mayor"
+                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="divider"></div>
-        </div>
-    </section>
+                <div class="divider"></div>
 
-    <!-- Páginas Web Realizadas -->
-    <section class="web-projects" id="next">
-        <div class="container">
-            <h2 class="section-title">Páginas web realizadas</h2>
-            <div class="projects-grid">
-                <!-- Magnus Barber Supply -->
-                <a href="https://www.behance.net/gallery/244301871/Shopify-Barberia-Optimizacion-UX-SEO" target="_blank" rel="noopener" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/magnus-barber.png" alt="Magnus Barber Supply">
-                            <div class="project-overlay">
-                                <h3>E-commerce de productos de barbería</h3>
-                                <p>Magnus Barber Supply</p>
+            </div><!-- /panel-design -->
+
+            <!-- Panel: Páginas Web -->
+            <div class="tab-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web">
+                <div class="projects-grid">
+
+                    <a href="https://www.behance.net/gallery/244301871/Shopify-Barberia-Optimizacion-UX-SEO" target="_blank" rel="noopener" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/magnus-barber.png" alt="Magnus Barber Supply">
+                                <div class="project-overlay">
+                                    <h3>E-commerce de productos de barbería</h3>
+                                    <p>Magnus Barber Supply</p>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Magnus Barber Supply</h3>
+                                <p>Realicé el rediseño de la página mediante iteraciones centradas en la experiencia del usuario, con el objetivo de optimizar la conversión y las ventas.</p>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <h3>Magnus Barber Supply</h3>
-                            <p>Realicé el rediseño de la página mediante iteraciones centradas en la experiencia del usuario, con el objetivo de optimizar la conversión y las ventas.</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- American U.S Regatta -->
-                <a href="https://americanusregatta.com.co/" target="_blank" rel="noopener" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/american-regatta.png" alt="American U.S Regatta">
-                            <div class="project-overlay">
-                                <h3>E-commerce de camisas para Hombre</h3>
-                                <p>American U.S Regatta</p>
+                    <a href="https://americanusregatta.com.co/" target="_blank" rel="noopener" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/american-regatta.png" alt="American U.S Regatta">
+                                <div class="project-overlay">
+                                    <h3>E-commerce de camisas para Hombre</h3>
+                                    <p>American U.S Regatta</p>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>American U.S Regatta</h3>
+                                <p>Migración de la página de WordPress a la plataforma Shopify, incluyendo la estructura y el diseño completo.</p>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <h3>American U.S Regatta</h3>
-                            <p>Migración de la página de WordPress a la plataforma Shopify, incluyendo la estructura y el diseño completo.</p>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
-                <!-- Backyard & Pergolas -->
-                <a href="https://backyardandpergolas.com/" target="_blank" rel="noopener" class="project-card-link">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <img src="images/backyard-pergolas.png" alt="Backyard & Pergolas">
-                            <div class="project-overlay">
-                                <h3>E-commerce de remodelaciones de casas</h3>
-                                <p>Backyard & Pergolas</p>
+                    <a href="https://backyardandpergolas.com/" target="_blank" rel="noopener" class="project-card-link">
+                        <div class="project-card">
+                            <div class="project-image">
+                                <img src="images/backyard-pergolas.png" alt="Backyard & Pergolas">
+                                <div class="project-overlay">
+                                    <h3>E-commerce de remodelaciones de casas</h3>
+                                    <p>Backyard & Pergolas</p>
+                                </div>
+                            </div>
+                            <div class="project-info">
+                                <h3>Backyard & Pergolas</h3>
+                                <p>Rediseño de la plataforma basado en el manual de marca, optimizando la coherencia visual y el atractivo de la interfaz.</p>
                             </div>
                         </div>
-                        <div class="project-info">
-                            <h3>Backyard & Pergolas</h3>
-                            <p>Rediseño de la plataforma basado en el manual de marca, optimizando la coherencia visual y el atractivo de la interfaz.</p>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                    </a>
+
+                </div>
+            </div><!-- /panel-web -->
+
         </div>
     </section>
 

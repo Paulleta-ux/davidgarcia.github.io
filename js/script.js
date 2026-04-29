@@ -195,3 +195,23 @@ function initializeApp() {
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.rel = 'noopener noreferrer';
 });
+// ===================================
+// Portfolio Tabs
+// ===================================
+(function () {
+    const btns = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+
+    btns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const target = btn.dataset.tab;
+
+            btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+            panels.forEach(p => p.classList.remove('active'));
+
+            btn.classList.add('active');
+            btn.setAttribute('aria-selected', 'true');
+            document.getElementById('panel-' + target).classList.add('active');
+        });
+    });
+})();
