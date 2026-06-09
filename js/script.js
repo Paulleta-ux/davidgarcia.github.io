@@ -215,3 +215,25 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
         });
     });
 })();
+// ===================================
+// PlayGround — fechas relativas
+// ===================================
+document.querySelectorAll('.pg-card-meta[data-date]').forEach(el => {
+    const date = new Date(el.dataset.date);
+    const now = new Date();
+    const diffMs = now - date;
+    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+
+    let label;
+    if (diffDays === 0)        label = 'Hoy';
+    else if (diffDays === 1)   label = 'Hace 1 día';
+    else if (diffDays < 7)     label = `Hace ${diffDays} días`;
+    else if (diffDays < 14)    label = 'Hace 1 semana';
+    else if (diffDays < 30)    label = `Hace ${Math.floor(diffDays / 7)} semanas`;
+    else if (diffDays < 60)    label = 'Hace 1 mes';
+    else if (diffDays < 365)   label = `Hace ${Math.floor(diffDays / 30)} meses`;
+    else if (diffDays < 730)   label = 'Hace 1 año';
+    else                       label = `Hace ${Math.floor(diffDays / 365)} años`;
+
+    el.textContent = `LinkedIn · ${label}`;
+});
