@@ -9,7 +9,7 @@
     <title>Portfolio de David García | Diseñador Interactivo UX/UI</title>
     <meta name="description" content="David García Murcia es Diseñador Interactivo en Bogotá, Colombia, con formación en UX Research, UX Strategy y UI Design. Ha trabajado en museos interactivos, proyectos culturales, experiencias de cambio social y e-commerce, aplicando investigación con usuarios, arquitectura de información, usabilidad y diseño responsive para resolver problemas reales de negocio y experiencia.">
 
-    <!-- Open Graph (WhatsApp / LinkedIn) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Portfolio de David García | Diseñador Interactivo UX/UI">
     <meta property="og:description" content="UX Research, UX Strategy y UI aplicado a experiencias digitales, museos interactivos y e-commerce.">
     <meta property="og:type" content="website">
@@ -17,13 +17,18 @@
     <meta property="og:image" content="https://paulleta-ux.github.io/davidgarcia.github.io/images/preview.jpg">
     <meta property="og:locale" content="es_CO">
 
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
     <!-- Header/Navegación -->
-    <header class="header">
+    <header class="header" id="site-header">
         <div class="container">
             <nav class="nav">
                 <div class="logo">David Garcia</div>
@@ -41,22 +46,23 @@
             <div class="hero-content">
 
                 <!-- Imagen -->
-                <div class="hero-image">
+                <div class="hero-image reveal-left">
                     <img 
                         src="images/fotopPerfil.jpeg" 
-                        alt="David García, Diseñador Interactivo especializado en UX y UI">
+                        alt="David García, Diseñador Interactivo especializado en UX y UI"
+                        loading="eager">
                 </div>
 
                 <!-- Texto -->
-                <div class="hero-text">
-                    <h1>Diseñador Interactivo</h1>
+                <div class="hero-text reveal-right">
+                    <span class="hero-eyebrow">Bogotá, Colombia</span>
+                    <h1>Diseñador<br>Interactivo</h1>
 
                     <p class="hero-description">
                         Con profundo interés en la <span class="highlight">usabilidad</span> de los usuarios.
                         Mi especialización se centra en UX Research, UX Strategy y UI Design.
                     </p>
 
-                    <!-- CTA --> 
                     <a 
                         href="files/David_Garcia_ProductDesigner.pdf"
                         class="btn btn-primary"
@@ -70,35 +76,46 @@
         </div>
     </section>
 
-    <!-- Portfolio con Tabs -->
+    <!-- =============================================
+         PORTAFOLIO — Desktop: Tabs | Mobile: Scroll
+         ============================================= -->
     <section class="portfolio-tabs" id="portafolio">
         <div class="container">
-            <h2 class="section-title">Portafolio</h2>
+            <h2 class="section-title reveal-up">Portafolio</h2>
 
-            <!-- Tab Nav -->
-            <div class="tabs-nav" role="tablist">
-                <button class="tab-btn active" role="tab" aria-selected="true" 
+            <!-- Tab Nav — solo visible en desktop (≥769px) -->
+            <div class="tabs-nav" role="tablist" aria-label="Categorías del portafolio">
+                <button class="tab-btn active" role="tab" aria-selected="true"
                         aria-controls="panel-design" id="tab-design" data-tab="design">
                     Product Design
                 </button>
-                <button class="tab-btn" role="tab" aria-selected="false" 
+                <button class="tab-btn" role="tab" aria-selected="false"
                         aria-controls="panel-web" id="tab-web" data-tab="web">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
                     Páginas Web
                 </button>
-                <button class="tab-btn" role="tab" aria-selected="false" 
+                <button class="tab-btn" role="tab" aria-selected="false"
                         aria-controls="panel-playground" id="tab-playground" data-tab="playground">
                     PlayGround
                 </button>
             </div>
 
+            <!-- =========================================
+                 DESKTOP: Paneles con tabs
+                 MOBILE: Todos visibles en scroll continuo
+                 ========================================= -->
+
             <!-- Panel: Product Design -->
             <div class="tab-panel active" id="panel-design" role="tabpanel" aria-labelledby="tab-design">
 
-                <div class="product-item">
+                <!-- Label de categoría — solo en mobile -->
+                <div class="mobile-section-label" aria-hidden="true">Product Design</div>
+
+                <div class="product-item reveal-up">
                     <div class="product-content reverse">
                         <div class="product-image">
-                            <img src="images/Maloka.png" alt="Maloka - Experiencia Extendida">
+                            <img src="images/Maloka.png" alt="Maloka - Experiencia Extendida" loading="lazy">
+                            <div class="product-image-tag">UX Research · AR</div>
                         </div>
                         <div class="product-text">
                             <h3>Universo Maloka</h3>
@@ -106,9 +123,9 @@
                             <p>Team Leader en colaboración con Maloka, lideré el diseño de una experiencia extendida para familias (folleto físico y app con realidad aumentada), a cargo de la investigación con usuarios, UI, prototipado y gestión de stakeholders.</p>
                             <div class="product-buttons">
                                 <a href="https://www.behance.net/gallery/225202727/Universo-Maloka-Caso-de-estudio-Experiencia-extendida"
-                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
                                 <a href="https://grupoland.itch.io/universo-maloka"
-                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver Aplicación</a>
                             </div>
                         </div>
                     </div>
@@ -116,10 +133,11 @@
 
                 <div class="divider"></div>
 
-                <div class="product-item">
+                <div class="product-item reveal-up">
                     <div class="product-content">
                         <div class="product-image">
-                            <img src="images/neuronautas-game.png" alt="Neuronautas - Videojuego">
+                            <img src="images/neuronautas-game.png" alt="Neuronautas - Videojuego" loading="lazy">
+                            <div class="product-image-tag">UX Strategy · Inclusión</div>
                         </div>
                         <div class="product-text">
                             <h3>Neuronautas</h3>
@@ -127,9 +145,9 @@
                             <p>Lideré el desarrollo de un videojuego accesible y sensorialmente amigable para personas dentro del espectro autista, a cargo de la estrategia UX, investigación y diseño de interacción, con enfoque en inclusión y visibilización de vivencias neurodivergentes.</p>
                             <div class="product-buttons">
                                 <a href="https://www.behance.net/gallery/223178539/Neuronautas"
-                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
                                 <a href="https://paulleta.itch.io/neuronautas"
-                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver Aplicación</a>
                             </div>
                         </div>
                     </div>
@@ -137,10 +155,11 @@
 
                 <div class="divider"></div>
 
-                <div class="product-item">
+                <div class="product-item reveal-up">
                     <div class="product-content reverse">
                         <div class="product-image">
-                            <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor">
+                            <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor" loading="lazy">
+                            <div class="product-image-tag">Diseño Especulativo</div>
                         </div>
                         <div class="product-text">
                             <h3>Mitos del Hermano Mayor</h3>
@@ -148,9 +167,9 @@
                             <p>Líder de diseño en proyecto especulativo sobre saberes ancestrales, coordiné el proceso completo desde la investigación con antropólogos hasta el desarrollo de modelos conceptuales, infografías y guía de estilos, destacando habilidades en investigación y diseño de productos digitales.</p>
                             <div class="product-buttons">
                                 <a href="https://www.behance.net/gallery/219527671/Mitos-del-Hermano-Mayor-Ganador-Hackaton"
-                                   class="btn btn-primary" target="_blank" rel="noopener">Ver Proyecto</a>
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver Proyecto</a>
                                 <a href="https://paulleta.itch.io/mitos-del-hermano-mayor"
-                                   class="btn btn-secondary" target="_blank" rel="noopener">Ver Aplicación</a>
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Ver Aplicación</a>
                             </div>
                         </div>
                     </div>
@@ -162,50 +181,59 @@
 
             <!-- Panel: Páginas Web -->
             <div class="tab-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web">
+
+                <div class="mobile-section-label" aria-hidden="true">Páginas Web</div>
+
                 <div class="projects-grid">
 
-                    <a href="https://www.behance.net/gallery/244301871/Shopify-Barberia-Optimizacion-UX-SEO" target="_blank" rel="noopener" class="project-card-link">
+                    <a href="https://www.behance.net/gallery/244301871/Shopify-Barberia-Optimizacion-UX-SEO"
+                       target="_blank" rel="noopener noreferrer" class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/magnus-barber.png" alt="Magnus Barber Supply">
+                                <img src="images/magnus-barber.png" alt="Magnus Barber Supply" loading="lazy">
                                 <div class="project-overlay">
                                     <h3>E-commerce de productos de barbería</h3>
                                     <p>Magnus Barber Supply</p>
                                 </div>
                             </div>
                             <div class="project-info">
+                                <span class="project-tag">Shopify · UX · SEO</span>
                                 <h3>Magnus Barber Supply</h3>
                                 <p>Realicé el rediseño de la página mediante iteraciones centradas en la experiencia del usuario, con el objetivo de optimizar la conversión y las ventas.</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://www.behance.net/gallery/248901655/Migracion-WooCommerce-a-Shopify" target="_blank" rel="noopener" class="project-card-link">
+                    <a href="https://www.behance.net/gallery/248901655/Migracion-WooCommerce-a-Shopify"
+                       target="_blank" rel="noopener noreferrer" class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Portada.png" alt="American U.S Regatta">
+                                <img src="images/Portada.png" alt="American U.S Regatta" loading="lazy">
                                 <div class="project-overlay">
                                     <h3>Migración WooCommerce a Shopify</h3>
                                     <p>American U.S Regatta</p>
                                 </div>
                             </div>
                             <div class="project-info">
+                                <span class="project-tag">WordPress → Shopify</span>
                                 <h3>American U.S Regatta</h3>
                                 <p>Migración de la página de WordPress a la plataforma Shopify, incluyendo la estructura y el diseño completo.</p>
                             </div>
                         </div>
                     </a>
 
-                    <a href="https://backyardandpergolas.com/" target="_blank" rel="noopener" class="project-card-link">
+                    <a href="https://backyardandpergolas.com/"
+                       target="_blank" rel="noopener noreferrer" class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/backyard-pergolas.png" alt="Backyard & Pergolas">
+                                <img src="images/backyard-pergolas.png" alt="Backyard & Pergolas" loading="lazy">
                                 <div class="project-overlay">
                                     <h3>E-commerce de remodelaciones de casas</h3>
                                     <p>Backyard & Pergolas</p>
                                 </div>
                             </div>
                             <div class="project-info">
+                                <span class="project-tag">UI · Marca · Shopify</span>
                                 <h3>Backyard & Pergolas</h3>
                                 <p>Rediseño de la plataforma basado en el manual de marca, optimizando la coherencia visual y el atractivo de la interfaz.</p>
                             </div>
@@ -215,112 +243,218 @@
                 </div>
             </div><!-- /panel-web -->
 
-<!-- Panel: PlayGround -->
-<div class="tab-panel" id="panel-playground" role="tabpanel" aria-labelledby="tab-playground">
-    <div class="playground-feed">
+            <!-- Panel: PlayGround -->
+            <div class="tab-panel" id="panel-playground" role="tabpanel" aria-labelledby="tab-playground">
 
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7459611233084796928/"
-           target="_blank" rel="noopener" class="pg-card">
-            <div class="pg-card-image">
-                <img src="images/a-frame.webp" alt="Jardín de Memoria - A-Frame">
-            </div>
-            <div class="pg-card-body">
-                <span class="pg-card-meta" data-date="2026-05-08">LinkedIn</span>
-                <p class="pg-card-title">Jardín de Memoria de Espacios Cotidianos</p>
-                <p class="pg-card-desc">Participé en el Microtaller organizado por IDARTES y la Cinemateca Distrital, explorando ambientes interactivos con A-Frame en un proyecto colaborativo.</p>
-                <span class="pg-card-link-label">Ver publicación →</span>
-            </div>
-        </a>
+                <div class="mobile-section-label" aria-hidden="true">PlayGround</div>
 
-        <a href="https://www.linkedin.com/feed/update/urn:li:activity:7455734444193230848/"
-           target="_blank" rel="noopener" class="pg-card">
-            <div class="pg-card-image">
-                <img src="images/NetworkingLaCoCreadora.webp" alt="Networking La CoCreadora">
-            </div>
-            <div class="pg-card-body">
-                <span class="pg-card-meta" data-date="2026-04-24">LinkedIn</span>
-                <p class="pg-card-title">Primer evento de networking con La CoCreadora y Vínculo</p>
-                <p class="pg-card-desc">Una experiencia muy agradable donde terminé ganando el reto y llevándome el juego de Alinna.</p>
-                <span class="pg-card-link-label">Ver publicación →</span>
-            </div>
-        </a>
+                <div class="playground-feed">
 
-        <div class="pg-card">
-            <div class="pg-card-image">
-                <img src="images/Principito.webp" alt="Interactive Story Map El Principito">
-            </div>
-            <div class="pg-card-body">
-                <span class="pg-card-meta" data-date="2026-03-08">LinkedIn</span>
-                <p class="pg-card-title">Interactive Story Map — El Principito</p>
-                <p class="pg-card-desc">Experiencia interactiva creada para el #FigmaMakeathon. Diseñada para verse en computador.</p>
-                <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433534302413434880/"
-                       target="_blank" rel="noopener"
-                       class="pg-card-link-label">Ver publicación →</a>
-                    <a href="https://user-ritzy-73947944.figma.site/"
-                       target="_blank" rel="noopener"
-                       class="pg-card-link-label">Ver experiencia →</a>
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7459611233084796928/"
+                       target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
+                        <div class="pg-card-image">
+                            <img src="images/a-frame.webp" alt="Jardín de Memoria - A-Frame" loading="lazy">
+                        </div>
+                        <div class="pg-card-body">
+                            <span class="pg-card-meta" data-date="2026-05-08">LinkedIn</span>
+                            <p class="pg-card-title">Jardín de Memoria de Espacios Cotidianos</p>
+                            <p class="pg-card-desc">Participé en el Microtaller organizado por IDARTES y la Cinemateca Distrital, explorando ambientes interactivos con A-Frame en un proyecto colaborativo.</p>
+                            <span class="pg-card-link-label">Ver publicación →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7455734444193230848/"
+                       target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
+                        <div class="pg-card-image">
+                            <img src="images/NetworkingLaCoCreadora.webp" alt="Networking La CoCreadora" loading="lazy">
+                        </div>
+                        <div class="pg-card-body">
+                            <span class="pg-card-meta" data-date="2026-04-24">LinkedIn</span>
+                            <p class="pg-card-title">Primer evento de networking con La CoCreadora y Vínculo</p>
+                            <p class="pg-card-desc">Una experiencia muy agradable donde terminé ganando el reto y llevándome el juego de Alinna.</p>
+                            <span class="pg-card-link-label">Ver publicación →</span>
+                        </div>
+                    </a>
+
+                    <div class="pg-card reveal-up">
+                        <div class="pg-card-image">
+                            <img src="images/Principito.webp" alt="Interactive Story Map El Principito" loading="lazy">
+                        </div>
+                        <div class="pg-card-body">
+                            <span class="pg-card-meta" data-date="2026-03-08">LinkedIn</span>
+                            <p class="pg-card-title">Interactive Story Map — El Principito</p>
+                            <p class="pg-card-desc">Experiencia interactiva creada para el #FigmaMakeathon. Diseñada para verse en computador.</p>
+                            <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433534302413434880/"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="pg-card-link-label">Ver publicación →</a>
+                                <a href="https://user-ritzy-73947944.figma.site/"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="pg-card-link-label">Ver experiencia →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div><!-- /panel-playground -->
+
+        </div>
+    </section>
+
+<!-- =============================================
+     SKILLS — Bento Grid Visual
+     ============================================= -->
+<section class="skills" id="acerca">
+    <div class="container">
+        <h2 class="section-title reveal-up">Habilidades y Herramientas</h2>
+
+        <div class="skills-bento">
+
+            <!-- Tarjeta grande: Habilidades -->
+            <div class="bento-card bento-card--skills reveal-up">
+                <span class="bento-label">Core Skills</span>
+                <h3>Proceso UX</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">UX Research</span>
+                    <span class="skill-tag">UX Strategy</span>
+                    <span class="skill-tag">UI Design</span>
+                    <span class="skill-tag">Wireframing</span>
+                    <span class="skill-tag">Prototipado</span>
+                    <span class="skill-tag">Test de Usabilidad</span>
+                    <span class="skill-tag">Atomic Design</span>
+                    <span class="skill-tag">Design Thinking</span>
+                    <span class="skill-tag">Diseño Responsivo</span>
+                    <span class="skill-tag">Arquitectura de Información</span>
                 </div>
             </div>
-        </div>
 
+            <!-- Figma -->
+            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.05s">
+                <div class="tool-icon">
+                    <img src="https://cdn.simpleicons.org/figma" width="48" height="48" alt="Figma">
+                </div>
+                <span class="tool-name">Figma</span>
+                <span class="tool-level">Principal</span>
+            </div>
+
+            <!-- Adobe Illustrator -->
+            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.1s">
+                <div class="tool-icon">
+                    <img src="/images/icons/Adobe_Illustrator_CC_icon.svg.png" width="48" height="48" alt="Adobe Illustrator">
+                </div>
+                <span class="tool-name">Illustrator</span>
+                <span class="tool-level">Intermedio</span>
+            </div>
+
+            <!-- Shopify -->
+            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.15s">
+                <div class="tool-icon">
+                    <img src="https://cdn.simpleicons.org/shopify" width="48" height="48" alt="Shopify">
+                </div>
+                <span class="tool-name">Shopify</span>
+                <span class="tool-level">E-commerce</span>
+            </div>
+
+            <!-- WordPress -->
+            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.2s">
+                <div class="tool-icon">
+                    <img src="https://cdn.simpleicons.org/wordpress" width="48" height="48" alt="WordPress">
+                </div>
+                <span class="tool-name">WordPress</span>
+                <span class="tool-level">CMS</span>
+            </div>
+
+            <!-- HTML / CSS -->
+            <div class="bento-card bento-card--tool bento-card--code reveal-up" style="--delay:0.25s">
+                <div class="tool-icon-duo">
+                    <img src="https://cdn.simpleicons.org/html5" width="28" height="28" alt="HTML5">
+                    <img src="/images/icons/732190.png" width="28" height="28" alt="CSS3">
+                </div>
+                <span class="tool-name">HTML / CSS</span>
+                <span class="tool-level">Frontend</span>
+            </div>
+
+            <!-- Otras herramientas -->
+            <div class="bento-card bento-card--others reveal-up" style="--delay:0.3s">
+                <span class="bento-label">Más herramientas</span>
+                <div class="others-list">
+                    <span>Adobe Photoshop</span>
+                    <span>Adobe XD</span>
+                    <span>Unity</span>
+                    <span>Optimal Workshop</span>
+                    <span>Azure DevOps</span>
+                    <span>Bizagi Modeler</span>
+                </div>
+            </div>
+
+        </div>
     </div>
-</div><!-- /panel-playground -->
-            
-        </div>
-    </section>
+</section>
 
-    <!-- Habilidades y Herramientas -->
-    <section class="skills" id="acerca">
-        <div class="container">
-            <h2 class="section-title">Habilidades y Herramientas</h2>
-            <div class="skills-grid">
-                <div class="skill-column">
-                    <h3>Habilidades Principales</h3>
-                    <p>Arquitectura de información, Atomic Design, Design Thinking, Diseño Responsivo, Diseño Visual, Test de usabilidad, UX Research, Wireframing.</p>
-                </div>
-                <div class="skill-column">
-                    <h3>Herramientas</h3>
-                    <p>Adobe Illustrator, Adobe Photoshop, Adobe XD, AzureDevOps, BizagiModel, HTML, CSS, Figma, Optimal Workshop, Unity, Shopify.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
+    <!-- =============================================
+         FOOTER — Contacto con alta conversión
+         ============================================= -->
     <footer class="footer" id="contacto">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-left"></div>
-                <div class="footer-right">
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/paulleta/" target="_blank" rel="noopener" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                            </svg>
-                        </a>
-                        <a href="https://www.behance.net/Paulleta" target="_blank" rel="noopener" aria-label="Behance">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
-                            </svg>
-                        </a>
-                        <a href="https://wa.me/3124688342" target="_blank" rel="noopener" aria-label="WhatsApp">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
-                            </svg>
-                        </a>
-                    </div>
+
+            <!-- CTA principal -->
+            <div class="footer-cta reveal-up">
+                <p class="footer-cta-label">¿Tienes un proyecto en mente?</p>
+                <h2 class="footer-cta-heading">Hablemos.</h2>
+            </div>
+
+            <!-- Contacto directo -->
+            <div class="footer-contact reveal-up">
+                <a href="mailto:davidgarcia.intd@gmail.com" class="footer-contact-link footer-contact-link--email">
+                    <span class="footer-contact-label">Email</span>
+                    <span class="footer-contact-value">davidgarcia.intd@gmail.com</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="tel:+573124688342" class="footer-contact-link footer-contact-link--phone">
+                    <span class="footer-contact-label">Teléfono</span>
+                    <span class="footer-contact-value">312 468 8342</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+
+            <!-- Divisor -->
+            <div class="footer-divider"></div>
+
+            <!-- Bottom: redes + copyright -->
+            <div class="footer-bottom-row">
+                <p class="footer-copy">© 2026 David Garcia</p>
+
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/paulleta/" target="_blank" rel="noopener noreferrer" 
+                       aria-label="LinkedIn" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://www.behance.net/Paulleta" target="_blank" rel="noopener noreferrer"
+                       aria-label="Behance" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M22 7h-7v-2h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14h-8.027c.13 3.211 3.483 3.312 4.588 2.029h3.168zm-7.686-4h4.965c-.105-1.547-1.136-2.219-2.477-2.219-1.466 0-2.277.768-2.488 2.219zm-9.574 6.988h-6.466v-14.967h6.953c5.476.081 5.58 5.444 2.72 6.906 3.461 1.26 3.577 8.061-3.207 8.061zm-3.466-8.988h3.584c2.508 0 2.906-3-.312-3h-3.272v3zm3.391 3h-3.391v3.016h3.341c3.055 0 2.868-3.016.05-3.016z"/>
+                        </svg>
+                        <span>Behance</span>
+                    </a>
+                    <a href="https://wa.me/3124688342" target="_blank" rel="noopener noreferrer"
+                       aria-label="WhatsApp" class="social-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>WhatsApp</span>
+                    </a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>Derechos de autor © 2026 David Garcia</p>
-            </div>
+
         </div>
     </footer>
 
     <!-- Botón Scroll to Top -->
     <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </button>
