@@ -3,7 +3,6 @@
 // ===================================
 const scrollToTopBtn = document.getElementById('scrollToTop');
 
-// Mostrar/ocultar botón según scroll
 window.addEventListener('scroll', () => {
     if (window.pageYOffset > 300) {
         scrollToTopBtn.classList.add('visible');
@@ -12,12 +11,8 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Scroll suave al hacer clic
 scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 // ===================================
@@ -26,83 +21,69 @@ scrollToTopBtn.addEventListener('click', () => {
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');
-        
-        // Solo aplicar smooth scroll si no es solo "#"
         if (href !== '#' && href.length > 1) {
             e.preventDefault();
             const target = document.querySelector(href);
-            
             if (target) {
                 const headerOffset = 80;
-                const elementPosition = target.getBoundingClientRect().top;
-                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
+                const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
             }
         }
     });
 });
 
 // ===================================
-// Animación de aparición al hacer scroll
+// Reveal Animations — Intersection Observer
+// FIX: usa la clase .is-visible que ya está definida en el CSS,
+// en lugar de sobreescribir los estilos inline.
 // ===================================
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
+const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
         }
     });
-}, observerOptions);
+}, {
+    threshold: 0.1,
+    rootMargin: '0px 0px -50px 0px'
+});
 
-// Elementos a animar
-const animatedElements = document.querySelectorAll('.project-card, .product-item, .skill-column');
-animatedElements.forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(30px)';
-    el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-    observer.observe(el);
+document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el => {
+    revealObserver.observe(el);
 });
 
 // ===================================
-// Header sticky effect
+// Header sticky — hide on scroll down
+// FIX: usa las clases CSS en lugar de style.transform inline,
+// evitando conflictos con las clases .header--hidden y .header--scrolled.
 // ===================================
 let lastScroll = 0;
 const header = document.querySelector('.header');
 
 window.addEventListener('scroll', () => {
     const currentScroll = window.pageYOffset;
-    
-    if (currentScroll > lastScroll && currentScroll > 100) {
-        // Scrolling down
-        header.style.transform = 'translateY(-100%)';
+
+    if (currentScroll > 100) {
+        header.classList.add('header--scrolled');
+        if (currentScroll > lastScroll) {
+            header.classList.add('header--hidden');
+        } else {
+            header.classList.remove('header--hidden');
+        }
     } else {
-        // Scrolling up
-        header.style.transform = 'translateY(0)';
+        header.classList.remove('header--scrolled');
+        header.classList.remove('header--hidden');
     }
-    
+
     lastScroll = currentScroll;
 });
 
 // ===================================
 // Lazy loading de imágenes
 // ===================================
-if ('loading' in HTMLImageElement.prototype) {
-    // El navegador soporta lazy loading nativo
-    const images = document.querySelectorAll('img');
-    images.forEach(img => {
-        img.loading = 'lazy';
-    });
-} else {
-    // Fallback para navegadores que no soportan lazy loading
+if (!('loading' in HTMLImageElement.prototype)) {
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -113,38 +94,29 @@ if ('loading' in HTMLImageElement.prototype) {
             }
         });
     });
-
-    const images = document.querySelectorAll('img[data-src]');
-    images.forEach(img => imageObserver.observe(img));
+    document.querySelectorAll('img[data-src]').forEach(img => imageObserver.observe(img));
 }
 
 // ===================================
-// Prevenir comportamiento por defecto en enlaces con #
+// Prevenir # vacíos
 // ===================================
 document.querySelectorAll('a[href="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-    });
+    link.addEventListener('click', e => e.preventDefault());
 });
 
 // ===================================
-// Añadir clase active al nav según sección visible
+// Nav active según sección visible
 // ===================================
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
 
 window.addEventListener('scroll', () => {
     let current = '';
-    
     sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (pageYOffset >= sectionTop - 200) {
+        if (window.pageYOffset >= section.offsetTop - 200) {
             current = section.getAttribute('id');
         }
     });
-    
     navLinks.forEach(link => {
         link.classList.remove('active');
         if (link.getAttribute('href').includes(current)) {
@@ -154,47 +126,12 @@ window.addEventListener('scroll', () => {
 });
 
 // ===================================
-// Añadir efecto parallax sutil al hero
-// ===================================
-const heroImage = document.querySelector('.hero-image img');
-
-window.addEventListener('scroll', () => {
-    if (window.pageYOffset < window.innerHeight) {
-        const scrolled = window.pageYOffset;
-        if (heroImage) {
-            heroImage.style.transform = `translateY(${scrolled * 0.1}px)`;
-        }
-    }
-});
-
-// ===================================
-// Console log para desarrollo
-// ===================================
-console.log('%c👋 Hola! Bienvenido al portafolio de David Garcia', 'font-size: 16px; font-weight: bold; color: #6C5933;');
-console.log('%cSi estás viendo esto, probablemente seas un desarrollador curioso 😄', 'font-size: 12px; color: #646464;');
-console.log('%cConectemos: https://www.linkedin.com/in/paulleta/', 'font-size: 12px; color: #6C5933;');
-
-// ===================================
-// Performance optimization
-// ===================================
-// Defer non-critical JavaScript
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initializeApp);
-} else {
-    initializeApp();
-}
-
-function initializeApp() {
-    // Inicialización de funcionalidades no críticas
-    console.log('App initialized');
-}
-
-// ===================================
 // Handle external links
 // ===================================
 document.querySelectorAll('a[target="_blank"]').forEach(link => {
     link.rel = 'noopener noreferrer';
 });
+
 // ===================================
 // Portfolio Tabs
 // ===================================
@@ -205,24 +142,21 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
     btns.forEach(btn => {
         btn.addEventListener('click', () => {
             const target = btn.dataset.tab;
-
             btns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
             panels.forEach(p => p.classList.remove('active'));
-
             btn.classList.add('active');
             btn.setAttribute('aria-selected', 'true');
             document.getElementById('panel-' + target).classList.add('active');
         });
     });
 })();
+
 // ===================================
 // PlayGround — fechas relativas
 // ===================================
 document.querySelectorAll('.pg-card-meta[data-date]').forEach(el => {
     const date = new Date(el.dataset.date);
-    const now = new Date();
-    const diffMs = now - date;
-    const diffDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+    const diffDays = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
 
     let label;
     if (diffDays === 0)        label = 'Hoy';
@@ -237,3 +171,10 @@ document.querySelectorAll('.pg-card-meta[data-date]').forEach(el => {
 
     el.textContent = `LinkedIn · ${label}`;
 });
+
+// ===================================
+// Console log
+// ===================================
+console.log('%c👋 Hola! Bienvenido al portafolio de David Garcia', 'font-size: 16px; font-weight: bold; color: #6C5933;');
+console.log('%cSi estás viendo esto, probablemente seas un desarrollador curioso 😄', 'font-size: 12px; color: #646464;');
+console.log('%cConectemos: https://www.linkedin.com/in/paulleta/', 'font-size: 12px; color: #6C5933;');
