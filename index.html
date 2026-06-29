@@ -24,6 +24,191 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        .hero-tw-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            min-height: 480px;
+            padding: 2rem 0 1rem;
+        }
+
+        /* --- Columna izquierda: texto --- */
+        .hero-tw-text {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .hero-tw-heading {
+            font-size: clamp(2rem, 4.5vw, 3.75rem);
+            font-weight: 700;
+            line-height: 1.12;
+            letter-spacing: -0.03em;
+            color: var(--color-text);
+            font-family: var(--font-secondary);
+            min-height: 2.6em;
+            margin-bottom: 0;
+            margin-top: 0.75rem;
+        }
+
+        .hero-tw-heading .tw-strike {
+            text-decoration: line-through;
+            color: var(--color-text-light);
+        }
+
+        .hero-tw-cursor {
+            display: inline-block;
+            width: 4px;
+            height: 0.85em;
+            background-color: var(--color-primary);
+            margin-left: 3px;
+            vertical-align: middle;
+            border-radius: 2px;
+            animation: tw-blink 0.9s step-end infinite;
+        }
+
+        @keyframes tw-blink {
+            0%, 100% { opacity: 1; }
+            50%       { opacity: 0; }
+        }
+
+        .hero-tw-description {
+            font-size: 1.15rem;
+            font-weight: 400;
+            color: var(--color-text-light);
+            line-height: 1.6;
+            margin-top: 1.75rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            transform: translateY(12px);
+            transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
+                        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hero-tw-description .highlight {
+            color: var(--color-primary);
+            font-weight: 600;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-tw-description .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 1px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--color-primary);
+            border-radius: 1px;
+            opacity: 0.25;
+        }
+
+        .hero-tw-description.tw-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-tw-btn {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s,
+                        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
+        }
+
+        .hero-tw-btn.tw-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Columna derecha: foto --- */
+        .hero-tw-image {
+            opacity: 0;
+            transform: translateX(20px);
+            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
+                        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
+        }
+
+        .hero-tw-image.tw-visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .hero-tw-image img {
+            width: 100%;
+            max-width: 448px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            object-position: center 15%;
+            border-radius: var(--radius-xl);
+            box-shadow: 0 12px 40px rgba(108, 89, 51, 0.15),
+                        0 4px 12px rgba(108, 89, 51, 0.1);
+            border: 3px solid rgba(108, 89, 51, 0.1);
+            transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+        }
+
+        .hero-tw-image img:hover {
+            transform: translateY(-6px) scale(1.01);
+            box-shadow: 0 22px 60px rgba(108, 89, 51, 0.2),
+                        0 8px 20px rgba(108, 89, 51, 0.15);
+        }
+
+        /* --- Responsive --- */
+        @media (max-width: 768px) {
+            .hero-tw-wrap {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+                min-height: unset;
+            }
+
+            .hero-tw-text {
+                align-items: center;
+                order: 2;
+            }
+
+            .hero-tw-image {
+                order: 1;
+                display: flex;
+                justify-content: center;
+                transform: translateX(0);
+                opacity: 0;
+                transform: translateY(16px);
+            }
+
+            .hero-tw-image.tw-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .hero-tw-image img {
+                max-width: 260px;
+            }
+
+            .hero-tw-heading {
+                font-size: clamp(1.75rem, 7vw, 2.5rem);
+                text-align: center;
+                min-height: 3em;
+            }
+
+            .hero-tw-description {
+                font-size: 0.95rem;
+                text-align: center;
+            }
+
+            .hero-tw-description .highlight::after {
+                display: none;
+            }
+
+            .hero-tw-btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -43,33 +228,35 @@
     <!-- Hero Section -->
     <section class="hero" id="inicio">
         <div class="container">
-            <div class="hero-content">
+            <div class="hero-tw-wrap">
 
-                <!-- Imagen -->
-                <div class="hero-image reveal-left">
-                    <img 
-                        src="images/fotopPerfil.jpeg" 
-                        alt="David García, Diseñador Interactivo especializado en UX y UI"
-                        loading="eager">
-                </div>
-
-                <!-- Texto -->
-                <div class="hero-text reveal-right">
+                <!-- Columna izquierda: texto animado -->
+                <div class="hero-tw-text">
                     <span class="hero-eyebrow">Bogotá, Colombia</span>
-                    <h1>Diseñador<br>Interactivo</h1>
 
-                    <p class="hero-description">
+                    <h1 class="hero-tw-heading" id="tw-heading" aria-label="Empiezo por entender."></h1>
+
+                    <p class="hero-tw-description" id="tw-sub">
                         Con profundo interés en la <span class="highlight">usabilidad</span> de los usuarios.
                         Mi especialización se centra en UX Research, UX Strategy y UI Design.
                     </p>
 
-                    <a 
+                    <a
                         href="files/David_Garcia_ProductDesigner.pdf"
-                        class="btn btn-primary"
+                        class="btn btn-primary hero-tw-btn"
+                        id="tw-btn"
                         download="David-Garcia-CV.pdf"
                         aria-label="Descargar hoja de vida de David García en PDF">
                         Descargar CV
                     </a>
+                </div>
+
+                <!-- Columna derecha: foto -->
+                <div class="hero-tw-image" id="tw-image">
+                    <img
+                        src="images/fotopPerfil.jpeg"
+                        alt="David García, Diseñador Interactivo especializado en UX y UI"
+                        loading="eager">
                 </div>
 
             </div>
@@ -100,15 +287,9 @@
                 </button>
             </div>
 
-            <!-- =========================================
-                 DESKTOP: Paneles con tabs
-                 MOBILE: Todos visibles en scroll continuo
-                 ========================================= -->
-
             <!-- Panel: Product Design -->
             <div class="tab-panel active" id="panel-design" role="tabpanel" aria-labelledby="tab-design">
 
-                <!-- Label de categoría — solo en mobile -->
                 <div class="mobile-section-label" aria-hidden="true">Product Design</div>
 
                 <div class="product-item reveal-up">
@@ -301,109 +482,100 @@
         </div>
     </section>
 
-<!-- =============================================
-     SKILLS — Bento Grid Visual
-     ============================================= -->
-<section class="skills" id="acerca">
-    <div class="container">
-        <h2 class="section-title reveal-up">Habilidades y Herramientas</h2>
+    <!-- =============================================
+         SKILLS — Bento Grid Visual
+         ============================================= -->
+    <section class="skills" id="acerca">
+        <div class="container">
+            <h2 class="section-title reveal-up">Habilidades y Herramientas</h2>
 
-        <div class="skills-bento">
+            <div class="skills-bento">
 
-            <!-- Tarjeta grande: Habilidades -->
-            <div class="bento-card bento-card--skills reveal-up">
-                <span class="bento-label">Core Skills</span>
-                <h3>Proceso UX</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">UX Research</span>
-                    <span class="skill-tag">UX Strategy</span>
-                    <span class="skill-tag">UI Design</span>
-                    <span class="skill-tag">Wireframing</span>
-                    <span class="skill-tag">Prototipado</span>
-                    <span class="skill-tag">Test de Usabilidad</span>
-                    <span class="skill-tag">Atomic Design</span>
-                    <span class="skill-tag">Design Thinking</span>
-                    <span class="skill-tag">Diseño Responsivo</span>
-                    <span class="skill-tag">Arquitectura de Información</span>
+                <div class="bento-card bento-card--skills reveal-up">
+                    <span class="bento-label">Core Skills</span>
+                    <h3>Proceso UX</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">UX Research</span>
+                        <span class="skill-tag">UX Strategy</span>
+                        <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Wireframing</span>
+                        <span class="skill-tag">Prototipado</span>
+                        <span class="skill-tag">Test de Usabilidad</span>
+                        <span class="skill-tag">Atomic Design</span>
+                        <span class="skill-tag">Design Thinking</span>
+                        <span class="skill-tag">Diseño Responsivo</span>
+                        <span class="skill-tag">Arquitectura de Información</span>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Figma -->
-            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.05s">
-                <div class="tool-icon">
-                    <img src="https://cdn.simpleicons.org/figma" width="48" height="48" alt="Figma">
+                <div class="bento-card bento-card--tool reveal-up" style="--delay:0.05s">
+                    <div class="tool-icon">
+                        <img src="https://cdn.simpleicons.org/figma" width="48" height="48" alt="Figma">
+                    </div>
+                    <span class="tool-name">Figma</span>
+                    <span class="tool-level">Principal</span>
                 </div>
-                <span class="tool-name">Figma</span>
-                <span class="tool-level">Principal</span>
-            </div>
 
-            <!-- Adobe Illustrator -->
-            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.1s">
-                <div class="tool-icon">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" width="48" height="48" alt="Adobe Illustrator">
+                <div class="bento-card bento-card--tool reveal-up" style="--delay:0.1s">
+                    <div class="tool-icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" width="48" height="48" alt="Adobe Illustrator">
+                    </div>
+                    <span class="tool-name">Illustrator</span>
+                    <span class="tool-level">Intermedio</span>
                 </div>
-                <span class="tool-name">Illustrator</span>
-                <span class="tool-level">Intermedio</span>
-            </div>
 
-            <!-- Shopify -->
-            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.15s">
-                <div class="tool-icon">
-                    <img src="https://cdn.simpleicons.org/shopify" width="48" height="48" alt="Shopify">
+                <div class="bento-card bento-card--tool reveal-up" style="--delay:0.15s">
+                    <div class="tool-icon">
+                        <img src="https://cdn.simpleicons.org/shopify" width="48" height="48" alt="Shopify">
+                    </div>
+                    <span class="tool-name">Shopify</span>
+                    <span class="tool-level">E-commerce</span>
                 </div>
-                <span class="tool-name">Shopify</span>
-                <span class="tool-level">E-commerce</span>
-            </div>
 
-            <!-- WordPress -->
-            <div class="bento-card bento-card--tool reveal-up" style="--delay:0.2s">
-                <div class="tool-icon">
-                    <img src="https://cdn.simpleicons.org/wordpress" width="48" height="48" alt="WordPress">
+                <div class="bento-card bento-card--tool reveal-up" style="--delay:0.2s">
+                    <div class="tool-icon">
+                        <img src="https://cdn.simpleicons.org/wordpress" width="48" height="48" alt="WordPress">
+                    </div>
+                    <span class="tool-name">WordPress</span>
+                    <span class="tool-level">CMS</span>
                 </div>
-                <span class="tool-name">WordPress</span>
-                <span class="tool-level">CMS</span>
-            </div>
 
-            <!-- HTML / CSS -->
-            <div class="bento-card bento-card--tool bento-card--code reveal-up" style="--delay:0.25s">
-                <div class="tool-icon-duo">
-                    <img src="https://cdn.simpleicons.org/html5" width="28" height="28" alt="HTML5">
-                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" width="28" height="28" alt="CSS3">
+                <div class="bento-card bento-card--tool bento-card--code reveal-up" style="--delay:0.25s">
+                    <div class="tool-icon-duo">
+                        <img src="https://cdn.simpleicons.org/html5" width="28" height="28" alt="HTML5">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" width="28" height="28" alt="CSS3">
+                    </div>
+                    <span class="tool-name">HTML / CSS</span>
+                    <span class="tool-level">Frontend</span>
                 </div>
-                <span class="tool-name">HTML / CSS</span>
-                <span class="tool-level">Frontend</span>
-            </div>
 
-            <!-- Otras herramientas -->
-            <div class="bento-card bento-card--others reveal-up" style="--delay:0.3s">
-                <span class="bento-label">Más herramientas</span>
-                <div class="others-list">
-                    <span>Adobe Photoshop</span>
-                    <span>Adobe XD</span>
-                    <span>Unity</span>
-                    <span>Optimal Workshop</span>
-                    <span>Azure DevOps</span>
-                    <span>Bizagi Modeler</span>
+                <div class="bento-card bento-card--others reveal-up" style="--delay:0.3s">
+                    <span class="bento-label">Más herramientas</span>
+                    <div class="others-list">
+                        <span>Adobe Photoshop</span>
+                        <span>Adobe XD</span>
+                        <span>Unity</span>
+                        <span>Optimal Workshop</span>
+                        <span>Azure DevOps</span>
+                        <span>Bizagi Modeler</span>
+                    </div>
                 </div>
-            </div>
 
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- =============================================
-         FOOTER — Contacto con alta conversión
+         FOOTER
          ============================================= -->
     <footer class="footer" id="contacto">
         <div class="container">
 
-            <!-- CTA principal -->
             <div class="footer-cta reveal-up">
                 <p class="footer-cta-label">¿Tienes un proyecto en mente?</p>
                 <h2 class="footer-cta-heading">Hablemos.</h2>
             </div>
 
-            <!-- Contacto directo -->
             <div class="footer-contact reveal-up">
                 <a href="mailto:davidgarcia.intd@gmail.com" class="footer-contact-link footer-contact-link--email">
                     <span class="footer-contact-label">Email</span>
@@ -417,15 +589,13 @@
                 </a>
             </div>
 
-            <!-- Divisor -->
             <div class="footer-divider"></div>
 
-            <!-- Bottom: redes + copyright -->
             <div class="footer-bottom-row">
                 <p class="footer-copy">© 2026 David Garcia</p>
 
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/paulleta/" target="_blank" rel="noopener noreferrer" 
+                    <a href="https://www.linkedin.com/in/paulleta/" target="_blank" rel="noopener noreferrer"
                        aria-label="LinkedIn" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
@@ -460,5 +630,122 @@
     </button>
 
     <script src="js/script.js"></script>
+
+    <script>
+    (function () {
+        const heading = document.getElementById('tw-heading');
+        const sub     = document.getElementById('tw-sub');
+        const btn     = document.getElementById('tw-btn');
+        const image   = document.getElementById('tw-image');
+
+        if (!heading) return;
+
+        const wrongPhrases = [
+            'No empiezo por Figma.',
+            'No empiezo por pantallas.',
+            'No empiezo por píxeles.'
+        ];
+        const finalLines = ['Empiezo por', 'entender.'];
+
+        const SPEED_TYPE   = 68;
+        const SPEED_DELETE = 32;
+        const PAUSE_AFTER  = 900;
+        const PAUSE_BEFORE = 300;
+
+        let wrongIdx   = 0;
+        let charIdx    = 0;
+        let isDeleting = false;
+        let phase      = 'wrong';
+
+        const cursor = document.createElement('span');
+        cursor.className = 'hero-tw-cursor';
+        cursor.setAttribute('aria-hidden', 'true');
+
+        const typed = document.createElement('span');
+        heading.appendChild(typed);
+        heading.appendChild(cursor);
+
+        function render(text, strike) {
+            if (strike) {
+                typed.innerHTML = '<span class="tw-strike">' + text + '</span>';
+            } else {
+                typed.innerHTML = text;
+            }
+        }
+
+        function tick() {
+            if (phase === 'wrong') {
+                const current = wrongPhrases[wrongIdx];
+
+                if (!isDeleting) {
+                    charIdx++;
+                    render(current.slice(0, charIdx), true);
+
+                    if (charIdx === current.length) {
+                        isDeleting = true;
+                        setTimeout(tick, PAUSE_AFTER);
+                        return;
+                    }
+                    setTimeout(tick, SPEED_TYPE);
+
+                } else {
+                    charIdx--;
+                    render(current.slice(0, charIdx), true);
+
+                    if (charIdx === 0) {
+                        isDeleting = false;
+                        wrongIdx++;
+
+                        if (wrongIdx < wrongPhrases.length) {
+                            setTimeout(tick, PAUSE_BEFORE);
+                        } else {
+                            phase = 'final';
+                            charIdx = 0;
+                            setTimeout(tick, PAUSE_BEFORE);
+                        }
+                        return;
+                    }
+                    setTimeout(tick, SPEED_DELETE);
+                }
+
+            } else if (phase === 'final') {
+                const full = finalLines.join('');
+
+                if (charIdx <= full.length) {
+                    let built = '';
+                    let count = 0;
+                    for (let i = 0; i < finalLines.length; i++) {
+                        const take = Math.max(0, Math.min(finalLines[i].length, charIdx - count));
+                        built += finalLines[i].slice(0, take);
+                        count += finalLines[i].length;
+                        if (i < finalLines.length - 1 && charIdx >= count) {
+                            built += '<br>';
+                        } else if (i < finalLines.length - 1 && take === finalLines[i].length) {
+                            built += '<br>';
+                        }
+                    }
+                    render(built, false);
+                    charIdx++;
+
+                    if (charIdx > full.length) {
+                        phase = 'done';
+                        setTimeout(showRest, 380);
+                        return;
+                    }
+                    setTimeout(tick, SPEED_TYPE);
+                }
+            }
+        }
+
+        function showRest() {
+            sub.classList.add('tw-visible');
+            btn.classList.add('tw-visible');
+            image.classList.add('tw-visible');
+        }
+
+        setTimeout(tick, 600);
+    })();
+    </script>
+
 </body>
 </html>
