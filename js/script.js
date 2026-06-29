@@ -35,8 +35,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 // ===================================
 // Reveal Animations — Intersection Observer
-// FIX: usa la clase .is-visible que ya está definida en el CSS,
-// en lugar de sobreescribir los estilos inline.
 // ===================================
 const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -56,8 +54,6 @@ document.querySelectorAll('.reveal-up, .reveal-left, .reveal-right').forEach(el 
 
 // ===================================
 // Header sticky — hide on scroll down
-// FIX: usa las clases CSS en lugar de style.transform inline,
-// evitando conflictos con las clases .header--hidden y .header--scrolled.
 // ===================================
 let lastScroll = 0;
 const header = document.querySelector('.header');
@@ -105,25 +101,35 @@ document.querySelectorAll('a[href="#"]').forEach(link => {
 });
 
 // ===================================
-// Nav active según sección visible
+// Nav active según página o sección visible
 // ===================================
-const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav-menu a');
+const isAboutPage = window.location.pathname.includes('about');
 
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-        if (window.pageYOffset >= section.offsetTop - 200) {
-            current = section.getAttribute('id');
-        }
-    });
+if (isAboutPage) {
+    // En about.html: marcar solo "Acerca de Mí", sin lógica de scroll
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(current)) {
-            link.classList.add('active');
-        }
+        link.classList.toggle('active', link.getAttribute('href') === 'about.html');
     });
-});
+} else {
+    // En index.html: activar según sección visible al scrollear
+    const sections = document.querySelectorAll('section[id]');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            if (window.pageYOffset >= section.offsetTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (current && link.getAttribute('href').includes(current)) {
+                link.classList.add('active');
+            }
+        });
+    });
+}
 
 // ===================================
 // Handle external links
