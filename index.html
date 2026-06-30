@@ -24,154 +24,13 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
-
-    <style>
-        .hero-tw-wrap {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            min-height: 480px;
-            padding: 2rem 0 1rem;
-        }
-
-        /* --- Columna izquierda: texto --- */
-        .hero-tw-text {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .hero-tw-heading {
-            font-size: clamp(2rem, 4.5vw, 3.75rem);
-            font-weight: 700;
-            line-height: 1.12;
-            letter-spacing: -0.03em;
-            color: var(--color-text);
-            font-family: var(--font-secondary);
-            min-height: 2.6em;
-            margin-bottom: 0;
-            margin-top: 0.75rem;
-        }
-
-        .hero-tw-heading .tw-strike {
-            text-decoration: line-through;
-            color: var(--color-text-light);
-        }
-
-        .hero-tw-cursor {
-            display: inline-block;
-            width: 4px;
-            height: 0.85em;
-            background-color: var(--color-primary);
-            margin-left: 3px;
-            vertical-align: middle;
-            border-radius: 2px;
-            animation: tw-blink 0.9s step-end infinite;
-        }
-
-        @keyframes tw-blink {
-            0%, 100% { opacity: 1; }
-            50%       { opacity: 0; }
-        }
-
-        .hero-tw-description {
-            font-size: 1.15rem;
-            font-weight: 400;
-            color: var(--color-text-light);
-            line-height: 1.6;
-            margin-top: 1.75rem;
-            margin-bottom: 2rem;
-        }
-
-        .hero-tw-description .highlight {
-            color: var(--color-primary);
-            font-weight: 600;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-tw-description .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: 1px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--color-primary);
-            border-radius: 1px;
-            opacity: 0.25;
-        }
-
-        /* --- Columna derecha: foto --- */
-        .hero-tw-image img {
-            width: 100%;
-            max-width: 448px;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            object-position: center 15%;
-            border-radius: var(--radius-xl);
-            box-shadow: 0 12px 40px rgba(108, 89, 51, 0.15),
-                        0 4px 12px rgba(108, 89, 51, 0.1);
-            border: 3px solid rgba(108, 89, 51, 0.1);
-            transition: transform var(--transition-slow), box-shadow var(--transition-slow);
-        }
-
-        .hero-tw-image img:hover {
-            transform: translateY(-6px) scale(1.01);
-            box-shadow: 0 22px 60px rgba(108, 89, 51, 0.2),
-                        0 8px 20px rgba(108, 89, 51, 0.15);
-        }
-
-        /* --- Responsive --- */
-        @media (max-width: 768px) {
-            .hero-tw-wrap {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-                min-height: unset;
-            }
-
-            .hero-tw-text {
-                align-items: center;
-                order: 2;
-            }
-
-            .hero-tw-image {
-                order: 1;
-                display: flex;
-                justify-content: center;
-            }
-
-            .hero-tw-image img {
-                max-width: 260px;
-            }
-
-            .hero-tw-heading {
-                font-size: clamp(1.75rem, 7vw, 2.5rem);
-                text-align: center;
-                min-height: 3em;
-            }
-
-            .hero-tw-description {
-                font-size: 0.95rem;
-                text-align: center;
-            }
-
-            .hero-tw-description .highlight::after {
-                display: none;
-            }
-
-            .hero-tw-btn {
-                width: 100%;
-                max-width: 280px;
-            }
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Header/Navegación -->
+
+    <!-- =============================================
+         HEADER / NAVEGACIÓN
+         ============================================= -->
     <header class="header" id="site-header">
         <div class="container">
             <nav class="nav">
@@ -184,18 +43,29 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+    <!-- =============================================
+         HERO
+         Columna izquierda: imagen | Columna derecha: texto
+         ============================================= -->
     <section class="hero" id="inicio">
         <div class="container">
             <div class="hero-tw-wrap">
 
-                <!-- Columna izquierda: texto animado -->
+                <!-- Imagen (izquierda) -->
+                <div class="hero-tw-image">
+                    <img
+                        src="images/fotopPerfil.jpeg"
+                        alt="David García, Diseñador Interactivo especializado en UX y UI"
+                        loading="eager">
+                </div>
+
+                <!-- Texto animado (derecha) -->
                 <div class="hero-tw-text">
                     <span class="hero-eyebrow">Bogotá, Colombia</span>
 
                     <h1 class="hero-tw-heading" id="tw-heading" aria-label="Empiezo por entender."></h1>
 
-                    <p class="hero-tw-description" id="tw-sub">
+                    <p class="hero-tw-description">
                         Con profundo interés en la <span class="highlight">usabilidad</span> de los usuarios.
                         Mi especialización se centra en UX Research, UX Strategy y UI Design.
                     </p>
@@ -203,19 +73,10 @@
                     <a
                         href="files/David_Garcia_ProductDesigner.pdf"
                         class="btn btn-primary hero-tw-btn"
-                        id="tw-btn"
                         download="David-Garcia-CV.pdf"
                         aria-label="Descargar hoja de vida de David García en PDF">
                         Descargar CV
                     </a>
-                </div>
-
-                <!-- Columna derecha: foto -->
-                <div class="hero-tw-image" id="tw-image">
-                    <img
-                        src="images/fotopPerfil.jpeg"
-                        alt="David García, Diseñador Interactivo especializado en UX y UI"
-                        loading="eager">
                 </div>
 
             </div>
@@ -237,7 +98,12 @@
                 </button>
                 <button class="tab-btn" role="tab" aria-selected="false"
                         aria-controls="panel-web" id="tab-web" data-tab="web">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true" style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5"><path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="1.5" aria-hidden="true"
+                         style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5">
+                        <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/>
+                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                    </svg>
                     Páginas Web
                 </button>
                 <button class="tab-btn" role="tab" aria-selected="false"
@@ -525,7 +391,7 @@
     </section>
 
     <!-- =============================================
-         FOOTER
+         FOOTER / CONTACTO
          ============================================= -->
     <footer class="footer" id="contacto">
         <div class="container">
@@ -588,12 +454,13 @@
         </svg>
     </button>
 
+    <!-- JS -->
     <script src="js/script.js"></script>
 
+    <!-- Typewriter Hero -->
     <script>
     (function () {
         const heading = document.getElementById('tw-heading');
-
         if (!heading) return;
 
         const wrongPhrases = [
@@ -621,11 +488,9 @@
         heading.appendChild(cursor);
 
         function render(text, strike) {
-            if (strike) {
-                typed.innerHTML = '<span class="tw-strike">' + text + '</span>';
-            } else {
-                typed.innerHTML = text;
-            }
+            typed.innerHTML = strike
+                ? '<span class="tw-strike">' + text + '</span>'
+                : text;
         }
 
         function tick() {
@@ -669,6 +534,7 @@
                 if (charIdx <= full.length) {
                     let built = '';
                     let count = 0;
+
                     for (let i = 0; i < finalLines.length; i++) {
                         const take = Math.max(0, Math.min(finalLines[i].length, charIdx - count));
                         built += finalLines[i].slice(0, take);
@@ -679,13 +545,11 @@
                             built += '<br>';
                         }
                     }
+
                     render(built, false);
                     charIdx++;
 
-                    if (charIdx > full.length) {
-                        phase = 'done';
-                        return;
-                    }
+                    if (charIdx > full.length) { phase = 'done'; return; }
                     setTimeout(tick, SPEED_TYPE);
                 }
             }

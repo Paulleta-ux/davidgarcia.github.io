@@ -102,12 +102,10 @@ button {
     transform: translate(0, 0);
 }
 
-/* Delays escalonados via custom property */
 [style*="--delay"] {
     transition-delay: var(--delay, 0s);
 }
 
-/* Reduced motion — respeta preferencia del sistema */
 @media (prefers-reduced-motion: reduce) {
     .reveal-up, .reveal-left, .reveal-right {
         opacity: 1;
@@ -141,13 +139,8 @@ button {
     will-change: transform;
 }
 
-.header.header--hidden {
-    transform: translateY(-100%);
-}
-
-.header.header--scrolled {
-    box-shadow: 0 2px 16px rgba(108, 89, 51, 0.08);
-}
+.header.header--hidden  { transform: translateY(-100%); }
+.header.header--scrolled { box-shadow: 0 2px 16px rgba(108, 89, 51, 0.08); }
 
 .nav {
     display: flex;
@@ -190,14 +183,9 @@ button {
 }
 
 .nav-menu a:hover,
-.nav-menu a.active {
-    color: var(--color-primary);
-}
-
+.nav-menu a.active           { color: var(--color-primary); }
 .nav-menu a:hover::after,
-.nav-menu a.active::after {
-    width: 100%;
-}
+.nav-menu a.active::after    { width: 100%; }
 
 /* ===================================
    Hero Section
@@ -207,14 +195,18 @@ button {
     background-color: var(--color-background);
 }
 
-.hero-content {
+/* Grid: imagen izquierda | texto derecha */
+.hero-tw-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: center;
+    min-height: 480px;
+    padding: 2rem 0 1rem;
 }
 
-.hero-image img {
+/* Columna izquierda — imagen */
+.hero-tw-image img {
     width: 100%;
     max-width: 448px;
     aspect-ratio: 1 / 1;
@@ -225,13 +217,19 @@ button {
                 0 4px 12px rgba(108, 89, 51, 0.1);
     border: 3px solid rgba(108, 89, 51, 0.1);
     transition: transform var(--transition-slow), box-shadow var(--transition-slow);
-    will-change: transform;
 }
 
-.hero-image img:hover {
+.hero-tw-image img:hover {
     transform: translateY(-6px) scale(1.01);
     box-shadow: 0 22px 60px rgba(108, 89, 51, 0.2),
                 0 8px 20px rgba(108, 89, 51, 0.15);
+}
+
+/* Columna derecha — texto */
+.hero-tw-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
 }
 
 .hero-eyebrow {
@@ -245,32 +243,55 @@ button {
     opacity: 0.85;
 }
 
-.hero-text h1 {
-    font-size: 4.5rem;
+.hero-tw-heading {
+    font-size: clamp(2rem, 4.5vw, 3.75rem);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.12;
     letter-spacing: -0.03em;
-    margin-bottom: 1.5rem;
     color: var(--color-text);
     font-family: var(--font-secondary);
+    min-height: 2.6em;
+    margin: 0.75rem 0 0;
 }
 
-.hero-description {
-    font-size: 1.25rem;
+.hero-tw-heading .tw-strike {
+    text-decoration: line-through;
+    color: var(--color-text-light);
+}
+
+.hero-tw-cursor {
+    display: inline-block;
+    width: 4px;
+    height: 0.85em;
+    background-color: var(--color-primary);
+    margin-left: 3px;
+    vertical-align: middle;
+    border-radius: 2px;
+    animation: tw-blink 0.9s step-end infinite;
+}
+
+@keyframes tw-blink {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0; }
+}
+
+.hero-tw-description {
+    font-size: 1.15rem;
     font-weight: 400;
     color: var(--color-text-light);
-    margin-bottom: 2.25rem;
     line-height: 1.6;
+    margin-top: 1.75rem;
+    margin-bottom: 2rem;
 }
 
-.hero-description .highlight {
+.hero-tw-description .highlight {
     color: var(--color-primary);
     font-weight: 600;
     position: relative;
     display: inline-block;
 }
 
-.hero-description .highlight::after {
+.hero-tw-description .highlight::after {
     content: '';
     position: absolute;
     bottom: 1px;
@@ -318,16 +339,12 @@ button {
     transition: opacity var(--transition-fast);
 }
 
-.btn-primary:hover::before {
-    opacity: 1;
-}
-
+.btn-primary:hover::before  { opacity: 1; }
 .btn-primary:hover {
     background-color: var(--color-primary-dark);
     transform: translateY(-2px) scale(1.02);
     box-shadow: 0 8px 24px rgba(108, 89, 51, 0.38);
 }
-
 .btn-primary:active {
     transform: translateY(0) scale(0.99);
     box-shadow: 0 2px 8px rgba(108, 89, 51, 0.25);
@@ -351,14 +368,8 @@ button {
     transition: transform var(--transition-normal);
 }
 
-.btn-secondary:hover {
-    color: var(--color-primary);
-    text-underline-offset: 6px;
-}
-
-.btn-secondary:hover::after {
-    transform: translateX(4px);
-}
+.btn-secondary:hover                { color: var(--color-primary); text-underline-offset: 6px; }
+.btn-secondary:hover::after         { transform: translateX(4px); }
 
 /* ===================================
    Section Title
@@ -380,7 +391,6 @@ button {
     background-color: var(--color-background);
 }
 
-/* Tab nav — visible en desktop */
 .tabs-nav {
     display: flex;
     gap: 0;
@@ -415,43 +425,28 @@ button {
     transition: transform var(--transition-normal);
 }
 
-.tab-btn.active {
-    color: var(--color-text);
-}
-
-.tab-btn.active::after {
-    transform: scaleX(1);
-}
-
-.tab-btn:hover {
-    color: var(--color-text);
-}
+.tab-btn.active         { color: var(--color-text); }
+.tab-btn.active::after  { transform: scaleX(1); }
+.tab-btn:hover          { color: var(--color-text); }
 
 .tab-panel {
     display: none;
     animation: tabFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.tab-panel.active {
-    display: block;
-}
+.tab-panel.active { display: block; }
 
 @keyframes tabFadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* Label de categoría mobile — oculto en desktop */
-.mobile-section-label {
-    display: none;
-}
+.mobile-section-label { display: none; }
 
 /* ===================================
    Product Items
    =================================== */
-.product-item {
-    margin-bottom: 5rem;
-}
+.product-item { margin-bottom: 5rem; }
 
 .product-content {
     display: grid;
@@ -460,18 +455,10 @@ button {
     align-items: center;
 }
 
-.product-content.reverse {
-    direction: rtl;
-}
+.product-content.reverse        { direction: rtl; }
+.product-content.reverse > *    { direction: ltr; }
 
-.product-content.reverse > * {
-    direction: ltr;
-}
-
-/* Imagen con tag flotante */
-.product-image {
-    position: relative;
-}
+.product-image { position: relative; }
 
 .product-image img {
     width: 100%;
@@ -556,7 +543,7 @@ button {
 }
 
 /* ===================================
-   Proyectos Grid (Páginas Web)
+   Projects Grid (Páginas Web)
    =================================== */
 .projects-grid {
     display: grid;
@@ -606,9 +593,7 @@ button {
     transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.project-card-link:hover .project-image img {
-    transform: scale(1.06);
-}
+.project-card-link:hover .project-image img { transform: scale(1.06); }
 
 .project-overlay {
     position: absolute;
@@ -625,9 +610,7 @@ button {
     backdrop-filter: blur(2px);
 }
 
-.project-card-link:hover .project-overlay {
-    opacity: 1;
-}
+.project-card-link:hover .project-overlay { opacity: 1; }
 
 .project-overlay h3 {
     color: var(--color-white);
@@ -667,9 +650,7 @@ button {
     font-family: var(--font-secondary);
 }
 
-.project-card-link:hover .project-info h3 {
-    color: var(--color-primary);
-}
+.project-card-link:hover .project-info h3 { color: var(--color-primary); }
 
 .project-info p {
     font-size: 0.9rem;
@@ -710,8 +691,8 @@ button {
     border-color: rgba(108, 89, 51, 0.18);
 }
 
-div.pg-card { cursor: default; }
-div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.05); }
+div.pg-card          { cursor: default; }
+div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.05); }
 
 .pg-card-image {
     width: 110px;
@@ -728,9 +709,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     transition: transform var(--transition-slow);
 }
 
-.pg-card:hover .pg-card-image img {
-    transform: scale(1.05);
-}
+.pg-card:hover .pg-card-image img { transform: scale(1.05); }
 
 .pg-card-body {
     flex: 1;
@@ -794,7 +773,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     gap: 1rem;
 }
 
-/* Tarjeta base */
 .bento-card {
     background: var(--color-white);
     border-radius: 18px;
@@ -811,7 +789,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     border-color: rgba(108, 89, 51, 0.14);
 }
 
-/* Habilidades principales — ocupa 2 columnas */
 .bento-card--skills {
     grid-column: span 2;
     display: flex;
@@ -861,7 +838,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     color: var(--color-primary);
 }
 
-/* Tarjetas de herramientas individuales */
 .bento-card--tool {
     display: flex;
     flex-direction: column;
@@ -881,15 +857,9 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     justify-content: center;
 }
 
-.tool-icon svg {
-    width: 100%;
-    height: 100%;
-    transition: transform var(--transition-normal);
-}
+.tool-icon svg { width: 100%; height: 100%; transition: transform var(--transition-normal); }
 
-.bento-card--tool:hover .tool-icon svg {
-    transform: scale(1.12) rotate(-3deg);
-}
+.bento-card--tool:hover .tool-icon svg { transform: scale(1.12) rotate(-3deg); }
 
 .tool-icon-duo {
     display: flex;
@@ -897,19 +867,10 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     align-items: center;
 }
 
-.tool-icon-duo svg {
-    width: 22px;
-    height: 22px;
-    transition: transform var(--transition-normal);
-}
+.tool-icon-duo svg { width: 22px; height: 22px; transition: transform var(--transition-normal); }
 
-.bento-card--code:hover .tool-icon-duo svg:first-child {
-    transform: translateX(-3px) rotate(-5deg) scale(1.1);
-}
-
-.bento-card--code:hover .tool-icon-duo svg:last-child {
-    transform: translateX(3px) rotate(5deg) scale(1.1);
-}
+.bento-card--code:hover .tool-icon-duo svg:first-child { transform: translateX(-3px) rotate(-5deg) scale(1.1); }
+.bento-card--code:hover .tool-icon-duo svg:last-child  { transform: translateX(3px) rotate(5deg) scale(1.1); }
 
 .tool-name {
     font-size: 0.88rem;
@@ -927,7 +888,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     opacity: 0.65;
 }
 
-/* Otras herramientas — ocupa 2 columnas */
 .bento-card--others {
     grid-column: span 2;
     display: flex;
@@ -959,7 +919,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
 }
 
 /* ===================================
-   Footer — Sección de Contacto
+   Footer
    =================================== */
 .footer {
     background-color: var(--color-background-light);
@@ -967,10 +927,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     padding: 5rem 0 2.5rem;
 }
 
-/* CTA heading */
-.footer-cta {
-    margin-bottom: 3rem;
-}
+.footer-cta { margin-bottom: 3rem; }
 
 .footer-cta-label {
     font-size: 0.8rem;
@@ -991,7 +948,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     line-height: 1;
 }
 
-/* Contacto directo */
 .footer-contact {
     display: flex;
     flex-direction: column;
@@ -1010,14 +966,11 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     color: var(--color-text);
     text-decoration: none;
     transition: all var(--transition-normal);
-    group: true;
     position: relative;
     overflow: hidden;
 }
 
-.footer-contact-link:last-child {
-    border-bottom: none;
-}
+.footer-contact-link:last-child { border-bottom: none; }
 
 .footer-contact-link::before {
     content: '';
@@ -1031,14 +984,8 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     z-index: 0;
 }
 
-.footer-contact-link:hover::before {
-    left: 0;
-}
-
-.footer-contact-link > * {
-    position: relative;
-    z-index: 1;
-}
+.footer-contact-link:hover::before { left: 0; }
+.footer-contact-link > *           { position: relative; z-index: 1; }
 
 .footer-contact-label {
     font-size: 0.7rem;
@@ -1059,9 +1006,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     transition: color var(--transition-fast);
 }
 
-.footer-contact-link:hover .footer-contact-value {
-    color: var(--color-primary);
-}
+.footer-contact-link:hover .footer-contact-value { color: var(--color-primary); }
 
 .footer-contact-link svg {
     opacity: 0;
@@ -1071,19 +1016,14 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     flex-shrink: 0;
 }
 
-.footer-contact-link:hover svg {
-    opacity: 1;
-    transform: translateX(0);
-}
+.footer-contact-link:hover svg { opacity: 1; transform: translateX(0); }
 
-/* Divisor footer */
 .footer-divider {
     height: 1px;
     background: rgba(108, 89, 51, 0.12);
     margin-bottom: 1.75rem;
 }
 
-/* Bottom row */
 .footer-bottom-row {
     display: flex;
     justify-content: space-between;
@@ -1098,7 +1038,6 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     font-weight: 400;
 }
 
-/* Social links — rediseñados, más contenidos */
 .social-links {
     display: flex;
     gap: 0.5rem;
@@ -1119,16 +1058,8 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     transition: all var(--transition-normal);
 }
 
-.social-link span {
-    font-family: var(--font-primary);
-    letter-spacing: 0.01em;
-}
-
-.social-link svg {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-}
+.social-link span  { font-family: var(--font-primary); letter-spacing: 0.01em; }
+.social-link svg   { width: 16px; height: 16px; flex-shrink: 0; }
 
 .social-link:hover {
     color: var(--color-primary);
@@ -1161,10 +1092,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     cursor: pointer;
 }
 
-.scroll-to-top.visible {
-    opacity: 1;
-    visibility: visible;
-}
+.scroll-to-top.visible { opacity: 1; visibility: visible; }
 
 .scroll-to-top:hover {
     background-color: var(--color-primary-dark);
@@ -1180,20 +1108,12 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
 
     .container { padding: 0 2rem; }
 
-    .hero-text h1 { font-size: 3.25rem; }
-    .hero-description { font-size: 1.1rem; }
-
-    .skills-bento {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .bento-card--others {
-        grid-column: span 3;
-    }
-
-    .social-links { gap: 0.4rem; }
+    .skills-bento { grid-template-columns: repeat(3, 1fr); }
+    .bento-card--others { grid-column: span 3; }
 
     .footer-cta-heading { font-size: 2.75rem; }
+
+    .social-links { gap: 0.4rem; }
 }
 
 /* ===================================
@@ -1205,60 +1125,58 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     .container { padding: 0 1.25rem; }
 
     /* Header */
-    .nav {
-        flex-direction: column;
-        gap: 0.75rem;
-    }
-
+    .nav { flex-direction: column; gap: 0.75rem; }
     .logo { font-size: 1.2rem; }
-
     .nav-menu { gap: 1.5rem; }
 
     /* Hero */
     .hero { padding: 3rem 0 3.5rem; }
 
-    .hero-content {
+    .hero-tw-wrap {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
+        min-height: unset;
     }
 
-    .hero-image {
+    .hero-tw-image {
         order: 1;
         display: flex;
         justify-content: center;
     }
 
-    .hero-image img { max-width: 280px; }
+    .hero-tw-image img { max-width: 260px; }
 
-    .hero-text { order: 2; }
-
-    .hero-text h1 { font-size: 2.25rem; }
-
-    .hero-description { font-size: 1rem; }
-
-    .hero-description .highlight::after { display: none; }
-
-    .btn {
-        width: 100%;
-        max-width: 280px;
-        padding: 0.9rem 2rem;
+    .hero-tw-text {
+        order: 2;
+        align-items: center;
     }
 
-    /* -----------------------------------------------
-       MOBILE: Tabs desaparecen, scroll vertical continuo
-       ----------------------------------------------- */
-    .tabs-nav {
-        display: none; /* Ocultamos la barra de tabs */
+    .hero-tw-heading {
+        font-size: clamp(1.75rem, 7vw, 2.5rem);
+        text-align: center;
+        min-height: 3em;
     }
 
-    /* Todos los paneles visibles en mobile */
+    .hero-tw-description {
+        font-size: 0.95rem;
+        text-align: center;
+    }
+
+    .hero-tw-description .highlight::after { display: none; }
+
+    .hero-tw-btn { width: 100%; max-width: 280px; }
+
+    /* Portfolio */
+    .portfolio-tabs { padding: 3rem 0; }
+
+    .tabs-nav { display: none; }
+
     .tab-panel {
         display: block !important;
         animation: none !important;
     }
 
-    /* Labels de sección mobile */
     .mobile-section-label {
         display: block;
         font-size: 0.7rem;
@@ -1272,14 +1190,8 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
         border-bottom: 1.5px solid rgba(108, 89, 51, 0.15);
     }
 
-    /* Separador entre categorías en mobile */
     #panel-web,
-    #panel-playground {
-        margin-top: 3.5rem;
-    }
-
-    /* Portfolio */
-    .portfolio-tabs { padding: 3rem 0; }
+    #panel-playground { margin-top: 3.5rem; }
 
     /* Product items */
     .product-content,
@@ -1294,9 +1206,7 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
     .product-text h4 { font-size: 1rem; }
     .product-text p  { font-size: 0.95rem; }
 
-    .product-buttons {
-        justify-content: center;
-    }
+    .product-buttons { justify-content: center; }
 
     .product-buttons .btn {
         max-width: 240px;
@@ -1306,78 +1216,37 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
 
     .product-item { margin-bottom: 3.5rem; }
 
-    .product-image-tag {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    .product-image-tag { opacity: 1; transform: translateY(0); }
 
     /* Projects grid */
-    .projects-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
+    .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
 
     /* Playground */
-    .playground-feed {
-        grid-template-columns: 1fr;
-    }
-
-    .pg-card-image {
-        width: 85px;
-        height: 85px;
-    }
+    .playground-feed { grid-template-columns: 1fr; }
+    .pg-card-image   { width: 85px; height: 85px; }
 
     /* Skills Bento */
     .skills { padding: 3rem 0 4.5rem; }
 
-    .skills-bento {
-        grid-template-columns: 1fr 1fr;
-        gap: 0.75rem;
-    }
-
-    .bento-card--skills {
-        grid-column: span 2;
-    }
-
-    .bento-card--others {
-        grid-column: span 2;
-    }
-
-    .bento-card--tool {
-        min-height: 120px;
-        padding: 1.25rem 0.75rem;
-    }
-
-    .tool-icon { width: 40px; height: 40px; }
+    .skills-bento           { grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+    .bento-card--skills     { grid-column: span 2; }
+    .bento-card--others     { grid-column: span 2; }
+    .bento-card--tool       { min-height: 120px; padding: 1.25rem 0.75rem; }
+    .tool-icon              { width: 40px; height: 40px; }
 
     /* Footer */
     .footer { padding: 3.5rem 0 2rem; }
+    .footer-cta-heading     { font-size: 2.25rem; }
+    .footer-contact-value   { font-size: 1rem; }
 
-    .footer-cta-heading { font-size: 2.25rem; }
-
-    .footer-contact-value { font-size: 1rem; }
-
-    .footer-bottom-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
-    }
+    .footer-bottom-row { flex-direction: column; align-items: flex-start; gap: 1rem; }
 
     .social-links { gap: 0.4rem; flex-wrap: wrap; }
-
     .social-link span { display: none; }
-
-    .social-link {
-        padding: 0.5rem 0.65rem;
-    }
+    .social-link { padding: 0.5rem 0.65rem; }
 
     /* Scroll to top */
-    .scroll-to-top {
-        width: 2.75rem;
-        height: 2.75rem;
-        bottom: 18px;
-        right: 18px;
-    }
+    .scroll-to-top { width: 2.75rem; height: 2.75rem; bottom: 18px; right: 18px; }
 }
 
 /* ===================================
@@ -1386,16 +1255,13 @@ div.pg-card:hover { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.0
 @media (max-width: 480px) {
     .container { padding: 0 1rem; }
 
-    .hero-text h1 { font-size: 1.9rem; }
-
+    .hero-tw-heading    { font-size: 1.9rem; }
     .footer-cta-heading { font-size: 1.9rem; }
+    .section-title      { font-size: 1.5rem; }
 
-    .section-title { font-size: 1.5rem; }
-
-    .skills-bento { grid-template-columns: 1fr; }
-
+    .skills-bento           { grid-template-columns: 1fr; }
     .bento-card--skills,
-    .bento-card--others { grid-column: span 1; }
+    .bento-card--others     { grid-column: span 1; }
 
     .social-link span { display: none; }
 }
