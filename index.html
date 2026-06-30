@@ -82,10 +82,6 @@
             line-height: 1.6;
             margin-top: 1.75rem;
             margin-bottom: 2rem;
-            opacity: 0;
-            transform: translateY(12px);
-            transition: opacity 0.55s cubic-bezier(0.22, 1, 0.36, 1),
-                        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
         .hero-tw-description .highlight {
@@ -107,36 +103,7 @@
             opacity: 0.25;
         }
 
-        .hero-tw-description.tw-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .hero-tw-btn {
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s,
-                        transform 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.12s;
-        }
-
-        .hero-tw-btn.tw-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         /* --- Columna derecha: foto --- */
-        .hero-tw-image {
-            opacity: 0;
-            transform: translateX(20px);
-            transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.25s,
-                        transform 0.65s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
-        }
-
-        .hero-tw-image.tw-visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
         .hero-tw-image img {
             width: 100%;
             max-width: 448px;
@@ -174,14 +141,6 @@
                 order: 1;
                 display: flex;
                 justify-content: center;
-                transform: translateX(0);
-                opacity: 0;
-                transform: translateY(16px);
-            }
-
-            .hero-tw-image.tw-visible {
-                opacity: 1;
-                transform: translateY(0);
             }
 
             .hero-tw-image img {
@@ -634,15 +593,12 @@
     <script>
     (function () {
         const heading = document.getElementById('tw-heading');
-        const sub     = document.getElementById('tw-sub');
-        const btn     = document.getElementById('tw-btn');
-        const image   = document.getElementById('tw-image');
 
         if (!heading) return;
 
         const wrongPhrases = [
             'No empiezo por la interfaz.',
-            'No empiezo por los componentes.'
+            'No empiezo por pixeles.'
         ];
         const finalLines = ['Empiezo por', 'entender.'];
 
@@ -728,18 +684,11 @@
 
                     if (charIdx > full.length) {
                         phase = 'done';
-                        setTimeout(showRest, 380);
                         return;
                     }
                     setTimeout(tick, SPEED_TYPE);
                 }
             }
-        }
-
-        function showRest() {
-            sub.classList.add('tw-visible');
-            btn.classList.add('tw-visible');
-            image.classList.add('tw-visible');
         }
 
         setTimeout(tick, 600);
