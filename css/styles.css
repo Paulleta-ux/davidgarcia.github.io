@@ -263,8 +263,8 @@ button {
 }
 
 .hero-tw-heading .tw-strike {
-    text-decoration: line-through;
-    color: var(--color-text-light);
+    opacity: 0.4;
+    color: var(--color-text);
 }
 
 .hero-tw-cursor {
