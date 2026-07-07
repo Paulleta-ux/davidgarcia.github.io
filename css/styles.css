@@ -815,16 +815,31 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
     z-index: 2;
 }
 
-/* Mobile: la featured vuelve a ocupar 1 columna y el video se ve más grande */
 @media (max-width: 768px) {
     .pg-card--featured {
         grid-column: span 1;
         flex-direction: column;
         align-items: stretch;
+        padding: 0;
+        overflow: hidden;
     }
+
     .pg-card--featured .pg-card-image {
         width: 100%;
-        height: 200px;
+        height: auto;
+        aspect-ratio: 9 / 16; /* vertical, tipo celular */
+        border-radius: 10px 10px 0 0;
+    }
+
+    .pg-card--featured .pg-card-image--video video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .pg-card--featured .pg-card-body {
+        padding: 1rem 1.25rem 1.25rem;
     }
 }
 
