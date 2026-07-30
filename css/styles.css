@@ -674,12 +674,12 @@ button {
 .playground-feed {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: 1.15rem;
 }
 
 .pg-card {
     display: flex;
-    gap: 1rem;
+    gap: 1.15rem;
     background-color: var(--color-white);
     border-radius: 10px;
     overflow: hidden;
@@ -688,7 +688,7 @@ button {
     transition: box-shadow var(--transition-normal), transform var(--transition-normal), border-color var(--transition-normal);
     text-decoration: none;
     color: inherit;
-    padding: 1rem;
+    padding: 1.15rem;
     align-items: center;
     cursor: pointer;
 }
@@ -703,8 +703,8 @@ div.pg-card          { cursor: default; }
 div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 0.05); }
 
 .pg-card-image {
-    width: 110px;
-    height: 110px;
+    width: 128px;
+    height: 128px;
     flex-shrink: 0;
     border-radius: 8px;
     overflow: hidden;
@@ -723,11 +723,11 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.35rem;
 }
 
 .pg-card-meta {
-    font-size: 0.7rem;
+    font-size: 0.72rem;
     color: var(--color-text-light);
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -735,17 +735,17 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
 }
 
 .pg-card-title {
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-weight: 700;
     color: var(--color-text);
-    line-height: 1.3;
+    line-height: 1.32;
     font-family: var(--font-secondary);
 }
 
 .pg-card-desc {
-    font-size: 0.82rem;
+    font-size: 0.86rem;
     color: var(--color-text-gray);
-    line-height: 1.45;
+    line-height: 1.48;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -753,7 +753,7 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
 }
 
 .pg-card-link-label {
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     color: var(--color-primary);
     font-weight: 600;
     margin-top: 0.2rem;
@@ -1341,7 +1341,7 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
 
     /* Playground */
     .playground-feed { grid-template-columns: 1fr; }
-    .pg-card-image   { width: 85px; height: 85px; }
+    .pg-card-image   { width: 95px; height: 95px; }
 
     /* Skills Bento */
     .skills { padding: 3rem 0 4.5rem; }
