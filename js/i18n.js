@@ -51,9 +51,8 @@
             "hero.desc": "Understanding is my way of <span class=\"highlight-underline\">reducing uncertainty</span>. I research behavior and turn findings into design decisions with real impact.",
             "hero.cv": "Download CV",
             "hero.cvAria": "Download David García's résumé as a PDF",
-            // Si tienes un CV en inglés, agrega en el HTML data-i18n-attr="aria-label:hero.cvAria;href:hero.cvHref"
-            // y descomenta esta línea con la ruta de tu archivo:
-            // "hero.cvHref": "files/David_Garcia_ProductDesigner_EN.pdf",
+            "hero.cvHref": "files/CV_DavidGarcia%20(EN).pdf",
+            "hero.cvDownload": "David-Garcia-CV-EN.pdf",
 
             /* ---------- Portafolio ---------- */
             "portfolio.title": "Portfolio",
