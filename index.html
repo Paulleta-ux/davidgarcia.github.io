@@ -39,12 +39,6 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
                     <li><a href="about.html" data-i18n="nav.about">Acerca de Mí</a></li>
-                    <li class="nav-lang">
-                        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
-                            <button type="button" class="lang-btn" data-lang="es" lang="es" title="Español" aria-pressed="true">ES</button>
-                            <button type="button" class="lang-btn" data-lang="en" lang="en" title="English" aria-pressed="false">EN</button>
-                        </div>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -74,7 +68,7 @@
                     <h1 class="hero-tw-heading" id="tw-heading" aria-label="Empiezo por entender." data-i18n-attr="aria-label:hero.h1Aria"></h1>
                     <p class="hero-tw-description" data-i18n-html="hero.desc">Entender es mi forma de <span class="highlight-underline">reducir la incertidumbre</span>. Investigo comportamientos y transformo hallazgos en decisiones de diseño con impacto real.</p>
 
-                    <a
+                    
                         href="files/David_Garcia_ProductDesigner.pdf"
                         class="btn btn-primary hero-tw-btn"
                         download="David-Garcia-CV.pdf"
@@ -193,7 +187,7 @@
             <!-- Panel: Páginas Web -->
             <div class="tab-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web">
 
-                <div class="mobile-section-label" aria-hidden="true" data-i18n="label.web">Páginas Web</div>
+                <div class="mobile-section-label" aria-hidden="true" data-i18n="label.web">Experiencias Web</div>
 
                 <div class="projects-grid">
 
@@ -532,12 +526,19 @@
         </div>
     </footer>
 
-    <!-- Botón Scroll to Top -->
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" data-i18n-attr="aria-label:scrollTop">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
+    <!-- Grupo flotante -->
+    <div class="floating-group">
+        <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" data-i18n-attr="aria-label:scrollTop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+
+        <div class="lang-switch floating-lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+            <button type="button" class="lang-btn" data-lang="es" lang="es" title="Español" aria-pressed="true">ES</button>
+            <button type="button" class="lang-btn" data-lang="en" lang="en" title="English" aria-pressed="false">EN</button>
+        </div>
+    </div>
 
     <!-- JS (i18n.js debe cargarse ANTES que script.js) -->
     <script src="js/i18n.js"></script>

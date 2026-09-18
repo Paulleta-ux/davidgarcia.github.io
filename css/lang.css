@@ -1,14 +1,23 @@
 /* ===================================
-   Selector de idioma ES / EN
-   Ajusta el color de acento aquí si tu paleta es distinta.
+   Grupo flotante: scroll-to-top + idioma
    =================================== */
-.nav-lang {
+.floating-group {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    z-index: 999;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-left: 0.5rem;
-    list-style: none;
+    gap: 10px;
 }
 
+/* El botón scroll-to-top ya no se posiciona solo */
+.scroll-to-top {
+    position: static;
+}
+
+/* Estilos base de la píldora — aplica siempre */
 .lang-switch {
     --lang-accent: #6C5933;
     display: inline-flex;
@@ -17,6 +26,13 @@
     padding: 3px;
     border: 1px solid rgba(108, 89, 51, 0.35);
     border-radius: 999px;
+    background: var(--color-bg, #fff);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Cuando está en el grupo flotante, no se posiciona solo */
+.floating-lang {
+    position: static;
 }
 
 .lang-btn {
@@ -52,7 +68,10 @@
 }
 
 @media (max-width: 480px) {
-    .nav-lang { margin-left: 0.25rem; }
+    .floating-group {
+        bottom: 1rem;
+        right: 1rem;
+    }
     .lang-btn { padding: 0.35rem 0.55rem; }
 }
 

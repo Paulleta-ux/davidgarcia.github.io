@@ -58,7 +58,7 @@
             "portfolio.title": "Portfolio",
             "portfolio.tablistAria": "Portfolio categories",
             "tab.web": "Web Experiences",
-            "label.web": "Web Pages",
+            "label.web": "Web Experiences",
 
             "btn.viewProject": "View Project",
             "btn.viewApp": "View App",
