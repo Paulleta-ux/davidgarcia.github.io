@@ -1,4 +1,11 @@
 // ===================================
+// Idioma actual (lo define js/i18n.js, que se carga antes)
+// ===================================
+function currentLang() {
+    return (window.I18N && window.I18N.getLang()) || 'es';
+}
+
+// ===================================
 // Scroll to Top Button
 // ===================================
 const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -158,126 +165,184 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
 })();
 
 // ===================================
-// PlayGround — fechas relativas
+// PlayGround — fechas relativas (ES / EN)
 // ===================================
-document.querySelectorAll('.pg-card-meta[data-date]').forEach(el => {
-    const date = new Date(el.dataset.date);
-    const diffDays = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
+(function () {
+    const LABELS = {
+        es: {
+            today:  'Hoy',
+            day1:   'Hace 1 día',
+            days:   n => `Hace ${n} días`,
+            week1:  'Hace 1 semana',
+            weeks:  n => `Hace ${n} semanas`,
+            month1: 'Hace 1 mes',
+            months: n => `Hace ${n} meses`,
+            year1:  'Hace 1 año',
+            years:  n => `Hace ${n} años`
+        },
+        en: {
+            today:  'Today',
+            day1:   '1 day ago',
+            days:   n => `${n} days ago`,
+            week1:  '1 week ago',
+            weeks:  n => `${n} weeks ago`,
+            month1: '1 month ago',
+            months: n => `${n} months ago`,
+            year1:  '1 year ago',
+            years:  n => `${n} years ago`
+        }
+    };
 
-    let label;
-    if (diffDays === 0)        label = 'Hoy';
-    else if (diffDays === 1)   label = 'Hace 1 día';
-    else if (diffDays < 7)     label = `Hace ${diffDays} días`;
-    else if (diffDays < 14)    label = 'Hace 1 semana';
-    else if (diffDays < 30)    label = `Hace ${Math.floor(diffDays / 7)} semanas`;
-    else if (diffDays < 60)    label = 'Hace 1 mes';
-    else if (diffDays < 365)   label = `Hace ${Math.floor(diffDays / 30)} meses`;
-    else if (diffDays < 730)   label = 'Hace 1 año';
-    else                       label = `Hace ${Math.floor(diffDays / 365)} años`;
+    function updateRelativeDates() {
+        const L = LABELS[currentLang()] || LABELS.es;
 
-    el.textContent = `LinkedIn · ${label}`;
-});
+        document.querySelectorAll('.pg-card-meta[data-date]').forEach(el => {
+            const date = new Date(el.dataset.date);
+            const diffDays = Math.floor((new Date() - date) / (1000 * 60 * 60 * 24));
+
+            let label;
+            if (diffDays <= 0)         label = L.today;
+            else if (diffDays === 1)   label = L.day1;
+            else if (diffDays < 7)     label = L.days(diffDays);
+            else if (diffDays < 14)    label = L.week1;
+            else if (diffDays < 30)    label = L.weeks(Math.floor(diffDays / 7));
+            else if (diffDays < 60)    label = L.month1;
+            else if (diffDays < 365)   label = L.months(Math.floor(diffDays / 30));
+            else if (diffDays < 730)   label = L.year1;
+            else                       label = L.years(Math.floor(diffDays / 365));
+
+            el.textContent = `LinkedIn · ${label}`;
+        });
+    }
+
+    updateRelativeDates();
+    document.addEventListener('portfolio:languagechange', updateRelativeDates);
+})();
 
 // ===================================
-// Typewriter Hero
+// Typewriter Hero (ES / EN)
 // ===================================
 (function () {
     const heading = document.getElementById('tw-heading');
     if (!heading) return;
 
-    const wrongPhrases = [
-        'No empiezo por la interfaz.',
-        'No empiezo por pixeles.'
-    ];
-    const finalLines = ['Empiezo por', 'entender.'];
+    const TEXTS = {
+        es: {
+            wrong: ['No empiezo por la interfaz.', 'No empiezo por pixeles.'],
+            final: ['Empiezo por', 'entender.']
+        },
+        en: {
+            wrong: ["I don't start with the interface.", "I don't start with pixels."],
+            final: ['I start by', 'understanding.']
+        }
+    };
 
     const SPEED_TYPE   = 68;
     const SPEED_DELETE = 32;
     const PAUSE_AFTER  = 900;
     const PAUSE_BEFORE = 300;
 
-    let wrongIdx   = 0;
-    let charIdx    = 0;
-    let isDeleting = false;
-    let phase      = 'wrong';
+    let runId = 0; // sirve para cancelar animaciones anteriores al cambiar de idioma
 
-    const cursor = document.createElement('span');
-    cursor.className = 'hero-tw-cursor';
-    cursor.setAttribute('aria-hidden', 'true');
+    function start(animate) {
+        const myRun = ++runId;
+        const { wrong: wrongPhrases, final: finalLines } = TEXTS[currentLang()] || TEXTS.es;
 
-    const typed = document.createElement('span');
-    heading.appendChild(typed);
-    heading.appendChild(cursor);
+        let wrongIdx   = 0;
+        let charIdx    = 0;
+        let isDeleting = false;
+        let phase      = 'wrong';
 
-    function render(text, strike) {
-        typed.innerHTML = strike
-            ? '<span class="tw-strike">' + text + '</span>'
-            : text;
-    }
+        heading.textContent = '';
 
-    function tick() {
-        if (phase === 'wrong') {
-            const current = wrongPhrases[wrongIdx];
+        const typed = document.createElement('span');
+        const cursor = document.createElement('span');
+        cursor.className = 'hero-tw-cursor';
+        cursor.setAttribute('aria-hidden', 'true');
+        heading.appendChild(typed);
+        heading.appendChild(cursor);
 
-            if (!isDeleting) {
-                charIdx++;
-                render(current.slice(0, charIdx), true);
+        function render(text, strike) {
+            typed.innerHTML = strike
+                ? '<span class="tw-strike">' + text + '</span>'
+                : text;
+        }
 
-                if (charIdx === current.length) {
-                    isDeleting = true;
-                    setTimeout(tick, PAUSE_AFTER);
-                    return;
-                }
-                setTimeout(tick, SPEED_TYPE);
+        // Al cambiar de idioma no repetimos la animación: mostramos el texto final directo
+        if (!animate) {
+            render(finalLines.join('<br>'), false);
+            return;
+        }
 
-            } else {
-                charIdx--;
-                render(current.slice(0, charIdx), true);
+        function tick() {
+            if (myRun !== runId) return; // llegó un cambio de idioma: esta animación se detiene
 
-                if (charIdx === 0) {
-                    isDeleting = false;
-                    wrongIdx++;
+            if (phase === 'wrong') {
+                const current = wrongPhrases[wrongIdx];
 
-                    if (wrongIdx < wrongPhrases.length) {
-                        setTimeout(tick, PAUSE_BEFORE);
-                    } else {
-                        phase = 'final';
-                        charIdx = 0;
-                        setTimeout(tick, PAUSE_BEFORE);
+                if (!isDeleting) {
+                    charIdx++;
+                    render(current.slice(0, charIdx), true);
+
+                    if (charIdx === current.length) {
+                        isDeleting = true;
+                        setTimeout(tick, PAUSE_AFTER);
+                        return;
                     }
-                    return;
-                }
-                setTimeout(tick, SPEED_DELETE);
-            }
+                    setTimeout(tick, SPEED_TYPE);
 
-        } else if (phase === 'final') {
-            const full = finalLines.join('');
+                } else {
+                    charIdx--;
+                    render(current.slice(0, charIdx), true);
 
-            if (charIdx <= full.length) {
-                let built = '';
-                let count = 0;
+                    if (charIdx === 0) {
+                        isDeleting = false;
+                        wrongIdx++;
 
-                for (let i = 0; i < finalLines.length; i++) {
-                    const take = Math.max(0, Math.min(finalLines[i].length, charIdx - count));
-                    built += finalLines[i].slice(0, take);
-                    count += finalLines[i].length;
-                    if (i < finalLines.length - 1 && charIdx >= count) {
-                        built += '<br>';
-                    } else if (i < finalLines.length - 1 && take === finalLines[i].length) {
-                        built += '<br>';
+                        if (wrongIdx < wrongPhrases.length) {
+                            setTimeout(tick, PAUSE_BEFORE);
+                        } else {
+                            phase = 'final';
+                            charIdx = 0;
+                            setTimeout(tick, PAUSE_BEFORE);
+                        }
+                        return;
                     }
+                    setTimeout(tick, SPEED_DELETE);
                 }
 
-                render(built, false);
-                charIdx++;
+            } else if (phase === 'final') {
+                const full = finalLines.join('');
 
-                if (charIdx > full.length) { phase = 'done'; return; }
-                setTimeout(tick, SPEED_TYPE);
+                if (charIdx <= full.length) {
+                    let built = '';
+                    let count = 0;
+
+                    for (let i = 0; i < finalLines.length; i++) {
+                        const take = Math.max(0, Math.min(finalLines[i].length, charIdx - count));
+                        built += finalLines[i].slice(0, take);
+                        count += finalLines[i].length;
+                        if (i < finalLines.length - 1 && charIdx >= count) {
+                            built += '<br>';
+                        } else if (i < finalLines.length - 1 && take === finalLines[i].length) {
+                            built += '<br>';
+                        }
+                    }
+
+                    render(built, false);
+                    charIdx++;
+
+                    if (charIdx > full.length) { phase = 'done'; return; }
+                    setTimeout(tick, SPEED_TYPE);
+                }
             }
         }
+
+        setTimeout(tick, 600);
     }
 
-    setTimeout(tick, 600);
+    start(true);
+    document.addEventListener('portfolio:languagechange', () => start(false));
 })();
 
 // ===================================

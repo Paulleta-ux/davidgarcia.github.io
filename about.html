@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <link rel="icon" href="images/favicon.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acerca de Mí - David Garcia</title>
-    <meta name="description" content="Conoce más sobre David García Murcia, diseñador interactivo de Bogotá con enfoque en UX/UI y experiencias digitales.">
-        <!-- Open Graph (WhatsApp / LinkedIn) -->
-    <meta property="og:title" content="Portfolio de David García | Diseñador Interactivo UX/UI">
-    <meta property="og:description" content="UX Research, UX Strategy y UI aplicado a experiencias digitales, museos interactivos y e-commerce.">
+    <title data-i18n="about.meta.title">Acerca de Mí - David Garcia</title>
+    <meta name="description" data-i18n-attr="content:about.meta.description" content="Conoce más sobre David García Murcia, diseñador interactivo de Bogotá con enfoque en UX/UI y experiencias digitales.">
+    <!-- Open Graph (WhatsApp / LinkedIn) -->
+    <meta property="og:title" data-i18n-attr="content:meta.title" content="Portfolio de David García | Diseñador Interactivo UX/UI">
+    <meta property="og:description" data-i18n-attr="content:meta.ogDescription" content="UX Research, UX Strategy y UI aplicado a experiencias digitales, museos interactivos y e-commerce.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://paulleta-ux.github.io/davidgarcia.github.io/">
     <meta property="og:image" content="https://paulleta-ux.github.io/davidgarcia.github.io/images/previewV2.jpg">
-    <meta property="og:locale" content="es_CO">
+    <meta property="og:locale" data-i18n-attr="content:meta.locale" content="es_CO">
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/lang.css">
 </head>
 <body>
     <!-- Header/Navegación -->
@@ -27,8 +28,14 @@
             <nav class="nav">
                 <div class="logo">David Garcia</div>
                 <ul class="nav-menu">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="about.html">Acerca de Mí</a></li>
+                    <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="about.html" data-i18n="nav.about">Acerca de Mí</a></li>
+                    <li class="nav-lang">
+                        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+                            <button type="button" class="lang-btn" data-lang="es" lang="es" title="Español" aria-pressed="true">ES</button>
+                            <button type="button" class="lang-btn" data-lang="en" lang="en" title="English" aria-pressed="false">EN</button>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -39,19 +46,19 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h1>Acerca de Mí</h1>
+                    <h1 data-i18n="about.title">Acerca de Mí</h1>
                     <div class="about-description">
-                        <p>Mi nombre es <strong>David García Murcia</strong> y soy de <strong>Bogotá, Colombia</strong>. Soy diseñador interactivo con enfoque en <strong>UX/UI</strong>, interesado en crear experiencias digitales funcionales, claras y centradas en las personas.</p>
-                        
-                        <p>Estudié <strong>Diseño Interactivo</strong> en la <strong>Universidad Jorge Tadeo Lozano</strong>, donde trabajé en proyectos de museos interactivos, iniciativas culturales, experiencias de cambio social y productos digitales, siempre desde la investigación con usuarios y la resolución de problemas reales.</p>
-                        
-                        <p>He participado en <strong>proyectos web y e-commerce</strong>, colaborando con equipos multidisciplinarios y aplicando principios de usabilidad, accesibilidad y diseño responsive. Concibo el diseño como una herramienta para cumplir objetivos, más allá de lo visual.</p>
-                        
-                        <p>En mis tiempos libres me gusta ver <strong>series y películas</strong>, <strong>leer</strong>, <strong>jugar videojuegos</strong> (especialmente en mi <strong>Xbox</strong>) y disfruto mucho <strong>hacer ejercicio</strong>, en particular <strong>saltar la cuerda</strong>.</p>
+                        <p data-i18n-html="about.p1">Mi nombre es <strong>David García Murcia</strong> y soy de <strong>Bogotá, Colombia</strong>. Soy diseñador interactivo con enfoque en <strong>UX/UI</strong>, interesado en crear experiencias digitales funcionales, claras y centradas en las personas.</p>
+
+                        <p data-i18n-html="about.p2">Estudié <strong>Diseño Interactivo</strong> en la <strong>Universidad Jorge Tadeo Lozano</strong>, donde trabajé en proyectos de museos interactivos, iniciativas culturales, experiencias de cambio social y productos digitales, siempre desde la investigación con usuarios y la resolución de problemas reales.</p>
+
+                        <p data-i18n-html="about.p3">He participado en <strong>proyectos web y e-commerce</strong>, colaborando con equipos multidisciplinarios y aplicando principios de usabilidad, accesibilidad y diseño responsive. Concibo el diseño como una herramienta para cumplir objetivos, más allá de lo visual.</p>
+
+                        <p data-i18n-html="about.p4">En mis tiempos libres me gusta ver <strong>series y películas</strong>, <strong>leer</strong>, <strong>jugar videojuegos</strong> (especialmente en mi <strong>Xbox</strong>) y disfruto mucho <strong>hacer ejercicio</strong>, en particular <strong>saltar la cuerda</strong>.</p>
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="images/foto-cascada.png" alt="David Garcia en una cascada">
+                    <img src="images/foto-cascada.png" alt="David Garcia en una cascada" data-i18n-attr="alt:about.imgAlt">
                 </div>
             </div>
         </div>
@@ -60,30 +67,30 @@
     <!-- Reconocimientos -->
     <section class="recognitions">
         <div class="container">
-            <h2 class="section-title reveal-up">Reconocimientos</h2>
-            <p class="section-subtitle reveal-up">Reconocimientos obtenidos por proyectos de diseño interactivo y UX en contextos académicos y profesionales.</p>
+            <h2 class="section-title reveal-up" data-i18n="rec.title">Reconocimientos</h2>
+            <p class="section-subtitle reveal-up" data-i18n="rec.subtitle">Reconocimientos obtenidos por proyectos de diseño interactivo y UX en contextos académicos y profesionales.</p>
 
             <div class="recognition-grid">
 
                 <div class="recognition-card reveal-up">
                     <div class="recognition-image">
-                        <img src="images/logo-semillero.png" alt="Logo Semillero" loading="lazy">
+                        <img src="images/logo-semillero.png" alt="Logo Semillero" data-i18n-attr="alt:rec.1.alt" loading="lazy">
                     </div>
                     <div class="recognition-content">
-                        <h3>Integrante en Laboratorio de Contenidos Digitales</h3>
-                        <p>Integrante del proyecto transmedia No hay dolores menores, desarrollado de forma colaborativa con comunidades escolares en Ciudad Bolívar.</p>
-                        <a href="https://nohaydoloresmenores.com/" class="recognition-link" target="_blank" rel="noopener">Ver proyecto →</a>
+                        <h3 data-i18n="rec.1.h3">Integrante en Laboratorio de Contenidos Digitales</h3>
+                        <p data-i18n="rec.1.p">Integrante del proyecto transmedia No hay dolores menores, desarrollado de forma colaborativa con comunidades escolares en Ciudad Bolívar.</p>
+                        <a href="https://nohaydoloresmenores.com/" class="recognition-link" target="_blank" rel="noopener" data-i18n="rec.viewProject">Ver proyecto →</a>
                     </div>
                 </div>
 
                 <div class="recognition-card reveal-up" style="--delay:0.08s">
                     <div class="recognition-image">
-                        <img src="images/festival-internacional.png" alt="Festival Internacional de la Imagen" loading="lazy">
+                        <img src="images/festival-internacional.png" alt="Festival Internacional de la Imagen" data-i18n-attr="alt:rec.2.alt" loading="lazy">
                     </div>
                     <div class="recognition-content">
-                        <h3>Participación en la Exhibición "A Través de las Grietas"</h3>
-                        <p>Participación en el XXIII Festival Internacional de la Imagen, presentando un artefacto interactivo basado en cooperación.</p>
-                        <a href="https://drive.google.com/drive/folders/1nneEbT5jXPfFHSzJIRhqbzSg-5shQc7o?usp=sharing" class="recognition-link" target="_blank" rel="noopener">Ver detalles →</a>
+                        <h3 data-i18n="rec.2.h3">Participación en la Exhibición "A Través de las Grietas"</h3>
+                        <p data-i18n="rec.2.p">Participación en el XXIII Festival Internacional de la Imagen, presentando un artefacto interactivo basado en cooperación.</p>
+                        <a href="https://drive.google.com/drive/folders/1nneEbT5jXPfFHSzJIRhqbzSg-5shQc7o?usp=sharing" class="recognition-link" target="_blank" rel="noopener" data-i18n="rec.viewDetails">Ver detalles →</a>
                     </div>
                 </div>
 
@@ -92,20 +99,20 @@
                         <img src="images/mitos-hermano-mayor.png" alt="IDARTES" loading="lazy">
                     </div>
                     <div class="recognition-content">
-                        <h3>Ganador en la Hackatón del Coloquio de An-Arqueología — IDARTES</h3>
-                        <p>En este proyecto, colaboré con mis compañeros en un desafío de diseño especulativo centrado en nuestras propias interpretaciones de las culturas y conocimientos ancestrales.</p>
-                        <a href="https://drive.google.com/file/d/19lA_Kh0crAiKQ6KR05scyXCHUD1THrvb/view?usp=sharing" class="recognition-link" target="_blank" rel="noopener">Ver certificado →</a>
+                        <h3 data-i18n="rec.3.h3">Ganador en la Hackatón del Coloquio de An-Arqueología — IDARTES</h3>
+                        <p data-i18n="rec.3.p">En este proyecto, colaboré con mis compañeros en un desafío de diseño especulativo centrado en nuestras propias interpretaciones de las culturas y conocimientos ancestrales.</p>
+                        <a href="https://drive.google.com/file/d/19lA_Kh0crAiKQ6KR05scyXCHUD1THrvb/view?usp=sharing" class="recognition-link" target="_blank" rel="noopener" data-i18n="rec.viewCert">Ver certificado →</a>
                     </div>
                 </div>
 
                 <div class="recognition-card reveal-up" style="--delay:0.16s">
                     <div class="recognition-image">
-                        <img src="images/semillero-ponente.png" alt="Semillero Ponente" loading="lazy">
+                        <img src="images/semillero-ponente.png" alt="Semillero Ponente" data-i18n-attr="alt:rec.4.alt" loading="lazy">
                     </div>
                     <div class="recognition-content">
-                        <h3>Ponente en el 3er Encuentro de Semilleros en Investigación Creación Audiovisual</h3>
-                        <p>Integrante del proyecto transmedia No hay dolores menores, desarrollado de forma colaborativa con comunidades escolares en Ciudad Bolívar.</p>
-                        <a href="https://drive.google.com/file/d/1wZ-W1u8xZv_hsSCiPlJWwgZhGf-FbdgZ/view" class="recognition-link" target="_blank" rel="noopener">Ver certificado →</a>
+                        <h3 data-i18n="rec.4.h3">Ponente en el 3er Encuentro de Semilleros en Investigación Creación Audiovisual</h3>
+                        <p data-i18n="rec.1.p">Integrante del proyecto transmedia No hay dolores menores, desarrollado de forma colaborativa con comunidades escolares en Ciudad Bolívar.</p>
+                        <a href="https://drive.google.com/file/d/1wZ-W1u8xZv_hsSCiPlJWwgZhGf-FbdgZ/view" class="recognition-link" target="_blank" rel="noopener" data-i18n="rec.viewCert">Ver certificado →</a>
                     </div>
                 </div>
 
@@ -118,8 +125,8 @@
         <div class="container">
 
             <div class="footer-cta reveal-up">
-                <p class="footer-cta-label">¿Tienes un proyecto en mente?</p>
-                <h2 class="footer-cta-heading">Hablemos.</h2>
+                <p class="footer-cta-label" data-i18n="footer.ctaLabel">¿Tienes un proyecto en mente?</p>
+                <h2 class="footer-cta-heading" data-i18n="footer.ctaHeading">Hablemos.</h2>
             </div>
 
             <div class="footer-contact reveal-up">
@@ -129,7 +136,7 @@
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
                 <a href="tel:+573124688342" class="footer-contact-link">
-                    <span class="footer-contact-label">Teléfono</span>
+                    <span class="footer-contact-label" data-i18n="footer.phone">Teléfono</span>
                     <span class="footer-contact-value">312 468 8342</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                 </a>
@@ -158,12 +165,14 @@
         </div>
     </footer>
 
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba">
+    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" data-i18n-attr="aria-label:scrollTop">
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
             <path d="M18 15l-6-6-6 6"/>
         </svg>
     </button>
 
+    <!-- JS (i18n.js debe cargarse ANTES que script.js) -->
+    <script src="js/i18n.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
