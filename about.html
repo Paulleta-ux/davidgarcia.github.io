@@ -30,12 +30,6 @@
                 <ul class="nav-menu">
                     <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
                     <li><a href="about.html" data-i18n="nav.about">Acerca de Mí</a></li>
-                    <li class="nav-lang">
-                        <div class="lang-switch" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
-                            <button type="button" class="lang-btn" data-lang="es" lang="es" title="Español" aria-pressed="true">ES</button>
-                            <button type="button" class="lang-btn" data-lang="en" lang="en" title="English" aria-pressed="false">EN</button>
-                        </div>
-                    </li>
                 </ul>
             </nav>
         </div>
@@ -165,11 +159,19 @@
         </div>
     </footer>
 
-    <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" data-i18n-attr="aria-label:scrollTop">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
-    </button>
+<!-- Grupo flotante -->
+    <div class="floating-group">
+        <button id="scrollToTop" class="scroll-to-top" aria-label="Volver arriba" data-i18n-attr="aria-label:scrollTop">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                <path d="M18 15l-6-6-6 6"/>
+            </svg>
+        </button>
+
+        <div class="lang-switch floating-lang" role="group" aria-label="Idioma" data-i18n-attr="aria-label:lang.label">
+            <button type="button" class="lang-btn" data-lang="es" lang="es" title="Español" aria-pressed="true">ES</button>
+            <button type="button" class="lang-btn" data-lang="en" lang="en" title="English" aria-pressed="false">EN</button>
+        </div>
+    </div>
 
     <!-- JS (i18n.js debe cargarse ANTES que script.js) -->
     <script src="js/i18n.js"></script>
