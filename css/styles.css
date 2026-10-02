@@ -512,9 +512,9 @@ button {
                 0 8px 24px rgba(108, 89, 51, 0.12);
 }
 
-/* Fuerza la misma proporción que las demás fotos de proyecto (447/369) */
+/* Recorta fotos muy panorámicas a una proporción más cuadrada, sin forzarlas al 1:1 de las demás */
 .product-image--ratio img {
-    aspect-ratio: 447 / 369;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
 }
 
