@@ -564,30 +564,11 @@ button {
     object-fit: cover;
 }
 
-.product-image-tag {
-    position: absolute;
-    bottom: 14px;
-    left: 14px;
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    color: var(--color-primary);
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-    padding: 0.35rem 0.75rem;
-    border-radius: 8px;
-    border: 1px solid rgba(108, 89, 51, 0.12);
-    pointer-events: none;
-    opacity: 0;
-    transform: translateY(6px);
-    transition: opacity var(--transition-normal), transform var(--transition-normal);
-}
-
-.product-item:hover .product-image-tag {
-    opacity: 1;
-    transform: translateY(0);
+/* Stack: dos imágenes apiladas, cada una con su proporción natural */
+.product-image--stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .product-text h3 {
@@ -682,36 +663,6 @@ button {
 }
 
 .project-card-link:hover .project-image img { transform: scale(1.06); }
-
-.project-overlay {
-    position: absolute;
-    inset: 0;
-    background: rgba(22, 14, 5, 0.82);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    transition: opacity var(--transition-normal);
-    padding: 2rem;
-    text-align: center;
-    backdrop-filter: blur(2px);
-}
-
-.project-card-link:hover .project-overlay { opacity: 1; }
-
-.project-overlay h3 {
-    color: var(--color-white);
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.4rem;
-    font-family: var(--font-primary);
-}
-
-.project-overlay p {
-    color: rgba(255,255,255,0.75);
-    font-size: 0.9rem;
-}
 
 .project-info {
     padding: 1.5rem 1.75rem 2rem;
@@ -1413,8 +1364,6 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
     }
 
     .product-item { margin-bottom: 3.5rem; }
-
-    .product-image-tag { opacity: 1; transform: translateY(0); }
 
     .product-image--collage {
         grid-template-columns: 1fr;
