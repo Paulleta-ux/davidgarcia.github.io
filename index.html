@@ -6,15 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO -->
-    <title data-i18n="meta.title">Portfolio de David García | Diseñador Interactivo UX/UI</title>
-    <meta name="description" data-i18n-attr="content:meta.description" content="David García Murcia es Diseñador Interactivo en Bogotá, Colombia, con formación en UX Research, UX Strategy y UI Design. Ha trabajado en museos interactivos, proyectos culturales, experiencias de cambio social y e-commerce, aplicando investigación con usuarios, arquitectura de información, usabilidad y diseño responsive para resolver problemas reales de negocio y experiencia.">
+    <title data-i18n="meta.title">David García | Product Designer &amp; UX Researcher en Bogotá</title>
+    <meta name="description" data-i18n-attr="content:meta.description" content="David García Murcia es Product Designer junior con base en UX Research, en Bogotá, Colombia. Diseña productos digitales de la investigación con usuarios al prototipo y a producción: e-commerce, apps de realidad aumentada, videojuegos inclusivos y estrategia digital.">
 
     <!-- Open Graph -->
-    <meta property="og:title" data-i18n-attr="content:meta.title" content="Portfolio de David García | Diseñador Interactivo UX/UI">
-    <meta property="og:description" data-i18n-attr="content:meta.ogDescription" content="UX Research, UX Strategy y UI aplicado a experiencias digitales, museos interactivos y e-commerce.">
+    <meta property="og:title" data-i18n-attr="content:meta.title" content="David García | Product Designer &amp; UX Researcher en Bogotá">
+    <meta property="og:description" data-i18n-attr="content:meta.ogDescription" content="Casos de estudio de Product Design y UX Research: museos interactivos, inclusión, co-diseño y e-commerce con resultados medibles.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://paulleta-ux.github.io/davidgarcia.github.io/">
-    <meta property="og:image" content="https://paulleta-ux.github.io/davidgarcia.github.io/images/preview.jpg">
+    <meta property="og:image" content="https://paulleta-ux.github.io/davidgarcia.github.io/images/previewV2.jpg">
     <meta property="og:locale" data-i18n-attr="content:meta.locale" content="es_CO">
 
     <!-- Fonts -->
@@ -38,6 +38,7 @@
                 <div class="logo">David Garcia</div>
                 <ul class="nav-menu">
                     <li><a href="index.html" data-i18n="nav.home">Inicio</a></li>
+                    <li><a href="#portafolio" data-i18n="nav.work">Proyectos</a></li>
                     <li><a href="about.html" data-i18n="nav.about">Acerca de Mí</a></li>
                 </ul>
             </nav>
@@ -46,7 +47,7 @@
 
     <!-- =============================================
          HERO
-         Columna izquierda: imagen | Columna derecha: texto
+         Columna izquierda: imagen | Columna derecha: propuesta de valor
          ============================================= -->
     <section class="hero" id="inicio">
         <div class="container">
@@ -54,28 +55,65 @@
 
                 <!-- Imagen (izquierda) -->
                 <div class="hero-tw-image">
-                    <img
-                        src="images/fotopPerfil.jpeg"
-                        alt="David García, Diseñador Interactivo especializado en UX y UI"
-                        data-i18n-attr="alt:hero.imgAlt"
-                        loading="eager">
+                    <div class="hero-photo">
+                        <img
+                            src="images/fotopPerfil.jpeg"
+                            alt="David García, Product Designer y UX Researcher"
+                            data-i18n-attr="alt:hero.imgAlt"
+                            loading="eager">
+                        <span class="hero-float hero-float--now">
+                            <span class="hero-float-label" data-i18n="hero.nowLabel">Actualmente</span>
+                            <span class="hero-float-value" data-i18n="hero.nowValue">Product Designer &amp; UX Researcher · IMEK</span>
+                        </span>
+                        <span class="hero-float hero-float--award">
+                            <span class="hero-float-label" data-i18n="hero.awardLabel">Ganador</span>
+                            <span class="hero-float-value" data-i18n="hero.awardValue">Hackatón IDARTES × Utadeo</span>
+                        </span>
+                    </div>
                 </div>
 
-                <!-- Texto animado (derecha) -->
+                <!-- Texto (derecha) -->
                 <div class="hero-tw-text">
-                    <span class="hero-eyebrow">Bogotá, Colombia</span>
+                    <span class="hero-status">
+                        <span class="hero-status-dot" aria-hidden="true"></span>
+                        <span data-i18n="hero.status">Disponible · Bogotá, Colombia · Remoto o híbrido</span>
+                    </span>
 
-                    <h1 class="hero-tw-heading" id="tw-heading" aria-label="Empiezo por entender." data-i18n-attr="aria-label:hero.h1Aria"></h1>
-                    <p class="hero-tw-description" data-i18n-html="hero.desc">Entender es mi forma de <span class="highlight-underline">reducir la incertidumbre</span>. Investigo comportamientos y transformo hallazgos en decisiones de diseño con impacto real.</p>
+                    <p class="hero-role">Product Designer · UX Research</p>
 
-                    <a
-                        href="files/David_Garcia_ProductDesigner.pdf"
-                        class="btn btn-primary hero-tw-btn"
-                        download="David-Garcia-CV.pdf"
-                        aria-label="Descargar hoja de vida de David García en PDF"
-                        data-i18n="hero.cv"
-                        data-i18n-attr="aria-label:hero.cvAria;href:hero.cvHref;download:hero.cvDownload">Descargar CV
-                    </a>
+                    <h1 class="hero-tw-heading" id="hero-heading">
+                        <span data-i18n="hero.h1a">Diseño productos digitales que</span>
+                        <span class="hero-rotator" aria-hidden="true"><span class="hero-rotator-word" id="hero-rotator">se entienden.</span></span>
+                        <span class="sr-only" data-i18n="hero.h1sr">se entienden, se usan y generan resultados.</span>
+                    </h1>
+
+                    <p class="hero-tw-description" data-i18n-html="hero.desc">Empiezo por entender a las personas y <span class="highlight-underline">termino midiendo el impacto</span>. Llevo cada producto de la entrevista con usuarios al prototipo y a producción.</p>
+
+                    <ul class="hero-stats" aria-label="Resultados destacados" data-i18n-attr="aria-label:hero.statsAria">
+                        <li class="hero-stat">
+                            <span class="hero-stat-num">+30 %</span>
+                            <span class="hero-stat-label" data-i18n="hero.stat1">en ventas tras rediseñar la compra</span>
+                        </li>
+                        <li class="hero-stat">
+                            <span class="hero-stat-num">+25 %</span>
+                            <span class="hero-stat-label" data-i18n="hero.stat2">clics orgánicos con optimización UX + SEO</span>
+                        </li>
+                        <li class="hero-stat">
+                            <span class="hero-stat-num">26</span>
+                            <span class="hero-stat-label" data-i18n="hero.stat3">talleres de co-diseño con escolares</span>
+                        </li>
+                    </ul>
+
+                    <div class="hero-ctas">
+                        <a href="#portafolio" class="btn btn-primary hero-tw-btn" data-i18n="hero.ctaWork">Ver casos de estudio</a>
+                        <a
+                            href="files/David_Garcia_ProductDesigner.pdf"
+                            class="btn btn-secondary"
+                            download="David-Garcia-CV.pdf"
+                            aria-label="Descargar hoja de vida de David García en PDF"
+                            data-i18n="hero.cv"
+                            data-i18n-attr="aria-label:hero.cvAria;href:hero.cvHref;download:hero.cvDownload">Descargar CV</a>
+                    </div>
                 </div>
 
             </div>
@@ -83,128 +121,257 @@
     </section>
 
     <!-- =============================================
-         PORTAFOLIO — Desktop: Tabs | Mobile: Scroll
+         LOGROS — Marquee minimalista
+         ============================================= -->
+    <section class="achievements" aria-labelledby="ach-title">
+        <div class="container">
+            <h2 class="ach-title" id="ach-title" data-i18n="ach.titleHome">Logros y reconocimientos</h2>
+        </div>
+        <div class="ach-marquee">
+            <div class="ach-track">
+                <ul class="ach-group">
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1pKdh1BMxQfVl0jfmaJhI3P_1iaJmItyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span data-i18n="ach.1">Ganador · Hackatón An-Arqueología — IDARTES × Utadeo</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1wZ-W1u8xZv_hsSCiPlJWwgZhGf-FbdgZ/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.2">Ponente · 3er Encuentro de Semilleros — U. de La Sabana</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/drive/folders/1nneEbT5jXPfFHSzJIRhqbzSg-5shQc7o?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="ach.3">Exhibición · XXIII Festival Internacional de la Imagen</span></a></li>
+                    <li><a class="ach-item" href="https://www.linkedin.com/feed/update/urn:li:activity:7494149483014934528/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.4">Charla · Semillero DIN'T — Universidad Nacional</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1Re0czP69kzztN4NdVdjjh449MAiiH8-L/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.5">Ponente · IX Encuentro de Semilleros — Utadeo</span></a></li>
+                    <li><a class="ach-item" href="https://www.linkedin.com/feed/update/urn:li:activity:7455734444193230848/" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span data-i18n="ach.6">Reto ganado · Networking La CoCreadora × Vínculo</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1PKQUgThVxiYAjClqVkwtdhWbK_eP9oEb/view?usp=sharing" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.7">Microtaller de diseño 3D para la web — MediaLab Idartes</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1k8JPSqwcUOw1vz2g_VR1ObTRLH1Lb8Fw/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.8">Curso de UI Design — uxcristopher</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1T5qtrSBEyOvoJc3JzueECZ-g0QzC_qTB/view?usp=drive_link" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.9">Arquitectura de la Información — Tech Academy</span></a></li>
+                </ul>
+                <ul class="ach-group" aria-hidden="true">
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1pKdh1BMxQfVl0jfmaJhI3P_1iaJmItyQ/view?usp=sharing" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span data-i18n="ach.1">Ganador · Hackatón An-Arqueología — IDARTES × Utadeo</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1wZ-W1u8xZv_hsSCiPlJWwgZhGf-FbdgZ/view?usp=sharing" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.2">Ponente · 3er Encuentro de Semilleros — U. de La Sabana</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/drive/folders/1nneEbT5jXPfFHSzJIRhqbzSg-5shQc7o?usp=sharing" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg><span data-i18n="ach.3">Exhibición · XXIII Festival Internacional de la Imagen</span></a></li>
+                    <li><a class="ach-item" href="https://www.linkedin.com/feed/update/urn:li:activity:7494149483014934528/" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.4">Charla · Semillero DIN'T — Universidad Nacional</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1Re0czP69kzztN4NdVdjjh449MAiiH8-L/view?usp=sharing" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span data-i18n="ach.5">Ponente · IX Encuentro de Semilleros — Utadeo</span></a></li>
+                    <li><a class="ach-item" href="https://www.linkedin.com/feed/update/urn:li:activity:7455734444193230848/" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><path d="M12 3l2.6 5.6 6.1.7-4.5 4.2 1.2 6L12 16.6 6.6 19.5l1.2-6L3.3 9.3l6.1-.7z"/></svg><span data-i18n="ach.6">Reto ganado · Networking La CoCreadora × Vínculo</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1PKQUgThVxiYAjClqVkwtdhWbK_eP9oEb/view?usp=sharing" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.7">Microtaller de diseño 3D para la web — MediaLab Idartes</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1k8JPSqwcUOw1vz2g_VR1ObTRLH1Lb8Fw/view?usp=drive_link" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.8">Curso de UI Design — uxcristopher</span></a></li>
+                    <li><a class="ach-item" href="https://drive.google.com/file/d/1T5qtrSBEyOvoJc3JzueECZ-g0QzC_qTB/view?usp=drive_link" target="_blank" rel="noopener noreferrer" tabindex="-1"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="9" r="5"/><path d="M9 13.5 8 21l4-2 4 2-1-7.5"/></svg><span data-i18n="ach.9">Arquitectura de la Información — Tech Academy</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============================================
+         PROYECTOS — Desktop: Tabs | Mobile: Scroll
          ============================================= -->
     <section class="portfolio-tabs" id="portafolio">
         <div class="container">
-            <h2 class="section-title reveal-up" data-i18n="portfolio.title">Portafolio</h2>
+            <h2 class="section-title reveal-up" data-i18n="portfolio.title">Proyectos</h2>
+            <p class="section-lead reveal-up" data-i18n="portfolio.lead">Casos con proceso completo, proyectos web con resultados medibles y exploraciones personales.</p>
 
             <!-- Tab Nav — solo visible en desktop (≥769px) -->
             <div class="tabs-nav" role="tablist" aria-label="Categorías del portafolio" data-i18n-attr="aria-label:portfolio.tablistAria">
                 <button class="tab-btn active" role="tab" aria-selected="true"
                         aria-controls="panel-design" id="tab-design" data-tab="design">
-                    Product Design
+                    <span data-i18n="tab.cases">Casos de estudio</span> <span class="tab-count">5</span>
                 </button>
                 <button class="tab-btn" role="tab" aria-selected="false"
                         aria-controls="panel-web" id="tab-web" data-tab="web">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-                         stroke="currentColor" stroke-width="1.5" aria-hidden="true"
-                         style="display:inline;vertical-align:middle;margin-right:6px;opacity:0.5">
-                        <path d="M12 2a10 10 0 1 0 0 20A10 10 0 0 0 12 2z"/>
-                        <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-                    </svg>
-                    <span data-i18n="tab.web">Experiencias Web</span>
+                    <span data-i18n="tab.web">Web &amp; E-commerce</span> <span class="tab-count">3</span>
                 </button>
                 <button class="tab-btn" role="tab" aria-selected="false"
                         aria-controls="panel-playground" id="tab-playground" data-tab="playground">
-                    PlayGround
+                    <span data-i18n="tab.lab">Laboratorio</span> <span class="tab-count">7</span>
                 </button>
             </div>
 
-            <!-- Panel: Product Design -->
+            <!-- Panel: Casos de estudio -->
             <div class="tab-panel active" id="panel-design" role="tabpanel" aria-labelledby="tab-design">
 
-                <div class="mobile-section-label" aria-hidden="true">Product Design</div>
+                <div class="mobile-section-label" aria-hidden="true" data-i18n="tab.cases">Casos de estudio</div>
 
-                <div class="product-item reveal-up">
+                <!-- IMEK -->
+                <article class="product-item reveal-up">
+                    <div class="product-content">
+                        <div class="product-image">
+                            <img src="images/imek-estrategia.webp" alt="IMEK - Estrategia digital y rediseño" data-i18n-attr="alt:imek.imgAlt" loading="lazy">
+                            <div class="product-image-tag" data-i18n="cat.strategy">Estrategia UX</div>
+                        </div>
+                        <div class="product-text">
+                            <p class="project-meta">
+                                <span class="project-status" data-i18n="meta.ongoing">En curso</span>
+                                <span data-i18n="imek.year">2026 – hoy</span>
+                                <span>Product Designer &amp; UX Researcher</span>
+                            </p>
+                            <h3 data-i18n="imek.h3">Reorientar un sitio hacia lo que de verdad aporta valor</h3>
+                            <h4>IMEK — Centro de Investigación en Mercadeo &amp; Desarrollo</h4>
+                            <p data-i18n="imek.p">El sitio estaba orientado a pedir donaciones, pero el valor principal de la organización está en su consultoría. Con una auditoría UX/UI y SEO, entrevistas a profundidad con investigadores (JTBD) y Value Proposition Canvas, reorienté la estrategia digital y hoy lidero el rediseño hacia un MVP.</p>
+                            <p class="project-result"><strong data-i18n="label.result">Resultado:</strong> <span data-i18n="imek.result">estrategia digital enfocada en generar oportunidades de consultoría; analítica con GA4, Search Console y Clarity; MVP planificado con wireframes, prototipo y pruebas de usabilidad.</span></p>
+                            <ul class="tag-list">
+                                <li>UX Research</li>
+                                <li data-i18n="tag.strategy">Estrategia UX</li>
+                                <li data-i18n="tag.analytics">Analítica</li>
+                            </ul>
+                            <div class="product-buttons">
+                                <a href="https://imek.org.co/"
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewSite">Ver sitio</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <div class="divider"></div>
+
+                <!-- Maloka -->
+                <article class="product-item reveal-up">
                     <div class="product-content reverse">
                         <div class="product-image">
                             <img src="images/Maloka.png" alt="Maloka - Experiencia Extendida" data-i18n-attr="alt:maloka.imgAlt" loading="lazy">
-                            <div class="product-image-tag">UX Research · AR</div>
+                            <div class="product-image-tag" data-i18n="cat.research">UX Research</div>
                         </div>
                         <div class="product-text">
-                            <h3 data-i18n="maloka.h3">Experiencia phygital para familias</h3>
-                            <h4 data-i18n="maloka.h4">Experiencia Extendida</h4>
-                            <p data-i18n="maloka.p">Team Leader en colaboración con Maloka, lideré el diseño de una experiencia extendida para familias (folleto físico y app con realidad aumentada), a cargo de la investigación con usuarios, UI, prototipado y gestión de stakeholders.</p>
+                            <p class="project-meta">
+                                <span>2024</span>
+                                <span>Team Lead</span>
+                                <span data-i18n="maloka.team">Equipo de 4</span>
+                            </p>
+                            <h3 data-i18n="maloka.h3">Experiencia phygital para familias en un museo</h3>
+                            <h4 data-i18n="maloka.h4">Universo Maloka — folleto + app de realidad aumentada</h4>
+                            <p data-i18n="maloka.p">En colaboración con el museo Maloka, lideré el diseño de una experiencia extendida para familias: un folleto físico conectado a una app de realidad aumentada. Estuve a cargo de la investigación con usuarios, la UI, el prototipado y la relación con stakeholders.</p>
+                            <p class="project-result"><strong data-i18n="label.result">Resultado:</strong> <span data-i18n="maloka.result">las pruebas con expertos UX y familias revelaron 3 problemas críticos (contexto inicial, conexión con la sala y mapa) que convertí en mejoras.</span></p>
+                            <ul class="tag-list">
+                                <li>UX Research</li>
+                                <li data-i18n="tag.prototyping">Prototipado</li>
+                                <li data-i18n="tag.ar">Realidad aumentada</li>
+                            </ul>
                             <div class="product-buttons">
                                 <a href="https://www.behance.net/gallery/225202727/Universo-Maloka-Caso-de-estudio-Experiencia-extendida"
-                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewProject">Ver Proyecto</a>
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewCase">Ver caso de estudio</a>
                                 <a href="https://grupoland.itch.io/universo-maloka"
-                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewApp">Ver Aplicación</a>
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewApp">Ver aplicación</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <div class="divider"></div>
 
-                <div class="product-item reveal-up">
+                <!-- Neuronautas -->
+                <article class="product-item reveal-up">
                     <div class="product-content">
                         <div class="product-image">
                             <img src="images/neuronautas-game.png" alt="Neuronautas - Videojuego" data-i18n-attr="alt:neuro.imgAlt" loading="lazy">
-                            <div class="product-image-tag" data-i18n="neuro.tag">UX Strategy · Inclusión</div>
+                            <div class="product-image-tag" data-i18n="cat.inclusion">Accesibilidad</div>
                         </div>
                         <div class="product-text">
-                            <h3 data-i18n="neuro.h3">Videojuego para personas dentro del espectro autista</h3>
-                            <h4 data-i18n="neuro.h4">Videojuego</h4>
-                            <p data-i18n="neuro.p">Lideré el desarrollo de un videojuego accesible y sensorialmente amigable para personas dentro del espectro autista, a cargo de la estrategia UX, investigación y diseño de interacción, con enfoque en inclusión y visibilización de vivencias neurodivergentes.</p>
+                            <p class="project-meta">
+                                <span>2023</span>
+                                <span>Product Manager &amp; Game Designer</span>
+                            </p>
+                            <h3 data-i18n="neuro.h3">Un videojuego seguro para personas dentro del espectro autista</h3>
+                            <h4 data-i18n="neuro.h4">Neuronautas — videojuego</h4>
+                            <p data-i18n="neuro.p">Lideré producto, investigación y diseño de interacción de un videojuego accesible y sensorialmente amigable, pensado para visibilizar vivencias neurodivergentes, hasta publicar un prototipo jugable.</p>
+                            <p class="project-result"><strong data-i18n="label.result">Resultado:</strong> <span data-i18n="neuro.result">un usuario dentro del espectro lo validó como un espacio seguro para explorar el riesgo.</span></p>
+                            <ul class="tag-list">
+                                <li data-i18n="tag.uxstrategy">Estrategia UX</li>
+                                <li data-i18n="tag.accessibility">Accesibilidad</li>
+                                <li data-i18n="tag.interaction">Diseño de interacción</li>
+                            </ul>
                             <div class="product-buttons">
                                 <a href="https://www.behance.net/gallery/223178539/Neuronautas"
-                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewProject">Ver Proyecto</a>
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewCase">Ver caso de estudio</a>
                                 <a href="https://paulleta.itch.io/neuronautas"
-                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewApp">Ver Aplicación</a>
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.play">Jugar prototipo</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <div class="divider"></div>
 
-                <div class="product-item reveal-up">
+                <!-- No hay dolores menores -->
+                <article class="product-item reveal-up">
                     <div class="product-content reverse">
                         <div class="product-image">
-                            <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor" loading="lazy">
-                            <div class="product-image-tag" data-i18n="mitos.tag">Diseño Especulativo</div>
+                            <img src="images/no-hay-dolores-menores.webp" alt="No hay dolores menores - Co-diseño con escolares" data-i18n-attr="alt:ndm.imgAlt" loading="lazy">
+                            <div class="product-image-tag" data-i18n="cat.codesign">Co-diseño</div>
                         </div>
                         <div class="product-text">
-                            <h3 data-i18n="mitos.h3">Diseño Especulativo sobre Saberes Ancestrales</h3>
-                            <h4 data-i18n="mitos.h4">Experiencia extendida - Ganador Hackatón con IDARTES</h4>
-                            <p data-i18n="mitos.p">Líder de diseño en proyecto especulativo sobre saberes ancestrales, coordiné el proceso completo desde la investigación con antropólogos hasta el desarrollo de modelos conceptuales, infografías y guía de estilos, destacando habilidades en investigación y diseño de productos digitales.</p>
+                            <p class="project-meta">
+                                <span>2023 – 2025</span>
+                                <span data-i18n="ndm.role">Investigador · SemillaLab, Utadeo</span>
+                            </p>
+                            <h3 data-i18n="ndm.h3">Co-diseño con escolares para hablar de salud mental</h3>
+                            <h4 data-i18n="ndm.h4">No hay dolores menores — proyecto transmedia</h4>
+                            <p data-i18n="ndm.p">Codiseñé metodologías participativas sobre salud mental y narrativas visuales con comunidades escolares de Ciudad Bolívar, y las convertí en una guía replicable para otros facilitadores.</p>
+                            <p class="project-result"><strong data-i18n="label.result">Resultado:</strong> <span data-i18n="ndm.result">26 talleres realizados; proyecto presentado en el Festival Internacional de la Imagen 2024 y en dos encuentros de semilleros de investigación.</span></p>
+                            <ul class="tag-list">
+                                <li data-i18n="tag.codesign">Co-diseño</li>
+                                <li data-i18n="tag.participatory">Investigación participativa</li>
+                                <li data-i18n="tag.narratives">Narrativas visuales</li>
+                            </ul>
                             <div class="product-buttons">
-                                <a href="https://www.behance.net/gallery/219527671/Mitos-del-Hermano-Mayor-Ganador-Hackaton"
-                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewProject">Ver Proyecto</a>
-                                <a href="https://paulleta.itch.io/mitos-del-hermano-mayor"
-                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewApp">Ver Aplicación</a>
+                                <a href="https://nohaydoloresmenores.org/"
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewProjectSite">Ver proyecto</a>
                             </div>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <div class="divider"></div>
+
+                <!-- Mitos del Hermano Mayor -->
+                <article class="product-item reveal-up">
+                    <div class="product-content">
+                        <div class="product-image">
+                            <img src="images/mitos-hermano-mayor.png" alt="Mitos del Hermano Mayor" data-i18n-attr="alt:mitos.imgAlt" loading="lazy">
+                            <div class="product-image-tag" data-i18n="cat.speculative">Diseño especulativo</div>
+                        </div>
+                        <div class="product-text">
+                            <p class="project-meta">
+                                <span>2023</span>
+                                <span data-i18n="mitos.role">Líder de diseño</span>
+                                <span class="project-status project-status--award" data-i18n="meta.winner">Ganador</span>
+                            </p>
+                            <h3 data-i18n="mitos.h3">Diseño especulativo sobre saberes ancestrales</h3>
+                            <h4 data-i18n="mitos.h4">Mitos del Hermano Mayor — experiencia extendida</h4>
+                            <p data-i18n="mitos.p">Coordiné el proceso completo, desde la investigación con antropólogos hasta los modelos conceptuales, las infografías y la guía de estilos de una experiencia sobre saberes ancestrales.</p>
+                            <p class="project-result"><strong data-i18n="label.result">Resultado:</strong> <span data-i18n="mitos.result">proyecto ganador de la Hackatón del Coloquio de An-Arqueología (IDARTES × Utadeo).</span></p>
+                            <ul class="tag-list">
+                                <li data-i18n="tag.speculative">Diseño especulativo</li>
+                                <li data-i18n="tag.expertResearch">Research con expertos</li>
+                                <li data-i18n="tag.visualSystems">Sistemas visuales</li>
+                            </ul>
+                            <div class="product-buttons">
+                                <a href="https://www.behance.net/gallery/219527671/Mitos-del-Hermano-Mayor-Ganador-Hackaton"
+                                   class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewCase">Ver caso de estudio</a>
+                                <a href="https://paulleta.itch.io/mitos-del-hermano-mayor"
+                                   class="btn btn-secondary" target="_blank" rel="noopener noreferrer" data-i18n="btn.viewExperience">Ver experiencia</a>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
             </div><!-- /panel-design -->
 
-            <!-- Panel: Páginas Web -->
+            <!-- Panel: Web & E-commerce -->
             <div class="tab-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web">
 
-                <div class="mobile-section-label" aria-hidden="true" data-i18n="label.web">Experiencias Web</div>
+                <div class="mobile-section-label" aria-hidden="true" data-i18n="tab.web">Web &amp; E-commerce</div>
+
+                <p class="panel-intro" data-i18n="web.intro">Tres e-commerce diseñados en BoteroMedia (2025), de la auditoría al lanzamiento.</p>
 
                 <div class="projects-grid">
 
-                    <div class="project-card-link reveal-up">
+                    <article class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Backyard&Pergolas (3).png" alt="Backyard & Pergolas" loading="lazy">
+                                <img src="images/Backyard&amp;Pergolas (3).png" alt="Backyard & Pergolas" loading="lazy">
                                 <div class="project-overlay">
-                                    <h3 data-i18n="backyard.overlay">E-commerce de remodelaciones de casas</h3>
-                                    <p>Backyard & Pergolas</p>
+                                    <h3 data-i18n="backyard.overlay">E-commerce de remodelación de casas</h3>
+                                    <p>Backyard &amp; Pergolas</p>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag" data-i18n="backyard.tag">UI · Marca · Shopify</span>
-                                <h3 data-i18n="backyard.h3">Repensando el e-commerce</h3>
-                                <p data-i18n="backyard.p">Rediseño de la plataforma basado en el manual de marca, optimizando la coherencia visual y el atractivo de la interfaz.</p>
-                                <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
+                                <span class="project-tag">UI Design · Shopify</span>
+                                <h3 data-i18n="backyard.h3">Repensando las convenciones del e-commerce</h3>
+                                <p data-i18n="backyard.p">Auditoría y rediseño hacia una experiencia minimalista, sin promociones invasivas y coherente con el manual de marca.</p>
+                                <p class="card-result" data-i18n="backyard.result">De la auditoría al lanzamiento</p>
+                                <div class="card-links">
                                     <a href="https://www.behance.net/gallery/255835631/Repensando-las-convenciones-del-e-commerce"
                                        target="_blank" rel="noopener noreferrer" class="pg-card-link-label" data-i18n="link.viewCase">Ver caso →</a>
                                     <a href="https://backyardandpergolas.com/"
@@ -212,9 +379,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-card-link reveal-up">
+                    <article class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
                                 <img src="images/magnus-barber.png" alt="Magnus Barber Supply" loading="lazy">
@@ -224,10 +391,11 @@
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">Shopify · UX · SEO</span>
+                                <span class="project-tag">UX · SEO · Shopify</span>
                                 <h3 data-i18n="magnus.h3">Optimización UX + SEO</h3>
-                                <p data-i18n="magnus.p">Realicé el rediseño de la página mediante iteraciones centradas en la experiencia del usuario, con el objetivo de optimizar la conversión y las ventas.</p>
-                                <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
+                                <p data-i18n="magnus.p">Rediseño por iteraciones centradas en la experiencia de compra, junto con la estrategia SEO del sitio.</p>
+                                <p class="card-result" data-i18n="magnus.result">+25 % clics orgánicos · +15 % CTR</p>
+                                <div class="card-links">
                                     <a href="https://www.behance.net/gallery/244301871/Shopify-Barberia-Optimizacion-UX-SEO"
                                        target="_blank" rel="noopener noreferrer" class="pg-card-link-label" data-i18n="link.viewCase">Ver caso →</a>
                                     <a href="https://magnussupply.com/"
@@ -235,22 +403,23 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-card-link reveal-up">
+                    <article class="project-card-link reveal-up">
                         <div class="project-card">
                             <div class="project-image">
-                                <img src="images/Portada.png" alt="American U.S Regatta" loading="lazy">
+                                <img src="images/Portada.png" alt="American U.S. Regatta" loading="lazy">
                                 <div class="project-overlay">
-                                    <h3 data-i18n="regatta.overlay">E-commerce de ropa para hombres</h3>
-                                    <p>American U.S Regatta</p>
+                                    <h3 data-i18n="regatta.overlay">E-commerce de ropa para hombre</h3>
+                                    <p>American U.S. Regatta</p>
                                 </div>
                             </div>
                             <div class="project-info">
-                                <span class="project-tag">WordPress → Shopify</span>
-                                <h3 data-i18n="regatta.h3">Migración WooCommerce a Shopify</h3>
-                                <p data-i18n="regatta.p">Migración de la página de WordPress a la plataforma Shopify, incluyendo la estructura y el diseño completo.</p>
-                                <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
+                                <span class="project-tag" data-i18n="regatta.tag">Migración · Shopify</span>
+                                <h3 data-i18n="regatta.h3">Migración de WooCommerce a Shopify</h3>
+                                <p data-i18n="regatta.p">Migré la tienda a una nueva plataforma con estructura y diseño completos, centrados en una compra más clara.</p>
+                                <p class="card-result" data-i18n="regatta.result">+30 % en ventas</p>
+                                <div class="card-links">
                                     <a href="https://www.behance.net/gallery/248901655/Migracion-WooCommerce-a-Shopify"
                                        target="_blank" rel="noopener noreferrer" class="pg-card-link-label" data-i18n="link.viewCase">Ver caso →</a>
                                     <a href="https://american-us-regatta.myshopify.com"
@@ -258,15 +427,17 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
                 </div>
             </div><!-- /panel-web -->
 
-            <!-- Panel: PlayGround -->
+            <!-- Panel: Laboratorio -->
             <div class="tab-panel" id="panel-playground" role="tabpanel" aria-labelledby="tab-playground">
 
-                <div class="mobile-section-label" aria-hidden="true">PlayGround</div>
+                <div class="mobile-section-label" aria-hidden="true" data-i18n="tab.lab">Laboratorio</div>
+
+                <p class="panel-intro" data-i18n="lab.intro">Prototipos, charlas y exploraciones que hago por fuera de los proyectos.</p>
 
                 <div class="playground-feed">
 
@@ -277,6 +448,7 @@
                             <span class="pg-card-featured-badge" data-i18n="pg.featured">Destacado</span>
                         </div>
                         <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.talk">Charla</span>
                             <span class="pg-card-meta" data-date="2026-08-18">LinkedIn</span>
                             <p class="pg-card-title" data-i18n="pg.talk.title">Mi primera charla: "Cómo conseguir experiencia mientras llega la primera experiencia"</p>
                             <p class="pg-card-desc" data-i18n="pg.talk.desc">Dicté mi primera charla para el semillero DIN'T de la Facultad de Artes – Universidad Nacional de Colombia, contando de forma personal mi camino profesional como diseñador Interactivo y UX.</p>
@@ -299,28 +471,16 @@
                             </video>
                         </div>
                         <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.prototype">Prototipo</span>
                             <span class="pg-card-meta" data-date="2026-07-03">LinkedIn</span>
                             <p class="pg-card-title" data-i18n="pg.album.title">Prototipo Realidad Aumentada — Álbum FIFA World Cup 2026™</p>
                             <p class="pg-card-desc" data-i18n="pg.album.desc">Modelé jugadores con Hi3D, los animé con Mixamo y construí una experiencia de realidad aumentada con A-Frame para llevar la experiencia de coleccionar el álbum Panini mucho más allá de simplemente pegar láminas.</p>
-                            <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
+                            <div class="card-links">
                                 <a href="https://www.linkedin.com/feed/update/urn:li:ugcPost:7478868953130414080/" target="_blank" rel="noopener noreferrer" class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</a>
                                 <a href="https://paulleta-ux.github.io/LaminasRealidadAumentada.github.io/" target="_blank" rel="noopener noreferrer" class="pg-card-link-label" data-i18n="link.viewExperience">Ver experiencia →</a>
                             </div>
                         </div>
                     </div>
-
-                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7487688860517306368/"
-                       target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
-                        <div class="pg-card-image">
-                            <img src="images/ControlDeMasas.webp" alt="Crowd Control - Behavioral Design" loading="lazy">
-                        </div>
-                        <div class="pg-card-body">
-                            <span class="pg-card-meta" data-date="2026-07-28">LinkedIn</span>
-                            <p class="pg-card-title" data-i18n="pg.crowd.title">Behavioral Design y el juego del semáforo</p>
-                            <p class="pg-card-desc" data-i18n="pg.crowd.desc">Una reflexión sobre Crowd Control (Control de Masas), un programa que rediseñaba momentos cotidianos como la espera en un semáforo, convirtiéndola en una experiencia gamificada. No se reduce el tiempo de espera real, pero se transforma la percepción del usuario y se fomentan mejores comportamientos.</p>
-                            <span class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</span>
-                        </div>
-                    </a>
 
                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7470981564949155840/"
                        target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
@@ -328,12 +488,33 @@
                             <img src="images/billetera.webp" alt="Aplicación de Finanzas personales" data-i18n-attr="alt:pg.finance.alt" loading="lazy">
                         </div>
                         <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.prototypeAI">Prototipo con IA</span>
                             <span class="pg-card-meta" data-date="2026-06-11">LinkedIn</span>
-                            <p class="pg-card-title" data-i18n="pg.finance.title">Aplicación de Finanzas personales</p>
+                            <p class="pg-card-title" data-i18n="pg.finance.title">Aplicación de finanzas personales</p>
                             <p class="pg-card-desc" data-i18n="pg.finance.desc">Aplicación de finanzas personales que simplifica el registro de gastos mediante IA, comandos por voz y reconocimiento automático de facturas a partir de fotografías.</p>
                             <span class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</span>
                         </div>
                     </a>
+
+                    <div class="pg-card reveal-up">
+                        <div class="pg-card-image">
+                            <img src="images/Principito.webp" alt="Interactive Story Map El Principito" loading="lazy">
+                        </div>
+                        <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.prototype">Prototipo</span>
+                            <span class="pg-card-meta" data-date="2026-03-08">LinkedIn</span>
+                            <p class="pg-card-title">Interactive Story Map — El Principito</p>
+                            <p class="pg-card-desc" data-i18n="pg.principito.desc">Experiencia interactiva creada para el #FigmaMakeathon. Diseñada para verse en computador.</p>
+                            <div class="card-links">
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433534302413434880/"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</a>
+                                <a href="https://user-ritzy-73947944.figma.site/"
+                                   target="_blank" rel="noopener noreferrer"
+                                   class="pg-card-link-label" data-i18n="link.viewExperience">Ver experiencia →</a>
+                            </div>
+                        </div>
+                    </div>
 
                     <a href="https://www.linkedin.com/feed/update/urn:li:activity:7459611233084796928/"
                        target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
@@ -341,9 +522,24 @@
                             <img src="images/a-frame.webp" alt="Jardín de Memoria - A-Frame" data-i18n-attr="alt:pg.aframe.alt" loading="lazy">
                         </div>
                         <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.workshop">Taller</span>
                             <span class="pg-card-meta" data-date="2026-05-08">LinkedIn</span>
                             <p class="pg-card-title" data-i18n="pg.aframe.title">Jardín de Memoria de Espacios Cotidianos</p>
                             <p class="pg-card-desc" data-i18n="pg.aframe.desc">Participé en el Microtaller organizado por IDARTES y la Cinemateca Distrital, explorando ambientes interactivos con A-Frame en un proyecto colaborativo.</p>
+                            <span class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</span>
+                        </div>
+                    </a>
+
+                    <a href="https://www.linkedin.com/feed/update/urn:li:activity:7487688860517306368/"
+                       target="_blank" rel="noopener noreferrer" class="pg-card reveal-up">
+                        <div class="pg-card-image">
+                            <img src="images/ControlDeMasas.webp" alt="Crowd Control - Behavioral Design" loading="lazy">
+                        </div>
+                        <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.reflection">Reflexión</span>
+                            <span class="pg-card-meta" data-date="2026-07-28">LinkedIn</span>
+                            <p class="pg-card-title" data-i18n="pg.crowd.title">Behavioral Design y el juego del semáforo</p>
+                            <p class="pg-card-desc" data-i18n="pg.crowd.desc">Una reflexión sobre Crowd Control (Control de Masas), un programa que rediseñaba momentos cotidianos como la espera en un semáforo, convirtiéndola en una experiencia gamificada. No se reduce el tiempo de espera real, pero se transforma la percepción del usuario y se fomentan mejores comportamientos.</p>
                             <span class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</span>
                         </div>
                     </a>
@@ -354,31 +550,13 @@
                             <img src="images/NetworkingLaCoCreadora.webp" alt="Networking La CoCreadora" loading="lazy">
                         </div>
                         <div class="pg-card-body">
+                            <span class="pg-card-kind" data-i18n="kind.event">Evento</span>
                             <span class="pg-card-meta" data-date="2026-04-24">LinkedIn</span>
                             <p class="pg-card-title" data-i18n="pg.network.title">Primer evento de networking con La CoCreadora y Vínculo</p>
                             <p class="pg-card-desc" data-i18n="pg.network.desc">Una experiencia muy agradable donde terminé ganando el reto y llevándome el juego de Alinna.</p>
                             <span class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</span>
                         </div>
                     </a>
-
-                    <div class="pg-card reveal-up">
-                        <div class="pg-card-image">
-                            <img src="images/Principito.webp" alt="Interactive Story Map El Principito" loading="lazy">
-                        </div>
-                        <div class="pg-card-body">
-                            <span class="pg-card-meta" data-date="2026-03-08">LinkedIn</span>
-                            <p class="pg-card-title">Interactive Story Map — El Principito</p>
-                            <p class="pg-card-desc" data-i18n="pg.principito.desc">Experiencia interactiva creada para el #FigmaMakeathon. Diseñada para verse en computador.</p>
-                            <div style="display:flex; gap:1.25rem; margin-top:0.2rem; flex-wrap:wrap;">
-                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7433534302413434880/"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="pg-card-link-label" data-i18n="link.viewPost">Ver publicación →</a>
-                                <a href="https://user-ritzy-73947944.figma.site/"
-                                   target="_blank" rel="noopener noreferrer"
-                                   class="pg-card-link-label" data-i18n="link.viewExperience">Ver experiencia →</a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div>
             </div><!-- /panel-playground -->
@@ -402,13 +580,15 @@
                         <span class="skill-tag">UX Research</span>
                         <span class="skill-tag">UX Strategy</span>
                         <span class="skill-tag">UI Design</span>
+                        <span class="skill-tag">Jobs To Be Done</span>
                         <span class="skill-tag">Wireframing</span>
                         <span class="skill-tag" data-i18n="skill.prototyping">Prototipado</span>
                         <span class="skill-tag" data-i18n="skill.usability">Test de Usabilidad</span>
-                        <span class="skill-tag">Atomic Design</span>
-                        <span class="skill-tag">Design Thinking</span>
-                        <span class="skill-tag" data-i18n="skill.responsive">Diseño Responsivo</span>
                         <span class="skill-tag" data-i18n="skill.ia">Arquitectura de Información</span>
+                        <span class="skill-tag">Design Systems</span>
+                        <span class="skill-tag" data-i18n="skill.responsive">Diseño Responsivo</span>
+                        <span class="skill-tag">CRO</span>
+                        <span class="skill-tag">Design Thinking</span>
                     </div>
                 </div>
 
@@ -422,10 +602,10 @@
 
                 <div class="bento-card bento-card--tool reveal-up" style="--delay:0.1s">
                     <div class="tool-icon">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" width="48" height="48" alt="Adobe Illustrator">
+                        <img src="https://cdn.simpleicons.org/googleanalytics" width="48" height="48" alt="Google Analytics 4">
                     </div>
-                    <span class="tool-name">Illustrator</span>
-                    <span class="tool-level" data-i18n="level.intermediate">Intermedio</span>
+                    <span class="tool-name">GA4</span>
+                    <span class="tool-level" data-i18n="level.analytics">Analítica</span>
                 </div>
 
                 <div class="bento-card bento-card--tool reveal-up" style="--delay:0.15s">
@@ -438,10 +618,10 @@
 
                 <div class="bento-card bento-card--tool reveal-up" style="--delay:0.2s">
                     <div class="tool-icon">
-                        <img src="https://cdn.simpleicons.org/wordpress" width="48" height="48" alt="WordPress">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/illustrator/illustrator-plain.svg" width="48" height="48" alt="Adobe Illustrator">
                     </div>
-                    <span class="tool-name">WordPress</span>
-                    <span class="tool-level">CMS</span>
+                    <span class="tool-name">Illustrator</span>
+                    <span class="tool-level" data-i18n="level.intermediate">Intermedio</span>
                 </div>
 
                 <div class="bento-card bento-card--tool bento-card--code reveal-up" style="--delay:0.25s">
@@ -456,12 +636,16 @@
                 <div class="bento-card bento-card--others reveal-up" style="--delay:0.3s">
                     <span class="bento-label" data-i18n="skills.more">Más herramientas</span>
                     <div class="others-list">
+                        <span>FigJam</span>
+                        <span>Maze</span>
+                        <span>Hotjar</span>
+                        <span>Microsoft Clarity</span>
+                        <span>Search Console</span>
+                        <span>Miro</span>
+                        <span>WordPress</span>
                         <span>Adobe Photoshop</span>
-                        <span>Adobe XD</span>
                         <span>Unity</span>
                         <span>Optimal Workshop</span>
-                        <span>Azure DevOps</span>
-                        <span>Bizagi Modeler</span>
                     </div>
                 </div>
 
@@ -476,7 +660,7 @@
         <div class="container">
 
             <div class="footer-cta reveal-up">
-                <p class="footer-cta-label" data-i18n="footer.ctaLabel">¿Tienes un proyecto en mente?</p>
+                <p class="footer-cta-label" data-i18n="footer.ctaLabel">¿Buscas un Product Designer para tu equipo?</p>
                 <h2 class="footer-cta-heading" data-i18n="footer.ctaHeading">Hablemos.</h2>
             </div>
 
@@ -513,7 +697,7 @@
                         </svg>
                         <span>Behance</span>
                     </a>
-                    <a href="https://wa.me/3124688342" target="_blank" rel="noopener noreferrer"
+                    <a href="https://wa.me/573124688342" target="_blank" rel="noopener noreferrer"
                        aria-label="WhatsApp" class="social-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                             <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>

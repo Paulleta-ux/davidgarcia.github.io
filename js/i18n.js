@@ -28,150 +28,168 @@
 
     var DICT = {
         en: {
-
-            /* ---------- Meta / SEO (index) ---------- */
-            "meta.title": "David García's Portfolio | UX/UI Interactive Designer",
-            "meta.description": "David García Murcia is an Interactive Designer based in Bogotá, Colombia, trained in UX Research, UX Strategy and UI Design. He has worked on interactive museums, cultural projects, social change experiences and e-commerce, applying user research, information architecture, usability and responsive design to solve real business and experience problems.",
-            "meta.ogDescription": "UX Research, UX Strategy and UI applied to digital experiences, interactive museums and e-commerce.",
+            "meta.title": "David García | Product Designer & UX Researcher in Bogotá",
+            "meta.description": "David García Murcia is a junior Product Designer grounded in UX Research, based in Bogotá, Colombia. He designs digital products from user research to prototype and production: e-commerce, augmented reality apps, inclusive video games and digital strategy.",
+            "meta.ogDescription": "Product Design and UX Research case studies: interactive museums, inclusion, co-design and e-commerce with measurable results.",
             "meta.locale": "en_US",
-
-            /* ---------- Meta / SEO (about) ---------- */
-            "about.meta.title": "About Me - David Garcia",
-            "about.meta.description": "Learn more about David García Murcia, an interactive designer from Bogotá focused on UX/UI and digital experiences.",
-
-            /* ---------- Común ---------- */
+            "about.meta.title": "About Me - David García | Product Designer",
+            "about.meta.description": "Learn more about David García Murcia, a Product Designer and UX Researcher from Bogotá, Colombia.",
             "lang.label": "Language",
             "nav.home": "Home",
+            "nav.work": "Work",
             "nav.about": "About Me",
             "scrollTop": "Back to top",
-
-            /* ---------- Hero ---------- */
-            "hero.imgAlt": "David García, Interactive Designer specialized in UX and UI",
-            "hero.h1Aria": "I start by understanding.",
-            "hero.desc": "Understanding is my way of <span class=\"highlight-underline\">reducing uncertainty</span>. I research behavior and turn findings into design decisions with real impact.",
+            "hero.imgAlt": "David García, Product Designer and UX Researcher",
+            "hero.nowLabel": "Currently",
+            "hero.nowValue": "Product Designer & UX Researcher · IMEK",
+            "hero.awardLabel": "Winner",
+            "hero.awardValue": "IDARTES × Utadeo Hackathon",
+            "hero.status": "Available · Bogotá, Colombia · Remote or hybrid",
+            "hero.h1a": "I design digital products that",
+            "hero.h1sr": "make sense, get used and drive results.",
+            "hero.desc": "I start by understanding people and <span class=\"highlight-underline\">end by measuring the impact</span>. I take each product from user interviews to prototype and into production.",
+            "hero.statsAria": "Key results",
+            "hero.stat1": "in sales after redesigning checkout",
+            "hero.stat2": "organic clicks through UX + SEO optimization",
+            "hero.stat3": "co-design workshops with school students",
+            "hero.ctaWork": "See case studies",
             "hero.cv": "Download CV",
             "hero.cvAria": "Download David García's résumé as a PDF",
             "hero.cvHref": "files/CV_DavidGarcia%20(EN).pdf",
             "hero.cvDownload": "David-Garcia-CV-EN.pdf",
-
-            /* ---------- Portafolio ---------- */
-            "portfolio.title": "Portfolio",
+            "ach.titleHome": "Achievements & recognitions",
+            "ach.1": "Winner · An-Archaeology Hackathon — IDARTES × Utadeo",
+            "ach.2": "Speaker · 3rd Research Groups Meeting — U. de La Sabana",
+            "ach.3": "Exhibition · XXIII International Image Festival",
+            "ach.4": "Talk · DIN'T research group — Universidad Nacional",
+            "ach.5": "Speaker · IX Research Groups Meeting — Utadeo",
+            "ach.6": "Challenge winner · La CoCreadora × Vínculo networking",
+            "ach.7": "3D web design micro-workshop — MediaLab Idartes",
+            "ach.8": "UI Design course — uxcristopher",
+            "ach.9": "Information Architecture — Tech Academy",
+            "portfolio.title": "Work",
+            "portfolio.lead": "Case studies with the full process, web projects with measurable results, and personal explorations.",
             "portfolio.tablistAria": "Portfolio categories",
-            "tab.web": "Web Experiences",
-            "label.web": "Web Experiences",
-
-            "btn.viewProject": "View Project",
-            "btn.viewApp": "View App",
-
-            /* Maloka */
-            "maloka.imgAlt": "Maloka - Extended Experience",
-            "maloka.h3": "Phygital experience for families",
-            "maloka.h4": "Extended Experience",
-            "maloka.p": "As Team Leader in collaboration with Maloka, I led the design of an extended experience for families (a printed brochure and an augmented reality app), handling user research, UI, prototyping and stakeholder management.",
-
-            /* Neuronautas */
-            "neuro.imgAlt": "Neuronautas - Video game",
-            "neuro.tag": "UX Strategy · Inclusion",
-            "neuro.h3": "Video game for people on the autism spectrum",
-            "neuro.h4": "Video game",
-            "neuro.p": "I led the development of an accessible, sensory-friendly video game for people on the autism spectrum, in charge of UX strategy, research and interaction design, with a focus on inclusion and on making neurodivergent experiences visible.",
-
-            /* Mitos */
-            "mitos.tag": "Speculative Design",
-            "mitos.h3": "Speculative Design on Ancestral Knowledge",
-            "mitos.h4": "Extended experience - Hackathon winner with IDARTES",
-            "mitos.p": "Design lead on a speculative project about ancestral knowledge, I coordinated the entire process, from research with anthropologists to the development of conceptual models, infographics and a style guide, highlighting skills in research and digital product design.",
-
-            /* Web: Backyard */
+            "tab.cases": "Case studies",
+            "tab.web": "Web & E-commerce",
+            "tab.lab": "Lab",
+            "label.result": "Result:",
+            "meta.ongoing": "Ongoing",
+            "meta.winner": "Winner",
+            "btn.viewCase": "View case study",
+            "btn.viewApp": "View app",
+            "btn.play": "Play prototype",
+            "btn.viewSite": "View website",
+            "btn.viewProjectSite": "View project",
+            "btn.viewExperience": "View experience",
+            "cat.strategy": "UX Strategy",
+            "cat.research": "UX Research",
+            "cat.inclusion": "Accessibility",
+            "cat.codesign": "Co-design",
+            "cat.speculative": "Speculative design",
+            "tag.strategy": "UX Strategy",
+            "tag.analytics": "Analytics",
+            "tag.prototyping": "Prototyping",
+            "tag.ar": "Augmented reality",
+            "tag.uxstrategy": "UX Strategy",
+            "tag.accessibility": "Accessibility",
+            "tag.interaction": "Interaction design",
+            "tag.codesign": "Co-design",
+            "tag.participatory": "Participatory research",
+            "tag.narratives": "Visual storytelling",
+            "tag.speculative": "Speculative design",
+            "tag.expertResearch": "Expert research",
+            "tag.visualSystems": "Visual systems",
+            "imek.imgAlt": "IMEK - Digital strategy and redesign",
+            "imek.year": "2026 – present",
+            "imek.h3": "Refocusing a website on what truly creates value",
+            "imek.p": "The website was built to ask for donations, but the organization's main value lies in its consulting. Through a UX/UI and SEO audit, in-depth interviews with researchers (JTBD) and a Value Proposition Canvas, I refocused the digital strategy and now lead the redesign toward an MVP.",
+            "imek.result": "a digital strategy focused on generating consulting opportunities; analytics with GA4, Search Console and Clarity; an MVP planned with wireframes, a prototype and usability testing.",
+            "maloka.team": "Team of 4",
+            "maloka.h3": "A phygital experience for families at a museum",
+            "maloka.h4": "Universo Maloka — brochure + augmented reality app",
+            "maloka.p": "In collaboration with the Maloka museum, I led the design of an extended experience for families: a printed brochure connected to an augmented reality app. I handled user research, UI, prototyping and stakeholder management.",
+            "maloka.result": "testing with UX experts and families revealed 3 critical issues (initial context, connection to the exhibit room and the map) that I turned into improvements.",
+            "neuro.h3": "A safe video game for people on the autism spectrum",
+            "neuro.h4": "Neuronautas — video game",
+            "neuro.p": "I led product, research and interaction design for an accessible, sensory-friendly video game that makes neurodivergent experiences visible, all the way to a published playable prototype.",
+            "neuro.result": "a user on the autism spectrum validated it as a safe space to explore risk.",
+            "ndm.imgAlt": "No hay dolores menores - Co-design with school students",
+            "ndm.role": "Researcher · SemillaLab, Utadeo",
+            "ndm.h3": "Co-designing with school students to talk about mental health",
+            "ndm.h4": "No hay dolores menores — transmedia project",
+            "ndm.p": "I co-designed participatory methods on mental health and visual storytelling with school communities in Ciudad Bolívar, and turned them into a replicable guide for other facilitators.",
+            "ndm.result": "26 workshops delivered; the project was presented at the 2024 International Image Festival and at two research group meetings.",
+            "mitos.imgAlt": "Mitos del Hermano Mayor",
+            "mitos.role": "Design lead",
+            "mitos.h3": "Speculative design on ancestral knowledge",
+            "mitos.h4": "Mitos del Hermano Mayor — extended experience",
+            "mitos.p": "I coordinated the entire process, from research with anthropologists to the conceptual models, infographics and style guide of an experience about ancestral knowledge.",
+            "mitos.result": "winning project of the An-Archaeology Colloquium Hackathon (IDARTES × Utadeo).",
+            "web.intro": "Three e-commerce sites designed at BoteroMedia (2025), from audit to launch.",
             "link.viewCase": "View case →",
             "link.viewSite": "View website →",
-            "backyard.overlay": "Home remodeling e-commerce",
-            "backyard.tag": "UI · Brand · Shopify",
-            "backyard.h3": "Rethinking e-commerce",
-            "backyard.p": "Platform redesign based on the brand manual, improving visual consistency and the appeal of the interface.",
-
-            /* Web: Magnus */
-            "magnus.overlay": "Barbershop products e-commerce",
-            "magnus.h3": "UX + SEO Optimization",
-            "magnus.p": "I redesigned the site through iterations centered on the user experience, aiming to improve conversion and sales.",
-
-            /* Web: Regatta */
-            "regatta.overlay": "Men's clothing e-commerce",
-            "regatta.h3": "WooCommerce to Shopify Migration",
-            "regatta.p": "Migration of the site from WordPress to the Shopify platform, including the full structure and design.",
-
-            /* ---------- PlayGround ---------- */
             "link.viewPost": "View post →",
             "link.viewExperience": "View experience →",
+            "backyard.overlay": "Home remodeling e-commerce",
+            "backyard.h3": "Rethinking e-commerce conventions",
+            "backyard.p": "Audit and redesign toward a minimalist experience, free of intrusive promotions and consistent with the brand manual.",
+            "backyard.result": "From audit to launch",
+            "magnus.overlay": "Barbershop products e-commerce",
+            "magnus.h3": "UX + SEO Optimization",
+            "magnus.p": "Redesign through iterations centered on the shopping experience, together with the site's SEO strategy.",
+            "magnus.result": "+25% organic clicks · +15% CTR",
+            "regatta.overlay": "Men's clothing e-commerce",
+            "regatta.tag": "Migration · Shopify",
+            "regatta.h3": "WooCommerce to Shopify migration",
+            "regatta.p": "I migrated the store to a new platform with a complete structure and design, focused on a clearer purchase flow.",
+            "regatta.result": "+30% in sales",
+            "lab.intro": "Prototypes, talks and explorations I work on outside of projects.",
+            "kind.talk": "Talk",
+            "kind.prototype": "Prototype",
+            "kind.prototypeAI": "AI prototype",
+            "kind.workshop": "Workshop",
+            "kind.reflection": "Reflection",
+            "kind.event": "Event",
             "pg.featured": "Featured",
-
+            "pg.finance.title": "Personal finance app",
+            "pg.finance.desc": "A personal finance app that simplifies expense tracking through AI, voice commands and automatic receipt recognition from photos.",
+            "skills.title": "Skills & Tools",
+            "skills.process": "UX Process",
+            "level.main": "Main",
+            "level.intermediate": "Intermediate",
+            "level.analytics": "Analytics",
+            "skills.more": "More tools",
+            "footer.ctaLabel": "Looking for a Product Designer for your team?",
+            "footer.ctaHeading": "Let's talk.",
+            "footer.phone": "Phone",
+            "about.title": "About Me",
+            "about.p1": "My name is <strong>David García Murcia</strong> and I'm from <strong>Bogotá, Colombia</strong>. I'm a <strong>Product Designer</strong> grounded in <strong>UX Research</strong>: I care about creating functional, clear, people-centered digital products, and about measuring whether they actually work.",
+            "about.p3": "I currently work as a <strong>Product Designer &amp; UX Researcher at IMEK</strong>, where I lead the redesign of its digital strategy. Before that, I designed <strong>three e-commerce sites at BoteroMedia</strong>, from audit to launch. I see design as a tool to achieve goals, beyond the visual.",
+            "rec.title": "Recognitions",
+            "about.p2": "I studied <strong>Interactive Design</strong> at <strong>Universidad Jorge Tadeo Lozano</strong>, where I worked on interactive museum projects, cultural initiatives, social change experiences and digital products, always grounded in user research and real problem solving.",
+            "about.p4": "In my free time I like watching <strong>TV series and movies</strong>, <strong>reading</strong>, <strong>playing video games</strong> (especially on my <strong>Xbox</strong>) and I really enjoy <strong>working out</strong>, particularly <strong>jumping rope</strong>.",
             "pg.talk.alt": "David García giving his first talk at Universidad Nacional de Colombia",
             "pg.talk.title": "My first talk: \"How to gain experience while waiting for your first experience\"",
             "pg.talk.desc": "I gave my first talk for the DIN'T research group at the Faculty of Arts – Universidad Nacional de Colombia, sharing my personal professional path as an Interactive and UX designer.",
-
             "pg.album.title": "Augmented Reality Prototype — FIFA World Cup 2026™ Album",
             "pg.album.desc": "I modeled players with Hi3D, animated them with Mixamo and built an augmented reality experience with A-Frame to take collecting the Panini album far beyond simply sticking stickers.",
-
             "pg.crowd.title": "Behavioral Design and the traffic light game",
             "pg.crowd.desc": "A reflection on Crowd Control, a program that redesigned everyday moments such as waiting at a traffic light, turning it into a gamified experience. The actual waiting time isn't reduced, but the user's perception is transformed and better behaviors are encouraged.",
-
             "pg.finance.alt": "Personal finance app",
-            "pg.finance.title": "Personal finance app",
-            "pg.finance.desc": "A personal finance app that simplifies expense tracking through AI, voice commands and automatic receipt recognition from photos.",
-
             "pg.aframe.alt": "Memory Garden - A-Frame",
             "pg.aframe.title": "Memory Garden of Everyday Spaces",
             "pg.aframe.desc": "I took part in the Micro-workshop organized by IDARTES and the Cinemateca Distrital, exploring interactive environments with A-Frame in a collaborative project.",
-
             "pg.network.title": "First networking event with La CoCreadora and Vínculo",
             "pg.network.desc": "A really enjoyable experience where I ended up winning the challenge and taking home the Alinna game.",
-
             "pg.principito.desc": "Interactive experience created for the #FigmaMakeathon. Designed to be viewed on a computer.",
-
-            /* ---------- Skills ---------- */
-            "skills.title": "Skills & Tools",
-            "skills.process": "UX Process",
+            "maloka.imgAlt": "Maloka - Extended Experience",
+            "neuro.imgAlt": "Neuronautas - Video game",
+            "about.imgAlt": "David Garcia at a waterfall",
             "skill.prototyping": "Prototyping",
             "skill.usability": "Usability Testing",
             "skill.responsive": "Responsive Design",
-            "skill.ia": "Information Architecture",
-            "level.main": "Main",
-            "level.intermediate": "Intermediate",
-            "skills.more": "More tools",
-
-            /* ---------- Footer ---------- */
-            "footer.ctaLabel": "Have a project in mind?",
-            "footer.ctaHeading": "Let's talk.",
-            "footer.phone": "Phone",
-
-            /* ---------- About ---------- */
-            "about.title": "About Me",
-            "about.imgAlt": "David Garcia at a waterfall",
-            "about.p1": "My name is <strong>David García Murcia</strong> and I'm from <strong>Bogotá, Colombia</strong>. I'm an interactive designer focused on <strong>UX/UI</strong>, interested in creating functional, clear, people-centered digital experiences.",
-            "about.p2": "I studied <strong>Interactive Design</strong> at <strong>Universidad Jorge Tadeo Lozano</strong>, where I worked on interactive museum projects, cultural initiatives, social change experiences and digital products, always grounded in user research and real problem solving.",
-            "about.p3": "I've taken part in <strong>web and e-commerce projects</strong>, collaborating with multidisciplinary teams and applying principles of usability, accessibility and responsive design. I see design as a tool to achieve goals, beyond the visual.",
-            "about.p4": "In my free time I like watching <strong>TV series and movies</strong>, <strong>reading</strong>, <strong>playing video games</strong> (especially on my <strong>Xbox</strong>) and I really enjoy <strong>working out</strong>, particularly <strong>jumping rope</strong>.",
-
-            "rec.title": "Recognitions",
-            "rec.subtitle": "Recognitions earned for interactive design and UX projects in academic and professional contexts.",
-            "rec.viewProject": "View project →",
-            "rec.viewDetails": "View details →",
-            "rec.viewCert": "View certificate →",
-
-            "rec.1.alt": "Research group logo",
-            "rec.1.h3": "Member of the Digital Content Laboratory",
-            "rec.1.p": "Member of the transmedia project No hay dolores menores, developed collaboratively with school communities in Ciudad Bolívar.",
-
-            "rec.2.alt": "International Image Festival",
-            "rec.2.h3": "Participation in the exhibition \"A Través de las Grietas\" (\"Through the Cracks\")",
-            "rec.2.p": "Participation in the XXIII International Image Festival, presenting an interactive artifact based on cooperation.",
-
-            "rec.3.h3": "Winner of the An-Archaeology Colloquium Hackathon — IDARTES",
-            "rec.3.p": "In this project, I collaborated with my teammates on a speculative design challenge centered on our own interpretations of ancestral cultures and knowledge.",
-
-            "rec.4.alt": "Research group speaker",
-            "rec.4.h3": "Speaker at the 3rd Audiovisual Research-Creation Research Groups Meeting"
-            // rec.4.p reutiliza "rec.1.p" (el HTML original tiene el mismo texto en ambas tarjetas)
+            "skill.ia": "Information Architecture"
         }
     };
 
@@ -288,4 +306,4 @@
         getLang: function () { return currentLang; },
         setLang: setLang
     };
-})();
+})();

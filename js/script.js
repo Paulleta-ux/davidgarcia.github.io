@@ -220,129 +220,49 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
 })();
 
 // ===================================
-// Typewriter Hero (ES / EN)
+// Hero — palabra rotativa (ES / EN)
 // ===================================
 (function () {
-    const heading = document.getElementById('tw-heading');
-    if (!heading) return;
+    const word = document.getElementById('hero-rotator');
+    if (!word) return;
 
-    const TEXTS = {
-        es: {
-            wrong: ['No empiezo por la interfaz.', 'No empiezo por pixeles.'],
-            final: ['Empiezo por', 'entender.']
-        },
-        en: {
-            wrong: ["I don't start with the interface.", "I don't start with pixels."],
-            final: ['I start by', 'understanding.']
-        }
+    const WORDS = {
+        es: ['se entienden.', 'se usan.', 'convierten.', 'incluyen.'],
+        en: ['make sense.', 'get used.', 'convert.', 'include.']
     };
 
-    const SPEED_TYPE   = 68;
-    const SPEED_DELETE = 32;
-    const PAUSE_AFTER  = 900;
-    const PAUSE_BEFORE = 300;
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const INTERVAL = 2600;
+    let idx = 0;
+    let timer = null;
 
-    let runId = 0; // sirve para cancelar animaciones anteriores al cambiar de idioma
+    function list() { return WORDS[currentLang()] || WORDS.es; }
 
-    function start(animate) {
-        const myRun = ++runId;
-        const { wrong: wrongPhrases, final: finalLines } = TEXTS[currentLang()] || TEXTS.es;
-
-        let wrongIdx   = 0;
-        let charIdx    = 0;
-        let isDeleting = false;
-        let phase      = 'wrong';
-
-        heading.textContent = '';
-
-        const typed = document.createElement('span');
-        const cursor = document.createElement('span');
-        cursor.className = 'hero-tw-cursor';
-        cursor.setAttribute('aria-hidden', 'true');
-        heading.appendChild(typed);
-        heading.appendChild(cursor);
-
-        function render(text, strike) {
-            typed.innerHTML = strike
-                ? '<span class="tw-strike">' + text + '</span>'
-                : text;
-        }
-
-        // Al cambiar de idioma no repetimos la animación: mostramos el texto final directo
-        if (!animate) {
-            render(finalLines.join('<br>'), false);
-            return;
-        }
-
-        function tick() {
-            if (myRun !== runId) return; // llegó un cambio de idioma: esta animación se detiene
-
-            if (phase === 'wrong') {
-                const current = wrongPhrases[wrongIdx];
-
-                if (!isDeleting) {
-                    charIdx++;
-                    render(current.slice(0, charIdx), true);
-
-                    if (charIdx === current.length) {
-                        isDeleting = true;
-                        setTimeout(tick, PAUSE_AFTER);
-                        return;
-                    }
-                    setTimeout(tick, SPEED_TYPE);
-
-                } else {
-                    charIdx--;
-                    render(current.slice(0, charIdx), true);
-
-                    if (charIdx === 0) {
-                        isDeleting = false;
-                        wrongIdx++;
-
-                        if (wrongIdx < wrongPhrases.length) {
-                            setTimeout(tick, PAUSE_BEFORE);
-                        } else {
-                            phase = 'final';
-                            charIdx = 0;
-                            setTimeout(tick, PAUSE_BEFORE);
-                        }
-                        return;
-                    }
-                    setTimeout(tick, SPEED_DELETE);
-                }
-
-            } else if (phase === 'final') {
-                const full = finalLines.join('');
-
-                if (charIdx <= full.length) {
-                    let built = '';
-                    let count = 0;
-
-                    for (let i = 0; i < finalLines.length; i++) {
-                        const take = Math.max(0, Math.min(finalLines[i].length, charIdx - count));
-                        built += finalLines[i].slice(0, take);
-                        count += finalLines[i].length;
-                        if (i < finalLines.length - 1 && charIdx >= count) {
-                            built += '<br>';
-                        } else if (i < finalLines.length - 1 && take === finalLines[i].length) {
-                            built += '<br>';
-                        }
-                    }
-
-                    render(built, false);
-                    charIdx++;
-
-                    if (charIdx > full.length) { phase = 'done'; return; }
-                    setTimeout(tick, SPEED_TYPE);
-                }
-            }
-        }
-
-        setTimeout(tick, 600);
+    function show(text, animate) {
+        if (!animate) { word.textContent = text; return; }
+        word.classList.add('is-out');
+        setTimeout(() => {
+            word.textContent = text;
+            word.classList.remove('is-out');
+            word.classList.add('is-in');
+            void word.offsetWidth; // fuerza el reflow para animar la entrada
+            word.classList.remove('is-in');
+        }, 450);
     }
 
-    start(true);
-    document.addEventListener('portfolio:languagechange', () => start(false));
+    function start() {
+        clearInterval(timer);
+        idx = 0;
+        show(list()[0], false);
+        if (reduceMotion) return;
+        timer = setInterval(() => {
+            idx = (idx + 1) % list().length;
+            show(list()[idx], true);
+        }, INTERVAL);
+    }
+
+    start();
+    document.addEventListener('portfolio:languagechange', start);
 })();
 
 // ===================================
@@ -350,4 +270,4 @@ document.querySelectorAll('a[target="_blank"]').forEach(link => {
 // ===================================
 console.log('%c👋 Hola! Bienvenido al portafolio de David Garcia', 'font-size: 16px; font-weight: bold; color: #6C5933;');
 console.log('%cSi estás viendo esto, probablemente seas un desarrollador curioso 😄', 'font-size: 12px; color: #646464;');
-console.log('%cConectemos: https://www.linkedin.com/in/paulleta/', 'font-size: 12px; color: #6C5933;');
+console.log('%cConectemos: https://www.linkedin.com/in/paulleta/', 'font-size: 12px; color: #6C5933;');
