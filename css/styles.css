@@ -551,6 +551,19 @@ button {
                 0 8px 24px rgba(108, 89, 51, 0.12);
 }
 
+/* Collage: foto protagonista + ilustración de apoyo, lado a lado */
+.product-image--collage {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 0.75rem;
+    aspect-ratio: 16 / 11;
+}
+
+.product-image--collage img {
+    height: 100%;
+    object-fit: cover;
+}
+
 .product-image-tag {
     position: absolute;
     bottom: 14px;
@@ -1402,6 +1415,17 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
     .product-item { margin-bottom: 3.5rem; }
 
     .product-image-tag { opacity: 1; transform: translateY(0); }
+
+    .product-image--collage {
+        grid-template-columns: 1fr;
+        aspect-ratio: auto;
+        gap: 0.6rem;
+    }
+
+    .product-image--collage img {
+        height: auto;
+        aspect-ratio: 16 / 10;
+    }
 
     /* Projects grid */
     .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
