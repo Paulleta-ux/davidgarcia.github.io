@@ -1572,7 +1572,8 @@ div.pg-card:hover    { transform: none; box-shadow: 0 2px 8px rgba(108, 89, 51, 
 @media (prefers-reduced-motion: reduce) {
     .hero-float { animation: none; }
     .ach-track { animation: none; width: auto; }
-    .ach-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+    .ach-group { flex-wrap: wrap; padding-right: 0; }
+    .ach-marquee { overflow: visible; -webkit-mask-image: none; mask-image: none; }
     .ach-group[aria-hidden="true"] { display: none; }
 }
 
