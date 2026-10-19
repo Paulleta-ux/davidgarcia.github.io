@@ -18,9 +18,33 @@ window.addEventListener('scroll', () => {
     }
 });
 
-scrollToTopBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-});
+// Animación propia (como en Figma: Scroll to · Ease out · 400 ms).
+// No depende del "smooth" del navegador, que Windows/Chrome desactivan
+// cuando las animaciones del sistema están apagadas.
+const SCROLL_TOP_DURATION = 400; // ms
+const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+function animateScrollToTop() {
+    const startY = window.pageYOffset;
+    if (startY <= 0) return;
+    const startTime = performance.now();
+    const root = document.documentElement;
+    const prevBehavior = root.style.scrollBehavior;
+    root.style.scrollBehavior = 'auto'; // evita que el CSS "smooth" interfiera
+
+    function step(now) {
+        const t = Math.min((now - startTime) / SCROLL_TOP_DURATION, 1);
+        window.scrollTo(0, Math.round(startY * (1 - easeOutCubic(t))));
+        if (t < 1) {
+            requestAnimationFrame(step);
+        } else {
+            root.style.scrollBehavior = prevBehavior;
+        }
+    }
+    requestAnimationFrame(step);
+}
+
+scrollToTopBtn.addEventListener('click', animateScrollToTop);
 
 // ===================================
 // Smooth Scroll para enlaces internos
